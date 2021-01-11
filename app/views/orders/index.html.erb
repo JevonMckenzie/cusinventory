@@ -82,7 +82,7 @@
           <div class="col-md-6">
             <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title">Orders (<%= @active.count %>)</h3>
+                <h3 class="box-title"><%= @active.count %> Item(s) are Currently Deployed</h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -111,15 +111,7 @@
                         <%= order.item.name %>
                       </td>
                       <td><%= order.quantity %></td>
-                      <% if order.expire_at.strftime("%y:%m:%d") >= Date.today.strftime("%y:%m:%d") %>
-                      <td>
-                        <%= order.expire_at %>
-                      </td>
-                    <% else %>
-                      <td style="color:red;">
-                        <%= order.expire_at %>
-                      </td>
-                      <% end %>
+                    
                       <td>
                         <%= order.member.name %>
                       </td>
