@@ -7,8 +7,8 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Dashboard
-          <small>Control panel</small>
+          Deployed
+          <small>Items</small>
         </h1>
         <ol class="breadcrumb">
           <li class="active">
@@ -40,7 +40,7 @@
                       
                       <th>Deployed To</th>
                       <th>
-                        <i class="ion ion-log-in"></i>
+                        Service
                       </th>
                       <th>
                         <i class="ion ion-loop"></i>
@@ -64,7 +64,7 @@
                       <td>
                         <%= order.member.name %>
                       </td>
-                      <td>
+                      <td align="center">
                         <%= link_to "", { :controller => :orders, :action => :disable, :id => order.id }, { class: "ion ion-log-in"} %>
                       </td>
                       <td>
