@@ -1,0 +1,112 @@
+<html>
+<head>
+<title> Customs Toner Requisition </title>
+<style>
+table, th, td, tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+</style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+ <div class="wrapper">
+     <%= render 'layouts/header' %>
+
+<div class="content-wrapper"  >
+       <section class="content-header">
+        <h1>
+          Dashboard
+          <small>Control panel</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li class="active">
+            <a href="#">
+              <i class="fa fa-home"></i>
+              Home Page</a>
+          </li>
+        </ol>
+      </section>
+<div class = "container"
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">Toner Requisitions</h1><br>
+<%= puts current_user.email %>
+<br>
+<%= link_to 'New Toner', new_toner_path %><br>
+<%= link_to 'Home', root_path %><br>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br><br>
+
+<div class="">
+<table width="">
+  
+    <tr>
+      <th>Requisitionnumber</th>
+      <th>Username</th>
+      <th>Tonername</th>
+      <th>Quantity</th>
+      <th>Sectionname</th>
+      <th>Stationname</th>
+      <th>Requestdate</th>
+      <th>Comment</th>
+      <th>Issuedate</th>
+      <th>Issuedby</th>
+      <th>Issuecomment</th>
+      <th colspan="3">Make Changes</th>
+    </tr>
+  
+
+   
+    <% @toners.each do |toner| %>
+      <% if toner.stationname == current_user.station || current_user.admin == true %>
+      <tr>
+        <td><%= toner.requisitionnumber %></td>
+        <td><%= toner.username %></td>
+        <td><%= toner.tonername %></td>
+        <td><%= toner.quantity %></td>
+        <td><%= toner.sectionname %></td>
+        <td><%= toner.stationname %></td>
+        <td><%= toner.requestdate %></td>
+        <td><%= toner.comment %></td>
+        <td><%= toner.issuedate %></td>
+        <td><%= toner.issuedby %></td>
+        <td><%= toner.issuecomment %></td>
+        <td><%= link_to 'Show', toner %></td>
+        <% if can? :update, toner %>
+        <td><%= link_to 'Edit', edit_toner_path(toner) %></td>
+        <% end %>
+        <% if can? :update, toner %>
+        <td><%= link_to 'Destroy', toner, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+</div>
+</div>
+<br>
+
+
+</div>
+</div>
+<%= render 'layouts/footer' %>
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <script>
+      $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+      });
+    </script>
+</body>
+</html>

@@ -5,10 +5,10 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>Deploy Item From Inventory</h1>
+        <h1>Request Toner</h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-home"></i>Home Page</a></li>
-          <li class="active">Add order</li>
+          <li class="active">Request Tonerr</li>
         </ol>
       </section>
 
@@ -24,12 +24,12 @@
               </div>
               <!-- /.box-header -->
               <!-- form start -->
-              <%= form_for @order do |f| %>
-                <% if @order.errors.any? %>
+              <%= form_for @toner do |f| %>
+                <% if @toner.errors.any? %>
                   <div id="error_explanation">
-                    <h2><%= pluralize(@order.errors.count, 'error') %> prohibited this item from being saved:</h2>
+                    <h2><%= pluralize(@toner.errors.count, 'error') %> prohibited this item from being saved:</h2>
                     <ul>
-                      <% @order.errors.full_messages.each do |message| %>
+                      <% @toner.errors.full_messages.each do |message| %>
                         <li><%= message %></li>
                       <% end %>
                     </ul>
@@ -37,20 +37,29 @@
                 <% end %>
 
                 <div class="box-body">
+                	   <div class="form-group">
+                    <label>Username</label>
+                    <%= f.text_field :username, class: 'form-control', placeholder: 'Enter Username', required: true %>
+                  </div>
+                  	   <div class="form-group">
+                    <label>Section Name</label>
+                    <%= f.text_field :sectionname, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
+                  </div>
+                  	   <div class="form-group">
+                    <label>Request Date</label>
+                    <%= f.date_field :requestdate, class: 'form-control', placeholder: 'Enter Request Date', required: true %>
+                  </div>
+                 
+                    <div class="form-group">
+                    <label>Toner Name</label>
+                    <%= f.text_field :tonername, class: 'form-control', placeholder: 'Enter Toner Name', required: true %>
+                  </div>
+                 
                   <div class="form-group">
                     <label>Quantity</label>
-                    <%= f.number_field :quantity, class: 'form-control', value: "1", readonly: true %>
+                    <%= f.number_field :quantity, class: 'form-control', placeholder: 'Enter Quantity', required: true %>
                   </div>
-                  <div class="form-group">
-                    <label>Service By</label>
-                    <%= f.text_field :expire_at, class: 'form-control datepicker', required: true %>
-                  </div>
-                  <div class="form-group">
-                    <label>Member</label>
-                    <%= f.select(:member_id, options_from_collection_for_select(@member, 'id', 'name'), { include_blank: true }, { class: 'form-control', required: true }) %>
-                  </div>
-                  <%= f.number_field :item_id, :value => params[:item], :hidden => true %>
-                </div>
+                 
                 <!-- /.box-body -->
                 <div class="box-footer">
                   <%= f.submit 'Submit', class: 'btn btn-primary' %>

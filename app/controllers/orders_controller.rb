@@ -13,6 +13,10 @@ class OrdersController < ApplicationController
     @inactive = Order.inactive?
   end
 
+  def inventory
+    @orders = Order.all
+  end
+
   def renew
     @current_user = current_user
     @order = Order.find_by_id(params[:id])

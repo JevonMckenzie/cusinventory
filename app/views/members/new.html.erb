@@ -5,7 +5,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Add Customs Sstation
+      Add Customs Station
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-home"></i> Home Page</a></li>
@@ -43,13 +43,23 @@
                 <label>Station Name</label>
                 <%= f.text_field :name, autocomplete: "off", placeholder: "Enter Name of Station", class: "form-control", required: true %>
               </div>
-             <div class="form-group">
-                <label>Section Name</label>
-                <%= f.text_field :email, autocomplete: "off", placeholder: "Enter Name of Section", class: "form-control", required: true %>
+                          
+             
+                <div class="form-group">
+                <label>Officer In Charge of Section</label>
+                <%= f.text_field :oic, autocomplete: "off", placeholder: "Enter name of OIC", class: "form-control", required: true %>
+              </div>
+                 <div class="form-group">
+                <label>IT Support Staff</label>
+                <%= f.text_field :supstaff, autocomplete: "off", placeholder: "Enter name of Officer", class: "form-control", required: true %>
               </div>
               <div class="form-group">
-                <label>Phone Number</label>
+                <label>Contact Number</label>
                 <%= f.text_field :phone, autocomplete: "off", placeholder: "Enter Phone Number", class: "form-control" %>
+              </div>
+                  <div class="form-group">
+                <label>Contact Email</label>
+                <%= f.text_field :email, autocomplete: "off", placeholder: "Enter Email Address", class: "form-control" %>
               </div>
             <!-- /.box-body -->
             <div class="box-footer">

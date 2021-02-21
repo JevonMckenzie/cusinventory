@@ -6,7 +6,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Deployed Items
+          Serviced Items
         </h1>
         <ol class="breadcrumb">
           <li>
@@ -31,11 +31,13 @@
                     <tr>
                       <th>Deployment Id</th>
                       <th>Category</th>
+                      <th>Serial Number</th>
                       <th>Item</th>
                       <th>Quantity</th>
-                      <th>Borrowed at</th>
-                      <th>Returned at</th>
+                      <th>Deployed On</th>
+                      <th>Serviced On</th>
                       <th>Member</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -43,11 +45,15 @@
                     <tr>
                       <td><%= order.id %></td>
                       <td><%= order.item.category %></td>
+                      <td><%= order.item.serial %></td>
                       <td><%= order.item.name %></td>
                       <td><%= order.quantity %></td>
                       <td><%= order.created_at.strftime("%d/%m/%Y, %H:%M") %></td>
                       <td><%= order.updated_at.strftime("%d/%m/%Y, %H:%M") %></td>
                       <td><%= order.member.name %></td>
+                     <td> <%= link_to order, method: :delete, data: { confirm: 'Are you sure? If you are trying to return an item it is recommended to use the "return" button.' } do %>
+                        <i class="ion ion-trash-b"></i>
+                        <% end %> </td>
                     </tr>
                     <% end %>
                   </tbody>

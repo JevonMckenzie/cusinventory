@@ -1,0 +1,79 @@
+<%= form_with(model: toner, local: true) do |form| %>
+  <% if toner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(toner.errors.count, "error") %> prohibited this toner from being saved:</h2>
+
+      <ul>
+        <% toner.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="field">
+    <%= form.label :requisitionnumber %>
+    <%= form.text_field :requisitionnumber, :value => Toner.last.requisitionnumber + 1, :readonly => true %>
+  </div> 
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username, :value => current_user.username, :readonly => true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tonername %>
+    <%= form.text_field :tonername, readonly: form.object.persisted? %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, readonly: form.object.persisted? %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sectionname %>
+    <%= form.text_field :sectionname, readonly: form.object.persisted? %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stationname %>
+    <%= form.text_field :stationname, :value => current_user.station, :readonly => true %>
+  </div>
+
+  
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment, readonly: form.object.persisted? %>
+  </div>
+<div class="field">
+    <%= form.label :RequestDate %>
+    <%= form.date_field :requestdate, :value => Time.now.strftime('%Y-%m-%d'), :readonly => true %>
+  </div>
+  <% if current_user.admin == true %>
+  <div class="field">
+    <%= form.label :IssuedBy %>
+    <%= form.text_field :issuedby %>
+  </div>
+
+  <div class="field">
+    <%= form.label :QuantityIssued %>
+    <%= form.number_field :quantityissued %>                                                  
+  </div>
+
+
+  <div class="field">
+    <%= form.label :IssueDate %>
+    <%= form.date_field :issuedate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :issuecomment %>
+    <%= form.text_field :issuecomment %>
+  </div>
+  <% end %>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

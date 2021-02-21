@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :toners
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   #devise_scope :user do
@@ -13,10 +14,12 @@ Rails.application.routes.draw do
   resources :users
   resources :items
 
-  root 'orders#index'
+
+  root 'orders#deployed'
   get 'renew/:id' => 'orders#renew'
   get 'return/:id' => 'orders#disable'
-  get 'past_orders' => 'orders#old'
+  get 'serviced_items' => 'orders#old'
+  get 'inventory' => 'orders#deployed'
  #get "/sign_up" => 'devise/registrations#new'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

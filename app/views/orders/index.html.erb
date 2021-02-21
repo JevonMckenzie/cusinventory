@@ -22,62 +22,7 @@
       <!-- Main content -->
       <section class="content">
         <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-aqua">
-              <div class="inner">
-                <h3><%=@items.sum(:quantity)%></h3>
-                <p>Items Tracked</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-search"></i>
-              </div>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-green">
-              <div class="inner">
-                <h3><%=@items.sum(:remaining_quantity)%></h3>
-                <p>Items Available</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-checkmark"></i>
-              </div>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-red">
-              <div class="inner">
-                <h3><%= (@items.sum(:quantity) - @items.sum(:remaining_quantity)) %></h3>
-                <p>Items Unavailable</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-alert"></i>
-              </div>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-yellow">
-              <div class="inner">
-                <h3><%= @expired.count %></h3>
-                <p>Expired Orders</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-android-time"></i>
-              </div>
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
-        <!-- /.row -->
-
+       
         <div class="row">
           <div class="col-md-6">
             <div class="box">
@@ -89,10 +34,11 @@
                 <table class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th>Description</th>
-                      <th>Qty</th>
-                      <th>Return By</th>
-                      <th>Borrowed By</th>
+                      <th>Category</th>
+                      <th>Name</th>
+                      <th>S.T. or Serial#</th>
+                      
+                      <th>Deployed To</th>
                       <th>
                         <i class="ion ion-log-in"></i>
                       </th>
@@ -108,9 +54,12 @@
                     <% @active.each do |order| %>
                     <tr>
                       <td>
+                        <%= order.item.category %>
+                      </td>
+                      <td>
                         <%= order.item.name %>
                       </td>
-                      <td><%= order.quantity %></td>
+                      <td><%= order.item.serial %></td>
                     
                       <td>
                         <%= order.member.name %>
@@ -139,14 +88,17 @@
           <div class="col-md-6">
             <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title">Members (<%= @members.count %>)</h3>
+                <h3 class="box-title">Customs Stations (<%= @members.count %>)</h3>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
                 <table class="table table-bordered table-hover">
                   <tr>
-                    <th>Name</th>
-                    <th>E-mail</th>
+                    <th>Station</th>
+                   
+                    <th>OIC</th>
+                    <th>Support</th>
+                    <th>Email</th>
                     <th>Phone</th>
                     <th>
                       <i class="ion ion-edit"></i>
@@ -158,6 +110,9 @@
                   <% @members.each do |member| %>
                   <tr>
                     <td><%= member.name %></td>
+                   
+                    <td><%= member.oic %></td>
+                    <td><%= member.supstaff %></td>
                     <td><%= member.email %></td>
                     <td><%= member.phone %></td>
                     <td><%= link_to "", edit_member_path(member), { class: "ion ion-edit"} %></td>

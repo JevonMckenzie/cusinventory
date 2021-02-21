@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :item
   belongs_to :member
-
+  #resources :toners
   validates :quantity, presence: true
   validates :expire_at, presence: true
   validates :item_id, presence: true

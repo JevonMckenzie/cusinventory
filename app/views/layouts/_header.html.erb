@@ -3,10 +3,10 @@
   <a href="<%= root_url %>" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini">
-      <b>f</b>inv</span>
+      <b>f</b>Customs</span>
     <!-- logo for regular state and mobile devices -->
     <span class="logo-lg">
-      <b>Customs Inventory</b>
+      <b>Customs MIS</b>
     </span>
   </a>
   <!-- Header Navbar: style can be found in header.less -->
@@ -41,8 +41,8 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
-      <li>
-        <a href="<%= root_url %>">
+              <li>
+        <a href="<%= inventory_path %>">
           <i class="fa fa-home"></i>
           <span>Dashboard</span>
         </a>
@@ -50,13 +50,21 @@
       <li>
         <a href="<%= items_path %>">
           <i class="fa fa-search"></i>
-          <span>View Inventory of Items</span>
+          <span>View Items on Inventory</span>
         </a>
       </li>
+    
       <li>
-        <a href="<%= past_orders_path %>">
-          <i class="fa fa-history"></i>
+        <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
           <span>View Deployed Items</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="<%= serviced_items_path %>">
+          <i class="fa fa-history"></i>
+          <span>View Serviced Items</span>
         </a>
       </li>
       <li>

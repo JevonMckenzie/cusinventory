@@ -13,8 +13,9 @@ class ItemsController < ApplicationController
   end
 
   def create
-    params[:item][:remaining_quantity] = params[:item][:quantity]
+   params[:item][:remaining_quantity] = params[:item][:quantity]
     @item = Item.new(item_params)
+   #params[:item][:quantity] = Item.where(:name => item.name).count(:name)
     if @item.save
       redirect_to :root, notice: 'Item was successfully created.'
     else
@@ -41,6 +42,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :category, :quantity, :description, :remaining_quantity)
+    params.require(:item).permit(:name, :category, :quantity, :description, :remaining_quantity, :price, :serial)
   end
 end

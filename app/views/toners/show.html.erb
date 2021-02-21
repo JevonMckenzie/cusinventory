@@ -1,0 +1,129 @@
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <%= render 'layouts/header' %>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>Requested Toner</h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-home"></i>Home Page</a></li>
+          <li class="active">Request Tonerr</li>
+        </ol>
+      </section>
+
+<section class="content">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="box box-header">
+              <div class="box-header with-border">
+                <h3 class="box-title">Basic Information</h3>
+              </div>
+              <!-- /.box-header -->
+              <!-- form start -->
+              <%= form_for @toner do |f| %>
+              
+                    <div class="form-group">
+                    <label>Requisition Number</label>
+                    <%= f.text_field :requisitionnumber, class: 'form-control', placeholder: 'Enter Section Name', value:@toner.requisitionnumber, required: true %>
+                  </div>
+                          <div class="form-group">
+                    <label>Request Date</label>
+                    <%= f.date_field :requestdate, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
+                  </div>
+
+
+                <div class="form-group">
+                     <div class="form-group">
+                    <label>Username</label>
+                   <%= f.text_field :username, required: true, class: 'form-control', value:@toner.username  %>
+                  </div>
+                       <div class="form-group">
+                    <label>Section Name</label>
+                    <%= f.text_field :sectionname, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
+                  </div>
+                      <div class="form-group">
+                    <label>Station Name</label>
+                    <%= f.text_field :sectionname, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
+                  </div>
+                      <div class="form-group">
+                    <label>Section Name</label>
+                    <%= f.text_field :sectionname, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
+                  </div>
+                      <div class="form-group">
+                    <label>Section Name</label>
+                    <%= f.text_field :sectionname, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
+                  </div>
+
+
+<% end %>
+<div class="container">
+<div class = "bg-faded py-4 my-4">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Requisitionnumber:</strong>
+  <%= @toner.requisitionnumber %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @toner.username %>
+</p>
+
+<p>
+  <strong>Tonername:</strong>
+  <%= @toner.tonername %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @toner.quantity %>
+</p>
+
+<p>
+  <strong>Sectionname:</strong>
+  <%= @toner.sectionname %>
+</p>
+
+<p>
+  <strong>Stationname:</strong>
+  <%= @toner.stationname %>
+</p>
+
+<p>
+  <strong>Requestdate:</strong>
+  <%= @toner.requestdate %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @toner.comment %>
+</p>
+
+<p>
+  <strong>Issuedate:</strong>
+  <%= @toner.issuedate %>
+</p>
+
+<p>
+  <strong>Issuedby:</strong>
+  <%= @toner.issuedby %>
+</p>
+
+<p>
+  <strong>Issuecomment:</strong>
+  <%= @toner.issuecomment %>
+</p>
+
+<%= link_to 'Edit', edit_toner_path(@toner) %> |
+<%= link_to 'Back', toners_path %>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
+</div>
+</div>
+</div>
+</div>
+</body>
