@@ -65,16 +65,18 @@
                         <%= order.member.name %>
                       </td>
                       <td align="center">
-                        <%= link_to "", { :controller => :orders, :action => :disable, :id => order.id }, { class: "ion ion-log-in"} %>
+                        <%= link_to "", { :controller => :orders, :action => :disable, data: { confirm: 'Are you sure you want to delete this alert?' }, :id => order.id }, { class: "ion ion-log-in"} %>
                       </td>
                       <td>
                         <%= link_to "", { :controller => :orders, :action => :renew, :id => order.id }, { class: "ion ion-loop"} %>
                       </td>
+                      <% if current_user.admin? %>
                       <td >
                         <%= link_to order, method: :delete, data: { confirm: 'Are you sure? If you are trying to return an item it is recommended to use the "return" button.' } do %>
                         <i class="ion ion-trash-b"></i>
                         <% end %>
                       </td>
+                      <% end %>
                     </tr>
                     <% end %>
                   </tbody>

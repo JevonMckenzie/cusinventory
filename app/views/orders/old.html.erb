@@ -37,7 +37,9 @@
                       <th>Deployed On</th>
                       <th>Serviced On</th>
                       <th>Member</th>
+                      <% if current_user.admin? %>
                       <th>Delete</th>
+                      <% end %>
                     </tr>
                   </thead>
                   <tbody>
@@ -51,9 +53,11 @@
                       <td><%= order.created_at.strftime("%d/%m/%Y, %H:%M") %></td>
                       <td><%= order.updated_at.strftime("%d/%m/%Y, %H:%M") %></td>
                       <td><%= order.member.name %></td>
+                      <% if current_user.admin? %>
                      <td> <%= link_to order, method: :delete, data: { confirm: 'Are you sure? If you are trying to return an item it is recommended to use the "return" button.' } do %>
                         <i class="ion ion-trash-b"></i>
                         <% end %> </td>
+                        <% end %>
                     </tr>
                     <% end %>
                   </tbody>
