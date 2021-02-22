@@ -42,14 +42,15 @@
                       <th>
                         Service
                       </th>
-                      <% if current_user.admin? %>
+                    
                       <th>
                         <i class="ion ion-loop"></i>
                       </th>
-                      <% end %>
+                      <% if current_user.admin? %>
                       <th>
                         <i class="ion ion-trash-b"></i>
                       </th>
+                      <% end %>
                     </tr>
                   </thead>
                   <tbody>
@@ -72,7 +73,7 @@
                       <td>
                         <%= link_to "", { :controller => :orders, :action => :renew, :id => order.id }, { class: "ion ion-loop"} %>
                       </td>
-                      <% if current_user.admin? %>
+                     <% if current_user.admin? %>
                       <td >
                         <%= link_to order, method: :delete, data: { confirm: 'Are you sure? If you are trying to return an item it is recommended to use the "return" button.' } do %>
                         <i class="ion ion-trash-b"></i>
