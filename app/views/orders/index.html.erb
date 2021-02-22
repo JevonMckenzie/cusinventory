@@ -42,9 +42,11 @@
                       <th>
                         Service
                       </th>
+                      <% if current_user.admin? %>
                       <th>
                         <i class="ion ion-loop"></i>
                       </th>
+                      <% end %>
                       <th>
                         <i class="ion ion-trash-b"></i>
                       </th>
