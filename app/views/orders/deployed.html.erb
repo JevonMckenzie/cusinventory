@@ -154,9 +154,9 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Headsets</h3><h5>Total: <%=Item.where(:category => "Headset").count(:category)%>
+                <h3>Headsets</h3><h5>Total: <%=Item.where(:category => "Head Set").count(:category)%>
                 </h5>
-                <h5>Available: <%=Item.where(:category => "Headset").sum(:remaining_quantity)%>
+                <h5>Available: <%=Item.where(:category => "Head Set").sum(:remaining_quantity)%>
                 </h5>
               </div>
               
