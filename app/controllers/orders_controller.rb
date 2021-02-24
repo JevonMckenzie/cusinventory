@@ -38,13 +38,19 @@ class OrdersController < ApplicationController
     end
   end
 
+  def returnedby
+  end
+
   def disable
     @current_user = current_user
+    #Order.update_attribute(:returnedby, @current_user)
+    #@returnedby = Order.current_user
     borrowed_qty = Order.find_by_id(params[:id]).quantity.to_i
     @borrowed_item = Order.find_by_id(params[:id]).item
     @borrowed_item.increment!(:remaining_quantity, borrowed_qty)
     @current_user = current_user
     @order = Order.find_by_id(params[:id])
+    @order.update_attribute(:returnedby, @current_user.email)
     Order.disable(params[:id])
     redirect_to :root
     flash[:notice] = "Item marked as returned. Thank you!"
