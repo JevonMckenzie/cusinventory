@@ -20,6 +20,7 @@
 
       <!-- Main content -->
       <section class="content">
+        <% if current_user.admin? %>
         <div class="row">
           <!-- left column -->
           <div class="col-md-6">
@@ -70,17 +71,24 @@
                 </div>
                
               </div>
+              
               <!-- /.box-body -->
               <div class="box-footer">
                 <%= f.submit "Submit", class: "btn btn-primary"%>
               </div>
               <% end %>
+             
             </div>
             <!-- /.box -->
           </div>
           <!--/.col (right) -->
         </div>
+
+        <% else %>
+
+        <h3 align="center"> Add Item Not Acessible </h3>
         <!-- /.row -->
+         <% end %>
       </section>
       <!-- /.content -->
     </div>
