@@ -175,6 +175,42 @@
               
             </div>
           </div>
+              <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+           <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Mouse</h3><h5>Total: <%=Item.where(:category => "Mouse").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Mouse").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+              <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+           <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Keyboard</h3><h5>Total: <%=Item.where(:category => "Keyboard").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Keyboard").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+              <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+           <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Flash Drive</h3><h5>Total: <%=Item.where(:category => "Flash Drive").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Flash Drive").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
           <!-- ./col -->
           <div class="col-lg-3 col-xs-6">
             <!-- small box -->
