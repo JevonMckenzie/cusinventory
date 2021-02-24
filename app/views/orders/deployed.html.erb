@@ -27,7 +27,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Desktops</h3><h5>Total: <%=Item.where(:category => "Desktop").count(:category)%>
+                <h3>Desktops</h3><h5>Total: <%=Item.where(:category => "Desktop").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "Desktop").sum(:remaining_quantity)%>
                 </h5>
@@ -40,7 +40,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Monitors</h3><h5>Total: <%=Item.where(:category => "Monitor").count(:category)%>
+                <h3>Monitors</h3><h5>Total: <%=Item.where(:category => "Monitor").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "Monitor").sum(:remaining_quantity)%>
                 </h5>
@@ -53,7 +53,7 @@
             <!-- small box -->
            <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Laptops</h3><h5>Total: <%=Item.where(:category => "Laptop").count(:category)%>
+                <h3>Laptops</h3><h5>Total: <%=Item.where(:category => "Laptop").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "Laptop").sum(:remaining_quantity)%>
                 </h5>
@@ -66,7 +66,7 @@
             <!-- small box -->
              <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Printers</h3><h5>Total: <%=Item.where(:category => "Printer").count(:category)%>
+                <h3>Printers</h3><h5>Total: <%=Item.where(:category => "Printer").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "Printer").sum(:remaining_quantity)%>
                 </h5>
@@ -85,7 +85,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Backup UPS</h3><h5>Total: <%=Item.where(:category => "BackupUps").count(:category)%>
+                <h3>Backup UPS</h3><h5>Total: <%=Item.where(:category => "BackupUps").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "BackupUps").sum(:remaining_quantity)%>
                 </h5>
@@ -98,7 +98,7 @@
             <!-- small box -->
              <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Mifi</h3><h5>Total: <%=Item.where(:category => "Mifi").count(:category)%>
+                <h3>Mifi</h3><h5>Total: <%=Item.where(:category => "Mifi").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "Mifi").sum(:remaining_quantity)%>
                 </h5>
@@ -111,7 +111,7 @@
             <!-- small box -->
         <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>USB Adpters</h3><h5>Total: <%=Item.where(:category => "USB Adapter").count(:category)%>
+                <h3>USB Adpters</h3><h5>Total: <%=Item.where(:category => "USB Adapter").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "USB Adapter").sum(:remaining_quantity)%>
                 </h5>
@@ -124,7 +124,7 @@
             <!-- small box -->
          <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Servers</h3><h5>Total: <%=Item.where(:category => "Server").count(:category)%>
+                <h3>Servers</h3><h5>Total: <%=Item.where(:category => "Server").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "Server").sum(:remaining_quantity)%>
                 </h5>
@@ -141,7 +141,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Webcams</h3><h5>Total: <%=Item.where(:category => "Webcam").count(:category)%>
+                <h3>Webcams</h3><h5>Total: <%=Item.where(:category => "Webcam").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "Webcam").sum(:remaining_quantity)%>
                 </h5>
@@ -154,7 +154,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Headsets</h3><h5>Total: <%=Item.where(:category => "Head Set").count(:category)%>
+                <h3>Headsets</h3><h5>Total: <%=Item.where(:category => "Head Set").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "Head Set").sum(:remaining_quantity)%>
                 </h5>
@@ -167,7 +167,7 @@
             <!-- small box -->
            <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Projectors</h3><h5>Total: <%=Item.where(:category => "Projector").count(:category)%>
+                <h3>Projectors</h3><h5>Total: <%=Item.where(:category => "Projector").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "Projector").sum(:remaining_quantity)%>
                 </h5>
@@ -180,7 +180,7 @@
             <!-- small box -->
              <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Add Item</h3><h5>Total: <%=Item.where(:category => "").count(:category)%>
+                <h3>Add Item</h3><h5>Total: <%=Item.where(:category => "").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "").sum(:remaining_quantity)%>
                 </h5>
