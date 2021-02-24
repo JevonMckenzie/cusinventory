@@ -16,10 +16,15 @@ Rails.application.routes.draw do
 
 
   root 'orders#deployed'
+  get 'inventory' => 'orders#deployed'
+
+  get 'serviced_items' => 'orders#old'
+
   get 'renew/:id' => 'orders#renew'
   get 'return/:id' => 'orders#disable'
-  get 'serviced_items' => 'orders#old'
-  get 'inventory' => 'orders#deployed'
+  
+  
+  get 'station_info' => 'orders#station'
  #get "/sign_up" => 'devise/registrations#new'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

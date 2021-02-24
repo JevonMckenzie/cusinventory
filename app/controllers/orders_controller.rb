@@ -13,6 +13,14 @@ class OrdersController < ApplicationController
     @inactive = Order.inactive?
   end
 
+  def station
+    @orders = Order.all
+    @members = Member.all
+    @items = Item.all
+    @active = Order.active?
+    @expired = Order.expired?
+  end
+
   def inventory
     @orders = Order.all
   end

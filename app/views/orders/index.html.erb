@@ -24,7 +24,7 @@
         <!-- Small boxes (Stat box) -->
        
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <div class="box">
               <div class="box-header with-border">
                 <h3 class="box-title"><%= @active.count %> Item(s) are Currently Deployed</h3>
@@ -37,7 +37,7 @@
                       <th>Category</th>
                       <th>Name</th>
                       <th>S.T. or Serial#</th>
-                      <th>Quantity</th>
+                      
                       <th>Deployed To</th>
                       <th>
                         Service
@@ -63,7 +63,6 @@
                         <%= order.item.name %>
                       </td>
                       <td><%= order.item.serial %></td>
-                      <td><%= order.item.quantity %></td>
                     
                       <td>
                         <%= order.member.name %>
@@ -91,49 +90,7 @@
           </div>
           <!-- ./col -->
 
-          <div class="col-md-6">
-            <div class="box">
-              <div class="box-header with-border">
-                <h3 class="box-title">Customs Stations (<%= @members.count %>)</h3>
-              </div>
-              <!-- /.box-header -->
-              <div class="box-body">
-                <table class="table table-bordered table-hover">
-                  <tr>
-                    <th>Station</th>
-                   
-                    <th>OIC</th>
-                    <th>Support</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>
-                      <i class="ion ion-edit"></i>
-                    </th>
-                    <th>
-                      <i class="ion ion-trash-b"></i>
-                    </th>
-                  </tr>
-                  <% @members.each do |member| %>
-                  <tr>
-                    <td><%= member.name %></td>
-                   
-                    <td><%= member.oic %></td>
-                    <td><%= member.supstaff %></td>
-                    <td><%= member.email %></td>
-                    <td><%= member.phone %></td>
-                    <td><%= link_to "", edit_member_path(member), { class: "ion ion-edit"} %></td>
-                    <td>
-                      <%= link_to member, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                      <i class="ion ion-trash-b"></i>
-                      <% end %>
-                    </td>
-                  </tr>
-                  <% end %>
-                </table>
-              </div>
-            </div>
-            <!-- /.box -->
-          </div>
+        >
           <!-- ./col -->
         </div>
         <!-- /.row -->
