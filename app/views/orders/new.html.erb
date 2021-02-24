@@ -37,6 +37,10 @@
                 <% end %>
 
                 <div class="box-body">
+                    <div class="form-group">
+                    <label>Deployed By</label>
+                    <%= f.text_field :deployedby, class: 'form-control', value: current_user.email %>
+                  </div>
                   <div class="form-group">
                     <label>Quantity</label>
                     <%= f.number_field :quantity, class: 'form-control', value: "1"%>

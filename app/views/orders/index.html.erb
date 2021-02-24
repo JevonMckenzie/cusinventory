@@ -35,6 +35,7 @@
                   <thead>
                     <tr>
                       <th>Category</th>
+                      <th>Deployed By</th>
                       <th>Name</th>
                       <th>Service Tag/Serial#</th>
                       
@@ -58,6 +59,9 @@
                     <tr>
                       <td>
                         <%= order.item.category %>
+                      </td>
+                       <td>
+                        <%= order.deployedby %>
                       </td>
                       <td>
                         <%= order.item.name %>
