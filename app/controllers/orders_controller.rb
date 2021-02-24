@@ -39,6 +39,7 @@ class OrdersController < ApplicationController
   end
 
   def disable
+    @current_user = current_user
     borrowed_qty = Order.find_by_id(params[:id]).quantity.to_i
     @borrowed_item = Order.find_by_id(params[:id]).item
     @borrowed_item.increment!(:remaining_quantity, borrowed_qty)
