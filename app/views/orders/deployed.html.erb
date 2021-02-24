@@ -85,9 +85,9 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Backup UPS</h3><h5>Total: <%=Item.where(:category => "BackupUps").sum(:quantity)%>
+                <h3>Backup UPS</h3><h5>Total: <%=Item.where(:category => "UPS Battery Backup").sum(:quantity)%>
                 </h5>
-                <h5>Available: <%=Item.where(:category => "BackupUps").sum(:remaining_quantity)%>
+                <h5>Available: <%=Item.where(:category => "UPS Battery Backup").sum(:remaining_quantity)%>
                 </h5>
               </div>
               
