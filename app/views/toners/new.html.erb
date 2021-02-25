@@ -19,9 +19,25 @@
           <div class="col-md-6">
             <!-- general form elements -->
             <div class="box box-header">
+
+    
+      
+              
+
+    
+   
+
+         <a href="<%= toners_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>View Toner Requisitions</span>
+        </a>
+     
+      
+    
               <div class="box-header with-border">
                 <h3 class="box-title">Basic Information</h3>
               </div>
+
               <!-- /.box-header -->
               <!-- form start -->
               <%= form_for @toner do |f| %>
@@ -39,15 +55,19 @@
                 <div class="box-body">
                 	   <div class="form-group">
                     <label>Username</label>
-                    <%= f.text_field :username, class: 'form-control', placeholder: 'Enter Username', required: true %>
+                    <%= f.text_field :username, class: 'form-control', placeholder: 'Enter Username', required: true, value: current_user.email, readonly: true %>
+                  </div>
+                     <div class="form-group">
+                    <label>User Assigned Station</label>
+                    <%= f.text_field :stationname, class: 'form-control', required: true, value: current_user.stationname, readonly: true %>
                   </div>
                   	   <div class="form-group">
                     <label>Section Name</label>
-                    <%= f.text_field :sectionname, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
+                    <%= f.select(:sectionname, [["Select Station/Section","Corozal-Cargo","Corozal-Passenger"],["Benque-Cargo","Benque-Cargo"], ["Benque-Passenger","Benque-Passenger"], ["San-Pedro","San-Pedro"], ["Toledo","Toledo"], ["Big Creek","Big Creek"],["Orange Walk","Orange Walk"],["Dangriga","Dangriga"],["BZ CMIS","BZ CMIS"],["BZ Shipping","BZ Shipping"],["BZ Valuation","BZ Valuation"],["BZ Risk Management","BZ Risk Management"],["BZ Trade","BZ Trade"],["BZ Queens Bond","BZ Queens Bond"],["BZ Port","BZ Port"],["BZ Training","BZ Training"],["BZ Deputy Gordon Office","BZ Deputy Gordon Office"],["Comproller Office","Comproller Office"],["Legal Council","Legal Council"],["Internal Auditor","Internal Auditor"],["Excise","Excise"],["Post Audit","Post Audit"],["Accounts","Accounts"],["Records","Records"],["Investigation","Investigation"],["Private Warehouse","Private Warehouse"],["Add Item","Add Item"],["Add Item","Add Item"],["Add Item","Add Item"],["Add Item","Add Item"],["Add Item","Add Item"],["Add Item","Add Item"],["Add Item","Add Item"]], {}, { :class => 'form-control' })%>
                   </div>
                   	   <div class="form-group">
                     <label>Request Date</label>
-                    <%= f.date_field :requestdate, class: 'form-control', placeholder: 'Enter Request Date', required: true %>
+                    <%= f.date_field :requestdate, class: 'form-control', placeholder: 'Enter Request Date', required: true, readonly:true, :value => Time.now.strftime('%Y-%m-%d') %>
                   </div>
                  
                     <div class="form-group">

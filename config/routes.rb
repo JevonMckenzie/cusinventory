@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   resources :toners
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -15,10 +17,15 @@ Rails.application.routes.draw do
   resources :items
 
 
-  root 'orders#deployed'
+  root 'pages#index'
+  get 'home' => 'pages#index'
   get 'inventory' => 'orders#deployed'
 
   get 'allitem' => 'items#allitem'
+
+  get 'toners' => 'toners#index'
+
+  get 'forms' => 'toners#forms'
 
   get 'station_info' => 'orders#station'
 

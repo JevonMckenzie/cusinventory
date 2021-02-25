@@ -15,11 +15,13 @@
 
     <!-- Main content -->
     <section class="content">
+      <% if current_user.admin? %>
       <div class="row">
         <!-- left column -->
         <div class="col-md-6">
           <!-- general form elements -->
           <div class="box box-header">
+            
             <div class="box-header with-border">
               <h3 class="box-title">Basic Information</h3>
             </div>
@@ -60,19 +62,25 @@
                 </div>
               </div>
               <!-- /.box-body -->
+              
               <div class="box-footer">
                 <%= f.submit "Submit", class: "btn btn-primary"%>
                 <div class="pull-right">
                   <%= link_to 'Delete account', current_user, method: :delete, data: { confirm: 'Are you sure? This action can not be reversed.' }, class: "btn btn-danger" %>
                 </div>
               </div>
-            <% end %>
+
           </div>
           <!-- /.box -->
         </div>
         <!--/.col (right) -->
       </div>
       <!-- /.row -->
+            <% end %>
+              <% else %> 
+
+              <h3 align="center"> Sorry you cannot edit users. </h3>
+            <% end %>
     </section>
     <!-- /.content -->
   </div>

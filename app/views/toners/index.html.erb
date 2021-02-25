@@ -59,7 +59,7 @@ table, th, td, tr {
 
    
     <% @toners.each do |toner| %>
-      <% if toner.stationname == current_user.station || current_user.admin == true %>
+      <% if toner.stationname == current_user.stationname || current_user.admin == true %>
       <tr>
         <td><%= toner.requisitionnumber %></td>
         <td><%= toner.username %></td>
@@ -72,13 +72,14 @@ table, th, td, tr {
         <td><%= toner.issuedate %></td>
         <td><%= toner.issuedby %></td>
         <td><%= toner.issuecomment %></td>
+
         <td><%= link_to 'Show', toner %></td>
-        <% if can? :update, toner %>
+         <% if current_user.admin? %>
         <td><%= link_to 'Edit', edit_toner_path(toner) %></td>
-        <% end %>
-        <% if can? :update, toner %>
+        
+       
         <td><%= link_to 'Destroy', toner, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
+       <% end %>
         </td>
       </tr>
     <% end %>

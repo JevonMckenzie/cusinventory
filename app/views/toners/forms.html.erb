@@ -1,0 +1,127 @@
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+
+    <%= render 'layouts/header' %>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Electronic Forms
+          <small>Control panel</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li class="active">
+            <a href="#">
+              <i class="fa fa-home"></i>
+              Home Page</a>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <a href="<%= new_toner_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span style="color:white;">Toner Requisition Form</span>
+        </a>
+                <h5>Total Forms Submitted: <%=Item.where(:category => "Desktop").sum(:quantity)%>
+                </h5>
+              
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h>Email Password Reset Form</h><h5>Total Forms Submitted: <%=Item.where(:category => "Monitor").sum(:quantity)%>
+                </h5>
+             
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+           <div class="small-box bg-aqua">
+              <div class="inner">
+                <h>New Email Account Form</h><h5>Total Forms Submitted: <%=Item.where(:category => "Laptop").sum(:quantity)%>
+                </h5>
+             
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             <div class="small-box bg-aqua">
+              <div class="inner">
+                <h>New IT Device Form</h><h5>Total Forms Submitted: <%=Item.where(:category => "Printer").sum(:quantity)%>
+                </h5>
+              
+              </div>
+              
+            </div>
+          </div>
+      
+
+          <!-- ./col -->
+        </div>
+
+        <!-- /.row -->
+<div class="row">
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+
+                <h>Computer Service Form</h><h5>Total Forms Submitted: <%=Item.where(:category => "UPS Battery Backup").sum(:quantity)%>
+                </h5>
+                
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+    
+      
+
+          <!-- ./col -->
+        </div>
+                
+        
+        </div>
+        <!-- /.row -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <%= render 'layouts/footer' %>
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <script>
+      $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+      });
+    </script>
+  </body>

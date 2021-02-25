@@ -59,67 +59,10 @@
 
 
 <% end %>
-<div class="container">
-<div class = "bg-faded py-4 my-4">
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Requisitionnumber:</strong>
-  <%= @toner.requisitionnumber %>
-</p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @toner.username %>
-</p>
-
-<p>
-  <strong>Tonername:</strong>
-  <%= @toner.tonername %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @toner.quantity %>
-</p>
-
-<p>
-  <strong>Sectionname:</strong>
-  <%= @toner.sectionname %>
-</p>
-
-<p>
-  <strong>Stationname:</strong>
-  <%= @toner.stationname %>
-</p>
-
-<p>
-  <strong>Requestdate:</strong>
-  <%= @toner.requestdate %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= @toner.comment %>
-</p>
-
-<p>
-  <strong>Issuedate:</strong>
-  <%= @toner.issuedate %>
-</p>
-
-<p>
-  <strong>Issuedby:</strong>
-  <%= @toner.issuedby %>
-</p>
-
-<p>
-  <strong>Issuecomment:</strong>
-  <%= @toner.issuecomment %>
-</p>
-
+ <% if current_user.admin? %>
 <%= link_to 'Edit', edit_toner_path(@toner) %> |
+<% end %>
 <%= link_to 'Back', toners_path %>
 <%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
 </div>

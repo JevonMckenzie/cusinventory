@@ -1,4 +1,4 @@
-<%= form_with(model: toner, local: true) do |form| %>
+<%= form_for @toner, url: toner_path(@toner), html: {method: :put} do |form| %>
   <% if toner.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(toner.errors.count, "error") %> prohibited this toner from being saved:</h2>
@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :username %>
-    <%= form.text_field :username, :value => current_user.username, :readonly => true %>
+    <%= form.text_field :username, :value => current_user.email, :readonly => true %>
   </div>
 
   <div class="field">
@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= form.label :stationname %>
-    <%= form.text_field :stationname, :value => current_user.station, :readonly => true %>
+    <%= form.text_field :stationname, :value => current_user.stationname, :readonly => true %>
   </div>
 
   
@@ -59,7 +59,7 @@
 
   <div class="field">
     <%= form.label :QuantityIssued %>
-    <%= form.number_field :quantityissued %>                                                  
+    <%= form.number_field :quantity %>                                                  
   </div>
 
 

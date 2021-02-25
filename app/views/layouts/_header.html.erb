@@ -39,7 +39,8 @@
       </div>
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
-    <ul class="sidebar-menu">
+     <% if current_user.admin? %>
+        <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
               <li>
         <a href="<%= inventory_path %>">
@@ -96,6 +97,25 @@
         </a>
       </li>
     </ul>
+
+
+ <% else %>
+
+    <ul class="sidebar-menu">
+      <li class="header">MAIN NAVIGATION</li>
+              
+
+    
+   
+      <li>
+        <a href="<%= forms_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>Electronic Forms</span>
+        </a>
+      </li>
+      
+    </ul>
+    <% end %>
   </section>
   <!-- /.sidebar -->
 </aside>
