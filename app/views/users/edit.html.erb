@@ -15,7 +15,7 @@
 
     <!-- Main content -->
     <section class="content">
-      <% if current_user.admin? %>
+   
       <div class="row">
         <!-- left column -->
         <div class="col-md-6">
@@ -28,6 +28,7 @@
             <!-- /.box-header -->
             <!-- form start -->
             <%= form_for(@user) do |f| %>
+               <% if current_user.admin? %>
               <% if @user.errors.any? %>
                 <div id="error_explanation">
                   <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -48,6 +49,8 @@
                   <label>E-mail Address</label>
                   <%= f.text_field :email, autocomplete: "off", placeholder: "Enter Email Address", class: "form-control", required: true  %>
                 </div>
+
+            <% end %>
                 <div class="form-group">
                   <label>New Password</label>
                   <%= f.password_field :password, autocomplete: "off", placeholder: "Enter Password", class: "form-control" %>
@@ -64,10 +67,14 @@
               <!-- /.box-body -->
               
               <div class="box-footer">
+                 
                 <%= f.submit "Submit", class: "btn btn-primary"%>
+              
+                <% if current_user.admin? %>
                 <div class="pull-right">
                   <%= link_to 'Delete account', current_user, method: :delete, data: { confirm: 'Are you sure? This action can not be reversed.' }, class: "btn btn-danger" %>
                 </div>
+                  <% end %>
               </div>
 
           </div>
@@ -77,10 +84,7 @@
       </div>
       <!-- /.row -->
             <% end %>
-              <% else %> 
-
-              <h3 align="center"> Sorry you cannot edit users. </h3>
-            <% end %>
+          
     </section>
     <!-- /.content -->
   </div>
