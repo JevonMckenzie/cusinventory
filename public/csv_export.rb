@@ -1,6 +1,6 @@
 require 'csv'
  
-file = "#{Rails.root}/public/data.csv"
+file = "#{Rails.root}/public/user_data.csv"
  
 table = User.all;0 # ";0" stops output.  Change "User" to any model.
  

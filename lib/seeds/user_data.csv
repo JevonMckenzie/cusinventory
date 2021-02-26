@@ -1,5 +1,6 @@
 Id,Name,Email,Password,Admin,CMISUser,Station
 16,therese.martinez@customs.gov.bz,therese.martinez@customs.gov.bz,pass123,,,
+2,Bonnifacio Cawich,bonnifacio.cawich@customs.gov.bz,pass123,,TRUE,BZ CMIS
 3,julian.chimal@customs.gov.bz,julian.chimal@customs.gov.bz,pass123,,,
 4,carlson.bradley@customs.gov.bz,carlson.bradley@customs.gov.bz,pass123,,,
 5,rigel.bowen@customs.gov.bz,rigel.bowen@customs.gov.bz,pass123,,,
@@ -13,6 +14,7 @@ Id,Name,Email,Password,Admin,CMISUser,Station
 13,carina.acevedo@customs.gov.bz,carina.acevedo@customs.gov.bz,pass123,,,
 14,anya.phillips@customs.gov.bz,anya.phillips@customs.gov.bz,pass123,,,
 15,collin.griffith@customs.gov.bz,collin.griffith@customs.gov.bz,pass123,,,
+1,jevon.mckenzie@customs.gov.bz,jevon.mckenzie@customs.gov.bz,pass123,TRUE,TRUE,BZ CMIS
 17,rackel.waight@customs.gov.bz,rackel.waight@customs.gov.bz,pass123,,,
 18,feliciano.cowo@customs.gov.bz,feliciano.cowo@customs.gov.bz,pass123,,,
 19,louis.betancourt@customs.gov.bz,louis.betancourt@customs.gov.bz,pass123,,,

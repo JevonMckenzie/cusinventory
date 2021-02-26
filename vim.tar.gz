@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><BucketName>heroku-jvm-buildpack-vi</BucketName><RequestId>47048CD7836EE3D8</RequestId><HostId>u5HfDxvpnDqRazRaVoKGSlMoG6sLNlvU9YIo7wlLab5DaOkxpvc4FUlXVym5mxfsVYdqEdFsEvA=</HostId></Error>
