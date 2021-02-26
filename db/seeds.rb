@@ -1,6 +1,6 @@
 require 'csv'
 
-
+User.delete_all
 
 CSV.foreach(Rails.root.join('lib', 'seeds', 'user_data.csv'), headers: true) do |row|
   User.create! do |model|
