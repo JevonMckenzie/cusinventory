@@ -28,7 +28,14 @@ table, th, td, tr {
           </li>
         </ol>
       </section>
-<div class = "container"
+<section class="content">
+        <div class="row">
+          <div class="col-xs-12">
+            <!-- Main data table -->
+            <div class="box">
+
+              <!-- /.box-header -->
+              <div class="box-body">
 <p id="notice"><%= notice %></p>
 
 <h1 align="center">Toner Requisitions</h1><br>
@@ -39,7 +46,7 @@ table, th, td, tr {
 <%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br><br>
 
 <div class="">
-<table width="">
+<table id="example1" class="table-bordered table-striped">
   
     <tr>
       <th>Requisitionnumber</th>
@@ -92,6 +99,8 @@ table, th, td, tr {
 
 </div>
 </div>
+</div></section></div>
+
 <%= render 'layouts/footer' %>
     <script>
       $.widget.bridge('uibutton', $.ui.button);
