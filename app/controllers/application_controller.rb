@@ -3,7 +3,9 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
 
-  
+  def admin_required
+    redirect_to('/') if current_user.cmisuser != "YES"
+  end
 
   
 end

@@ -39,7 +39,7 @@
       </div>
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
-     <% if current_user.admin? %>
+     <% if current_user.admin? || current_user.cmisuser == "YES" %>
         <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
               <li>
