@@ -61,7 +61,7 @@ table, th, td, tr {
                   </thead>
                   <tbody>
                     <% @items.each do |item| %>
-                    <% if item.remaining_quantity > 0 %>
+                   
                                      <tr>
                      
                       <td><%= item.id %></td>
@@ -83,7 +83,7 @@ table, th, td, tr {
                       <td><%= link_to 'Deploy', new_order_path(item: item.id) %></td>
                     </tr>
                     <% end %>
-                    <% end %>
+                    
                   </tbody>
                 </table>
               </div>

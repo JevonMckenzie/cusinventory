@@ -44,24 +44,59 @@
       <li class="header">MAIN NAVIGATION</li>
               <li>
         <a href="<%= home_path %>">
-          <i class="fa fa-home"></i>
+          <i class="fa fa-search"></i>
           <span>Dashboard</span>
         </a>
       </li>
-       <li>
-        <a href="<%= inventory_path %>">
+            <li>
+         <a href="<%= items_path %>">
           <i class="fa fa-search"></i>
-          <span>Inventory of IT Resources</span>
+          <span>View All Items on Inventory</span>
+        </a>
+       
+        </li>
+<li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>View Deployed Items</span>
         </a>
       </li>
-      
+        
+          <li>
+          <a href="<%= serviced_items_path %>">
+          <i class="fa fa-search"></i>
+          <span>View Serviced/Returned Items</span>
+        </a>
+      </li>
+        
+          <li>
+          <a href="<%= station_info_path %>">
+          <i class="fa fa-search"></i>
+          <span>View Customs Stations</span>
+        </a>
+      </li>
+       
+      <li>
+       <a href="<%= new_item_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>Add Item to Inventory</span>
+        </a>
+      </li>
+<li>
+        <li>
+        <a href="<%= new_member_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>Add Customs Station</span>
+        </a>
+</li>
+   
 
     
    
   
         <li>
         <a href="<%= forms_path %>">
-          <i class="fa fa-user-plus"></i>
+          <i class="fa fa-search"></i>
           <span>Electronic Forms</span>
         </a>
       </li>
