@@ -8,9 +8,9 @@ CSV.foreach(Rails.root.join('lib', 'seeds', 'user_data.csv'), headers: true) do 
     model.name = row[1]
     model.email = row[2]
     model.password = row[3]
-    model.admin = row[3]
-    model.cmisuser = row[3]
-    model.stationname = row[3]
+    model.admin = row[4]
+    model.cmisuser = row[5]
+    model.stationname = row[6]
   end
 end
 
