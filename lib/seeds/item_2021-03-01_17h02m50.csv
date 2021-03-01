@@ -1,0 +1,79 @@
+Id,Name,Category,Quantity,Description,Created at,Updated at,Remaining quantity,Serial,Price,Consumable,Quantity [Orders],Status [Orders],Expire at [Orders],Created at [Orders],Updated at [Orders],Section [Orders],Details [Orders],Deployedby [Orders],Returnedby [Orders],Id [Members],Name [Members],Email [Members],Phone [Members],Created at [Members],Updated at [Members],Supstaff [Members],Oic [Members],Section [Members]
+3,Dell Optiplex 390,Desktop,1,Old PC,"February 23, 2021 18:17","February 23, 2021 18:17",1,B19N4V1,0,,"1,1,1","false,true,true","August 02, 2021,August 02, 2021,August 01, 2021","February 23, 2021 18:28,February 25, 2021 17:57,February 25, 2021 17:57","February 24, 2021 20:25,February 25, 2021 17:57,February 25, 2021 17:57"," - , - , - "," - , - , - "," - ,jevonmmckenzie@gmail.com,jevonmmckenzie@gmail.com","jevonmmckenzie@gmail.com, - , - ","11,11,11","Toledo,Toledo,Toledo","richard.garbutt@customs.gov.bz,richard.garbutt@customs.gov.bz,richard.garbutt@customs.gov.bz","6106773,6106773,6106773","February 22, 2021 20:34,February 22, 2021 20:34,February 22, 2021 20:34","February 22, 2021 20:34,February 22, 2021 20:34,February 22, 2021 20:34","None,None,None","Richard Garbutt,Richard Garbutt,Richard Garbutt"," - , - , - "
+4,Dell Optiplex 390,Desktop,1,Old PC,"February 23, 2021 18:18","February 23, 2021 18:18",1,D11X4V1,0,,"1,1","false,true","August 02, 2021,August 01, 2021","February 23, 2021 18:28,February 25, 2021 17:58","February 24, 2021 20:25,February 25, 2021 17:58"," - , - "," - , - "," - ,jevonmmckenzie@gmail.com","jevonmmckenzie@gmail.com, - ","11,11","Toledo,Toledo","richard.garbutt@customs.gov.bz,richard.garbutt@customs.gov.bz","6106773,6106773","February 22, 2021 20:34,February 22, 2021 20:34","February 22, 2021 20:34,February 22, 2021 20:34","None,None","Richard Garbutt,Richard Garbutt"," - , - "
+5,Dell Optiplex 390,Desktop,1,Old PC,"February 23, 2021 18:20","February 23, 2021 18:20",1,56Z8JS1,0,,"1,1","false,true","August 02, 2021,August 31, 2021","February 23, 2021 18:28,February 25, 2021 17:59","February 24, 2021 20:25,February 25, 2021 17:59"," - , - "," - , - "," - ,jevonmmckenzie@gmail.com","jevonmmckenzie@gmail.com, - ","11,11","Toledo,Toledo","richard.garbutt@customs.gov.bz,richard.garbutt@customs.gov.bz","6106773,6106773","February 22, 2021 20:34,February 22, 2021 20:34","February 22, 2021 20:34,February 22, 2021 20:34","None,None","Richard Garbutt,Richard Garbutt"," - , - "
+6,Dell Optiplex 3040,Desktop,1,Will Update Price,"February 23, 2021 18:21","February 23, 2021 18:21",1,1C6SSD2,0,,"1,1","false,true","August 02, 2021,August 01, 2021","February 23, 2021 18:29,February 25, 2021 18:00","February 25, 2021 17:54,February 25, 2021 18:00"," - , - "," - , - "," - ,jevonmmckenzie@gmail.com","jevonmmckenzie@gmail.com, - ","11,11","Toledo,Toledo","richard.garbutt@customs.gov.bz,richard.garbutt@customs.gov.bz","6106773,6106773","February 22, 2021 20:34,February 22, 2021 20:34","February 22, 2021 20:34,February 22, 2021 20:34","None,None","Richard Garbutt,Richard Garbutt"," - , - "
+7,Needs Update,Monitor,1,Needs Update,"February 23, 2021 18:22","February 23, 2021 18:22",1,needs update,0,,"1,1","false,true","August 02, 2021,August 01, 2021","February 23, 2021 18:29,February 25, 2021 18:00","February 25, 2021 17:54,February 25, 2021 18:00"," - , - "," - , - "," - ,jevonmmckenzie@gmail.com","jevonmmckenzie@gmail.com, - ","11,11","Toledo,Toledo","richard.garbutt@customs.gov.bz,richard.garbutt@customs.gov.bz","6106773,6106773","February 22, 2021 20:34,February 22, 2021 20:34","February 22, 2021 20:34,February 22, 2021 20:34","None,None","Richard Garbutt,Richard Garbutt"," - , - "
+8,Needs Update,Monitor,1,Needs Update,"February 23, 2021 18:23","February 23, 2021 18:24",1,Needs Update,0,,"1,1","false,true","August 02, 2021,January 18, 2021","February 23, 2021 18:29,February 25, 2021 18:01","February 25, 2021 17:55,February 25, 2021 18:01"," - , - "," - , - "," - ,jevonmmckenzie@gmail.com","jevonmmckenzie@gmail.com, - ","11,11","Toledo,Toledo","richard.garbutt@customs.gov.bz,richard.garbutt@customs.gov.bz","6106773,6106773","February 22, 2021 20:34,February 22, 2021 20:34","February 22, 2021 20:34,February 22, 2021 20:34","None,None","Richard Garbutt,Richard Garbutt"," - , - "
+9,Needs Update,Monitor,1,Needs Update,"February 23, 2021 18:23","February 23, 2021 18:23",1,Needs Update,0,,1,false,"August 02, 2021","February 23, 2021 18:30","February 25, 2021 17:55", - , - , - ,jevonmmckenzie@gmail.com,11,Toledo,richard.garbutt@customs.gov.bz,6106773,"February 22, 2021 20:34","February 22, 2021 20:34",None,Richard Garbutt, - 
+10,Needs Update,Monitor,1,Needs Update,"February 23, 2021 18:23","February 23, 2021 18:23",1,Needs Update,0,,1,false,"August 02, 2021","February 23, 2021 18:30","February 25, 2021 17:55", - , - , - ,jevonmmckenzie@gmail.com,11,Toledo,richard.garbutt@customs.gov.bz,6106773,"February 22, 2021 20:34","February 22, 2021 20:34",None,Richard Garbutt, - 
+11,Dell 1130,Printer,1,Needs Update,"February 23, 2021 18:25","February 23, 2021 21:30",1,Needs Update,0,,1,false,"August 02, 2021","February 23, 2021 18:30","February 25, 2021 17:56", - , - , - ,jevonmmckenzie@gmail.com,11,Toledo,richard.garbutt@customs.gov.bz,6106773,"February 22, 2021 20:34","February 22, 2021 20:34",None,Richard Garbutt, - 
+12,HP Laserjet P2055DN,Printer,1,Needs Update,"February 23, 2021 18:25","February 23, 2021 18:25",1,Needs Update,0,,1,false,"August 02, 2021","February 23, 2021 18:31","February 25, 2021 17:56", - , - , - ,jevonmmckenzie@gmail.com,11,Toledo,richard.garbutt@customs.gov.bz,6106773,"February 22, 2021 20:34","February 22, 2021 20:34",None,Richard Garbutt, - 
+13,Lexmark MX410DE,Printer,1,Needs Update,"February 23, 2021 18:26","February 23, 2021 18:26",1,Needs Update,0,,1,false,"August 02, 2021","February 23, 2021 19:30","February 25, 2021 17:56", - , - , - ,jevonmmckenzie@gmail.com,11,Toledo,richard.garbutt@customs.gov.bz,6106773,"February 22, 2021 20:34","February 22, 2021 20:34",None,Richard Garbutt, - 
+18,IMICRO IMME282 WIRED USB HEADSET BLACK,Head Set,2,None,"February 23, 2021 20:39","February 24, 2021 18:43",2,none,88.67,,"1,1,1,1","false,false,false,true","October 31, 2021,July 25, 2021,April 25, 2021,February 16, 2021","February 23, 2021 20:40,February 24, 2021 18:44,February 24, 2021 18:46,February 24, 2021 19:26","February 24, 2021 15:34,February 24, 2021 18:44,February 24, 2021 19:10,February 24, 2021 19:26"," - , - , - , - "," - , - , - , - "," - , - , - ,jevonmmckenzie@gmail.com"," - , - , - , - ","5,5,5,5","Belize City Trade,Belize City Trade,Belize City Trade,Belize City Trade","systemadministrator1@customs.gov.bz,systemadministrator1@customs.gov.bz,systemadministrator1@customs.gov.bz,systemadministrator1@customs.gov.bz","N/A,N/A,N/A,N/A","February 22, 2021 19:23,February 22, 2021 19:23,February 22, 2021 19:23,February 22, 2021 19:23","February 22, 2021 19:23,February 22, 2021 19:23,February 22, 2021 19:23,February 22, 2021 19:23","Modernization System Admin,Modernization System Admin,Modernization System Admin,Modernization System Admin","Therese Martinez,Therese Martinez,Therese Martinez,Therese Martinez"," - , - , - , - "
+19,Logitech H151 with Mic,Head Set,10,None,"February 23, 2021 20:41","February 24, 2021 15:57",10,None,0,,1,false,"April 25, 2021","February 24, 2021 15:59","February 24, 2021 18:40", - , - , - , - ,3,Benque Passenger,michael.cholom@customs.gov.bz,6066055,"February 22, 2021 19:20","February 22, 2021 19:20",Michael Cholom,Celso Marin, - 
+29,Klip Extreme Galet Optical Mouse,Mouse,10,None,"February 23, 2021 20:55","February 25, 2021 15:24",10,none,16.49,,,,,,,,,,,,,,,,,,,
+40,Genius KB-06XE Slender Black,Keyboard,5,None,"February 23, 2021 21:03","February 25, 2021 15:29",5,none,23.56,,,,,,,,,,,,,,,,,,,
+45,Klip Extreem Stylus Essential,Keyboard,5,None,"February 23, 2021 21:05","February 25, 2021 15:28",5,none,23.56,,,,,,,,,,,,,,,,,,,
+51,APC 600VA,UPS Battery Backup,5,None,"February 23, 2021 21:11","February 25, 2021 15:29",5,none,160,,,,,,,,,,,,,,,,,,,
+56,APC 850VA,UPS Battery Backup,5,None,"February 23, 2021 21:13","February 25, 2021 15:31",5,none,233.78,,,,,,,,,,,,,,,,,,,
+62,Dell PK492,Toner,4,None,"February 23, 2021 21:26","February 25, 2021 15:32",4,none,0,,,,,,,,,,,,,,,,,,,
+66,Dell 2350dn Drum PK496,Toner,1,None,"February 23, 2021 21:28","February 23, 2021 21:28",1,none,0,,,,,,,,,,,,,,,,,,,
+67,Dell 113X,Toner,5,None,"February 23, 2021 21:28","February 25, 2021 18:30",5,none,325,,,,,,,,,,,,,,,,,,,
+68,Hp 81A,Toner,4,None,"February 23, 2021 21:36","February 25, 2021 15:34",4,none,0,,,,,,,,,,,,,,,,,,,
+72,CF2 87XC,Toner,1,None,"February 23, 2021 21:37","February 23, 2021 21:37",1,none,0,,,,,,,,,,,,,,,,,,,
+73,Hp 64A,Toner,2,None,"February 23, 2021 21:38","February 25, 2021 15:35",2,none,0,,,,,,,,,,,,,,,,,,,
+75,Hp 26A,Toner,4,None,"February 23, 2021 21:39","February 25, 2021 15:36",4,none,0,,,,,,,,,,,,,,,,,,,
+79,Hp 37A,Toner,3,None,"February 23, 2021 21:41","February 25, 2021 18:27",3,none,454,,,,,,,,,,,,,,,,,,,
+82,Hp 30A,Toner,4,None,"February 23, 2021 21:43","February 25, 2021 18:28",4,none,165,,,,,,,,,,,,,,,,,,,
+84,Hp 17A,Toner,6,"None
+","February 23, 2021 21:44","February 25, 2021 15:38",6,none,0,,,,,,,,,,,,,,,,,,,
+90,Hp 19A,Toner,6,None,"February 23, 2021 21:46","February 25, 2021 15:39",6,none,0,,,,,,,,,,,,,,,,,,,
+96,126A (310A) Black,Toner,3,None,"February 23, 2021 21:49","February 25, 2021 15:41",3,none,0,,,,,,,,,,,,,,,,,,,
+100,126A (312A) Yellow,Toner,3,None,"February 23, 2021 21:51","February 25, 2021 15:42",3,none,0,,,,,,,,,,,,,,,,,,,
+103,126A (313A) Magenta,Toner,3,None,"February 23, 2021 21:53","February 25, 2021 15:42",3,none,0,,,,,,,,,,,,,,,,,,,
+106,126A (311A) Cyan,Toner,1,None,"February 23, 2021 21:54","February 23, 2021 21:54",1,none,0,,,,,,,,,,,,,,,,,,,
+108,131A (210A) Black,Toner,3,None,"February 23, 2021 21:55","February 25, 2021 15:44",3,none,0,,,,,,,,,,,,,,,,,,,
+111,131A (211A) Cyan,Toner,4,None,"February 23, 2021 21:56","February 25, 2021 15:45",4,none,0,,,,,,,,,,,,,,,,,,,
+115,131A (213A) Magenta,Toner,5,None,"February 23, 2021 21:58","February 25, 2021 15:46",5,none,0,,,,,,,,,,,,,,,,,,,
+120,Hp 410A Black,Toner,2,None,"February 23, 2021 22:00","February 25, 2021 15:47",2,none,0,,,,,,,,,,,,,,,,,,,
+122,Hp 411A Cyan,Toner,3,None,"February 23, 2021 22:01","February 25, 2021 15:48",3,none,0,,,,,,,,,,,,,,,,,,,
+125,Hp 412A Yellow,Toner,3,None,"February 23, 2021 22:03","February 25, 2021 15:49",3,none,0,,,,,,,,,,,,,,,,,,,
+128,413A Mag,Toner,4,None,"February 25, 2021 15:51","February 25, 2021 15:51",4,None,0,,,,,,,,,,,,,,,,,,,
+129,Hp 83A,Toner,5,None,"February 25, 2021 15:52","February 25, 2021 18:29",5,None,337,,,,,,,,,,,,,,,,,,,
+130,Hp 85A,Toner,4,None,"February 25, 2021 15:53","February 25, 2021 15:53",4,none,0,,,,,,,,,,,,,,,,,,,
+131,Hp 55A,Toner,2,None,"February 25, 2021 15:54","February 25, 2021 15:54",2,none,0,,,,,,,,,,,,,,,,,,,
+132,Hp 80A,Toner,3,None,"February 25, 2021 15:55","February 25, 2021 15:55",3,none,0,,,,,,,,,,,,,,,,,,,
+133,Hp 35A,Toner,2,None,"February 25, 2021 15:55","February 25, 2021 15:55",2,none,0,,,,,,,,,,,,,,,,,,,
+134,Hp 05A,Toner,5,None,"February 25, 2021 15:58","February 25, 2021 15:58",5,none,0,,,,,,,,,,,,,,,,,,,
+135,122 XL Color,Toner,4,None,"February 25, 2021 15:58","February 25, 2021 15:59",4,none,0,,,,,,,,,,,,,,,,,,,
+136,122 XL Black,Toner,4,None,"February 25, 2021 15:59","February 25, 2021 15:59",4,none,0,,,,,,,,,,,,,,,,,,,
+137,414 Black,Toner,0,None,"February 25, 2021 16:00","February 25, 2021 16:00",0,none,0,,,,,,,,,,,,,,,,,,,
+138,414A Cyan,Toner,1,None,"February 25, 2021 16:00","February 25, 2021 16:00",1,none,0,,,,,,,,,,,,,,,,,,,
+139,414A Yellow,Toner,1,None,"February 25, 2021 16:01","February 25, 2021 16:01",1,none,0,,,,,,,,,,,,,,,,,,,
+140,414A Magenta,Toner,2,None,"February 25, 2021 16:01","February 25, 2021 16:01",2,none,0,,,,,,,,,,,,,,,,,,,
+141,21XL,Toner,1,None,"February 25, 2021 16:02","February 25, 2021 16:02",1,none,0,,,,,,,,,,,,,,,,,,,
+142,22XL,Toner,1,None,"February 25, 2021 16:02","February 25, 2021 16:02",1,none,0,,,,,,,,,,,,,,,,,,,
+143,Canon GPR22 Drum,Toner,5,None,"February 25, 2021 16:03","February 25, 2021 16:03",5,none,0,,,,,,,,,,,,,,,,,,,
+144,Canon GPR22,Toner,2,None,"February 25, 2021 16:03","February 25, 2021 16:03",2,none,0,,,,,,,,,,,,,,,,,,,
+145,Canon GPR54,Toner,1,None,"February 25, 2021 16:04","February 25, 2021 16:04",1,none,0,,,,,,,,,,,,,,,,,,,
+146,Brother Fax 775 ,Toner,2,None,"February 25, 2021 16:05","February 25, 2021 16:05",2,none,0,,,,,,,,,,,,,,,,,,,
+147,Brother Fax 575,Toner,3,None,"February 25, 2021 16:06","February 25, 2021 16:06",3,none,0,,,,,,,,,,,,,,,,,,,
+148,Samsung 101S,Toner,1,None,"February 25, 2021 16:07","February 25, 2021 16:08",1,none,0,,,,,,,,,,,,,,,,,,,
+149,Kyocera TK352,Toner,3,None,"February 25, 2021 16:07","February 25, 2021 16:07",3,none,0,,,,,,,,,,,,,,,,,,,
+150,Hp 950 Black,Toner,2,None,"February 25, 2021 16:08","February 25, 2021 16:08",2,none,0,,,,,,,,,,,,,,,,,,,
+151,Hp 951 Color,Toner,3,None,"February 25, 2021 16:09","February 25, 2021 16:10",3,none,0,,,,,,,,,,,,,,,,,,,
+152,Hp 952 Black,Toner,3,None,"February 25, 2021 16:10","February 25, 2021 16:10",3,none,0,,,,,,,,,,,,,,,,,,,
+153,952 Magenta,Toner,2,None,"February 25, 2021 16:11","February 25, 2021 16:11",2,none,0,,,,,,,,,,,,,,,,,,,
+154,Hp 952 Yellow,Toner,2,None,"February 25, 2021 16:11","February 25, 2021 16:11",2,none,0,,,,,,,,,,,,,,,,,,,
+155,Hp 952 Cyan,Toner,1,None,"February 25, 2021 16:12","February 25, 2021 16:12",1,none,0,,,,,,,,,,,,,,,,,,,
+156,508A Black,Toner,2,None,"February 25, 2021 16:12","February 25, 2021 16:12",2,none,0,,,,,,,,,,,,,,,,,,,
+157,508A Cyan,Toner,2,None,"February 25, 2021 16:13","February 25, 2021 16:13",2,none,0,,,,,,,,,,,,,,,,,,,
+158,508A Yellow,Toner,2,None,"February 25, 2021 16:14","February 25, 2021 16:14",2,none,0,,,,,,,,,,,,,,,,,,,
+159,508A Magenta,Toner,2,None,"February 25, 2021 16:14","February 25, 2021 16:14",2,none,0,,,,,,,,,,,,,,,,,,,
+160,Lexmark 50F4H00,Toner,1,None,"February 25, 2021 16:18","February 25, 2021 16:18",1,None,0,,,,,,,,,,,,,,,,,,,
+161,Lexmark 60F4H00,Toner,1,None,"February 25, 2021 16:20","February 25, 2021 16:20",1,none,0,,,,,,,,,,,,,,,,,,,
+163,Wannsview Webcam w/ microphone/videoconferencing 1080 Full HD,Webcam,10,None,"February 25, 2021 16:24","February 25, 2021 16:24",10,none,0,,,,,,,,,,,,,,,,,,,
+165,Hp 36A,Toner,3,None,"February 25, 2021 18:16","February 25, 2021 18:16",3,none,208.23,,,,,,,,,,,,,,,,,,,
+166,Hp 90A,Toner,1,None,"February 25, 2021 18:21","February 25, 2021 18:21",1,none,454.83,,,,,,,,,,,,,,,,,,,
+167,UPS Battery Replacement,UPS Battery Backup,6,None,"February 25, 2021 18:32","February 25, 2021 18:32",6,none,74.59,,,,,,,,,,,,,,,,,,,
