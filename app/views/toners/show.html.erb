@@ -13,6 +13,21 @@
       </section>
 
 <section class="content">
+         <a href="<%= toners_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>Outstanding Requisitions</span>
+        </a>
+        &nbsp;
+         <a href="<%= requisitions_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>all Requisitions</span>
+        </a>
+        &nbsp;
+      
+          <a href="<%= new_toner_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>New Toner Requisitions</span>
+        </a> <br>
         <div class="row">
           <!-- left column -->
           <div class="col-md-6">
@@ -40,25 +55,30 @@
                     <label>Username</label>
                    <%= f.text_field :username, required: true, class: 'form-control', value:@toner.username  %>
                   </div>
-                       <div class="form-group">
-                    <label>Section Name</label>
-                    <%= f.text_field :sectionname, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
-                  </div>
+                
                       <div class="form-group">
                     <label>Station Name</label>
-                    <%= f.text_field :sectionname, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
+                    <%= f.text_field :stationname, class: 'form-control', placeholder: 'Enter Station Name', required: true %>
                   </div>
                       <div class="form-group">
                     <label>Section Name</label>
                     <%= f.text_field :sectionname, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
                   </div>
                       <div class="form-group">
-                    <label>Section Name</label>
-                    <%= f.text_field :sectionname, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
+                    <label>Quantity Requested</label>
+                    <%= f.text_field :quantity, class: 'form-control', placeholder: 'Enter Quantity Requested', required: true %>
                   </div>
                      <div class="form-group">
                     <label>Issued By</label>
-                    <%= f.text_field :issuedby, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
+                    <%= f.text_field :issuedby, class: 'form-control', placeholder: 'Enter Issued By', required: true %>
+                  </div>
+                    <div class="form-group">
+                    <label>Quantity Issued</label>
+                    <%= f.number_field :quantityissued, class: 'form-control', placeholder: 'Enter Quantity Issued', required: true %>
+                  </div>
+                      <div class="form-group">
+                    <label>Date Issued</label>
+                    <%= f.date_field :issuedate, class: 'form-control', placeholder: 'Enter Date Issued', required: true %>
                   </div>
                      <div class="form-group">
                     <label>Issue Comment</label>
@@ -69,7 +89,7 @@
 <% end %>
 
  <% if current_user.admin? %>
-<%= link_to 'Edit', edit_toner_path(@toner) %> |
+<%= link_to 'Edit/Issue Toner', edit_toner_path(@toner) %> |
 <% end %>
 <%= link_to 'Back', toners_path %>
 <%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>

@@ -18,8 +18,8 @@ Rails.application.routes.draw do
   resources :users
   resources :items
 
-
-  root 'pages#index'
+  get 'requisitions' => 'toners#alltoners'
+  root 'orders#deployed'
   get 'home' => 'pages#index'
   get 'inventory' => 'orders#deployed'
 

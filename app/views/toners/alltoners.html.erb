@@ -19,7 +19,7 @@ table, th, td, tr {
       <section class="content-header">
         <h1>
           Inventory
-          <small>Outstanding Requisitions</small>
+          <small>All Toner Requisitions</small>
         </h1>
         <ol class="breadcrumb">
           <li>
@@ -32,18 +32,19 @@ table, th, td, tr {
       </section>
 
       <section class="content">
-        <div class="row">
-          <div class="col-xs-12">
-            <!-- Main data table -->
-      
-        <a href="<%= requisitions_path %>">
+              <a href="<%= toners_path %>">
           <i class="fa fa-user-plus"></i>
-          <span>All Toner Requisitions</span>
-        </a> &nbsp;
+          <span>Outstanding Requisitions</span>
+        </a>
+        &nbsp;
+      
           <a href="<%= new_toner_path %>">
           <i class="fa fa-user-plus"></i>
           <span>New Toner Requisitions</span>
         </a> <br>
+        <div class="row">
+          <div class="col-xs-12">
+            <!-- Main data table -->
             <div class="box">
 
               <!-- /.box-header -->
@@ -66,7 +67,7 @@ table, th, td, tr {
                   </thead>
                   <tbody>
                     <% @toners.each do |toner| %>
-                    <% if toner.quantityissued.nil? %>
+                  
                                      <tr>
                     
                       <td><%= toner.id %></td>
@@ -83,7 +84,7 @@ table, th, td, tr {
                       <td><%= link_to 'Show', toner %></td>
         
       </tr>
-     <% end %>
+     
               <% end %>      
                   </tbody>
                 </table>

@@ -12,6 +12,10 @@ class TonersController < ApplicationController
   def show
   end
 
+  def alltoners
+    @toners = Toner.all
+  end
+
   # GET /toners/new
   def new
     @toner = Toner.new
