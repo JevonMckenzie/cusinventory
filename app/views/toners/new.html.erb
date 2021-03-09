@@ -44,6 +44,7 @@
 
               <!-- /.box-header -->
               <!-- form start -->
+
               <%= form_for @toner do |f| %>
                 <% if @toner.errors.any? %>
                   <div id="error_explanation">
@@ -57,10 +58,23 @@
                 <% end %>
 
                 <div class="box-body">
-                       <div class="form-group">
-                    <label>Requisition Number</label>
-                    <%= f.text_field :requisitionnumber, :value => Toner.last.requisitionnumber + 1, :readonly => true %>
-                  </div>
+
+                    <% if Toner.first.requisitionnumber.nil? %>
+
+                            <div class="form-group">
+                               <label>Requisition Number</label>
+                               <%= f.text_field :requisitionnumber, :value => 1, :readonly => true %>
+                           </div>
+
+                            <% else %>
+
+                             <div class="form-group">
+                                <label>Requisition Number</label>
+                               <%= f.text_field :requisitionnumber, :value => Toner.last.requisitionnumber + 1, :readonly => true %>
+                             </div>
+
+                       <% end %>
+
                 	   <div class="form-group">
                     <label>Username</label>
                     <%= f.text_field :username, class: 'form-control', placeholder: 'Enter Username', required: true, value: current_user.email, readonly: true %>
