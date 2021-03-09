@@ -67,6 +67,7 @@ table, th, td, tr {
                   </thead>
                   <tbody>
                     <% @toners.each do |toner| %>
+                     <% if toner.stationname == current_user.stationname || current_user.cmisuser == "YES" %>
                   
                                      <tr>
                     
@@ -85,7 +86,7 @@ table, th, td, tr {
         
       </tr>
      
-              <% end %>      
+              <% end %>     <% end %> 
                   </tbody>
                 </table>
               </div>

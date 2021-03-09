@@ -88,7 +88,7 @@
 
 <% end %>
 
- <% if current_user.admin? %>
+ <% if current_user.cmisuser == "YES" %>
 <%= link_to 'Edit/Issue Toner', edit_toner_path(@toner) %> |
 <% end %>
 <%= link_to 'Back', toners_path %>
