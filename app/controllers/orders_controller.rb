@@ -108,6 +108,6 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:quantity, :expire_at, :deployedby, :status, :item_id, :member_id)
+      params.require(:order).permit(:requisitionnumber, :quantity, :expire_at, :deployedby, :status, :item_id, :member_id)
     end
 end

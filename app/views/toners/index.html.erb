@@ -60,6 +60,7 @@ table, th, td, tr {
                       
                       <th>Requestdate</th>
                       <th>Comment</th>
+                      <th>Issuedby</th>
                        <th>Show</th>
                       
                     </tr>
@@ -67,7 +68,7 @@ table, th, td, tr {
                   <tbody>
                     <% @toners.each do |toner| %>
                      <% if toner.stationname == current_user.stationname || current_user.cmisuser == "YES" %>
-                    <% if toner.quantityissued.nil? %>
+                    <% if toner.quantityissued.nil? and toner.id > 0 %>
                                      <tr>
                     
                       <td><%= toner.id %></td>
@@ -79,6 +80,7 @@ table, th, td, tr {
                       <td><%= toner.sectionname %></td>
                       <td><%= toner.requestdate %></td>
                       <td><%= toner.comment %></td>
+                      <td><%= toner.issuedby %></td>
                       
                       
                       <td><%= link_to 'Show', toner %></td>

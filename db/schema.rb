@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210305212810) do
+ActiveRecord::Schema.define(version: 20210311182020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,12 +60,13 @@ ActiveRecord::Schema.define(version: 20210305212810) do
     t.date     "expire_at"
     t.integer  "item_id"
     t.integer  "member_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "section"
     t.string   "details"
     t.string   "deployedby"
     t.string   "returnedby"
+    t.integer  "requisitionnumber"
     t.index ["item_id"], name: "index_orders_on_item_id", using: :btree
     t.index ["member_id"], name: "index_orders_on_member_id", using: :btree
   end
