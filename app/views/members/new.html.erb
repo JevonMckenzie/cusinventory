@@ -46,20 +46,20 @@
                           
              
                 <div class="form-group">
-                <label>Officer In Charge of Section</label>
-                <%= f.text_field :oic, autocomplete: "off", placeholder: "Enter name of OIC", class: "form-control" %>
+               
+                <%= f.hidden_field :oic, autocomplete: "off", placeholder: "Enter name of OIC", class: "form-control" %>
               </div>
                  <div class="form-group">
-                <label>IT Support Staff</label>
-                <%= f.text_field :supstaff, autocomplete: "off", placeholder: "Enter name of Officer", class: "form-control" %>
+               
+                <%= f.hidden_field :supstaff, autocomplete: "off", placeholder: "Enter name of Officer", class: "form-control" %>
               </div>
               <div class="form-group">
-                <label>Contact Number</label>
-                <%= f.text_field :phone, autocomplete: "off", placeholder: "Enter Phone Number", class: "form-control" %>
+              
+                <%= f.hidden_field :phone, autocomplete: "off", value: "11111", placeholder: "Enter Phone Number", class: "form-control" %>
               </div>
                   <div class="form-group">
-                <label>Contact Email</label>
-                <%= f.text_field :email, autocomplete: "off", placeholder: "Enter Email Address", class: "form-control" %>
+               
+                <%= f.hidden_field :email, value: "sysadmin@custms.gv.bz", autocomplete: "off", placeholder: "Enter Email Address", class: "form-control" %>
               </div>
             <!-- /.box-body -->
             <div class="box-footer">
