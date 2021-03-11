@@ -31,7 +31,9 @@
           <i class="fa fa-user-plus"></i>
           <span style="color:white;">CMIS Requisition Form</span>
         </a>
-                <h5>Total Forms Submitted: <%=Item.where(:category => "Desktop").sum(:quantity)%>
+                <h5>Total Forms Submitted: <%=Toner.count-1%>
+                </h5>
+                <h5>Total Forms Attended To:<%=Toner.where.not(issuedby: [nil, ""]).count%>
                 </h5>
               
               </div>
