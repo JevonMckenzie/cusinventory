@@ -33,7 +33,7 @@
         </a>
                 <h5>Total Forms Submitted: <%=Toner.count-1%>
                 </h5>
-                <h5>Total Forms Attended To:<%=Toner.where.not(issuedby: [nil, ""]).count%>
+                <h5>Total Forms Attended To: <%=Toner.where.not(issuedby: [nil, ""]).count%>
                 </h5>
               
               </div>
@@ -45,7 +45,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h>Email Password Reset Form</h><h5>Total Forms Submitted: <%=Item.where(:category => "Monitor").sum(:quantity)%>
+                <h>Email Password Reset Form</h><h5>Total Forms Submitted:
                 </h5>
              
               </div>
@@ -57,7 +57,7 @@
             <!-- small box -->
            <div class="small-box bg-aqua">
               <div class="inner">
-                <h>New Email Account Form</h><h5>Total Forms Submitted: <%=Item.where(:category => "Laptop").sum(:quantity)%>
+                <h>New Email Account Form</h><h5>Total Forms Submitted:
                 </h5>
              
               </div>
@@ -70,7 +70,7 @@
             <div class="small-box bg-aqua">
               <div class="inner">
 
-                <h>Computer Service Form</h><h5>Total Forms Submitted: <%=Item.where(:category => "UPS Battery Backup").sum(:quantity)%>
+                <h>Computer Service Form</h><h5>Total Forms Submitted: 
                 </h5>
                 
               </div>
@@ -89,7 +89,7 @@
             <div class="small-box bg-aqua">
               <div class="inner">
 
-                <h>Computer Service Form</h><h5>Total Forms Submitted: <%=Item.where(:category => "UPS Battery Backup").sum(:quantity)%>
+                <h>Computer Service Form</h><h5>Total Forms Submitted: 
                 </h5>
                 
               </div>
