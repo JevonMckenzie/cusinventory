@@ -29,7 +29,7 @@
               <div class="inner">
                 <a href="<%= new_toner_path %>">
           <i class="fa fa-user-plus"></i>
-          <span style="color:white;">Toner Requisition Form</span>
+          <span style="color:white;">CMIS Requisition Form</span>
         </a>
                 <h5>Total Forms Submitted: <%=Item.where(:category => "Desktop").sum(:quantity)%>
                 </h5>
@@ -63,13 +63,14 @@
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-xs-6">
+  <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-             <div class="small-box bg-aqua">
+            <div class="small-box bg-aqua">
               <div class="inner">
-                <h>New IT Device Form</h><h5>Total Forms Submitted: <%=Item.where(:category => "Printer").sum(:quantity)%>
+
+                <h>Computer Service Form</h><h5>Total Forms Submitted: <%=Item.where(:category => "UPS Battery Backup").sum(:quantity)%>
                 </h5>
-              
+                
               </div>
               
             </div>
