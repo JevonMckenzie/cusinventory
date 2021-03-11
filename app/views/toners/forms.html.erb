@@ -33,7 +33,7 @@
         </a>
                 <h5>Total Forms Submitted: <%=Toner.count-1%>
                 </h5>
-                <h5>Total Forms Attended To: <%=Toner.where.not(issuedby: [nil, ""]).count%>
+                <h5>Total Forms Attended To: <%=Toner.where.not(issuedby: [nil, ""]).count - 1%>
                 </h5>
               
               </div>
