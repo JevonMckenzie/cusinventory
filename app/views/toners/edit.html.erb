@@ -1,10 +1,40 @@
-<div class ="container">
-<div class = "bg-faded p-4 my-4">
-<h1 align="center">Editing Toner</h1>
 
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <%= render 'layouts/header' %>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>Edit Item</h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-home"></i>Home Page</a></li>
+         
+        </ol>
+      </section>
+
+<section class="content">
+<div class ="form-group">
+
+<h1 align="center">Editing Item</h1>
+ <table align = "center" class="table table-bordered table-hover">
+ 	<td>
 <%= render 'form', toner: @toner %>
 
-<%= link_to 'Show', @toner %> |
-<%= link_to 'Back', toners_path %>
+</td>
+</table>
 </div>
+
+</section>
 </div>
+<%= render 'layouts/footer' %>
+    <!-- ./wrapper -->
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $(document).ready(function () {
+        $.widget.bridge('uibutton', $.ui.button);
+        $('.datepicker').datepicker({format: 'yyyy/mm/dd'});
+      });
+    </script>
+  </div>
+</body>
