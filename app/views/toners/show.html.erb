@@ -1,6 +1,41 @@
+<html>
+<head><title>Customs Management Information Systems</title>
+<style type="text/css">
+@media print
+{
+body {
+            margin: 5px;
+        }
+
+        .body.{
+            padding-top: 0px;
+        }
+
+        .no-print {
+            display: none;
+        }
+
+        .div2, .section-to-print * {
+            visibility: visible;
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+
+        .section-to-print {
+            /*position: absolute;*/
+            /*left: 0;
+            top: 0;*/
+        }
+    }
+
+</style>
+</head>
 <body class="hold-transition skin-blue sidebar-mini">
+
   <div class="wrapper">
+    <div class="no-print">
     <%= render 'layouts/header' %>
+  </div>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -8,11 +43,12 @@
         <h1>Requested Toner</h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-home"></i>Home Page</a></li>
-          <li class="active">Request Tonerr</li>
+          <li class="active">Request Toner</li>
         </ol>
       </section>
 
 <section class="content">
+  <div class="no-print">
          <a href="<%= toners_path %>">
           <i class="fa fa-user-plus"></i>
           <span>Outstanding Requisitions</span>
@@ -23,11 +59,14 @@
           <span>all Requisitions</span>
         </a>
         &nbsp;
-      
+    
           <a href="<%= new_toner_path %>">
           <i class="fa fa-user-plus"></i>
-          <span>New Toner Requisitions</span>
-        </a> <br>
+          <span>New Item Requisitions</span>
+        </a> 
+
+      </div>
+        <br>
         <div class="row">
           <!-- left column -->
           <div class="col-md-6">
@@ -36,8 +75,11 @@
               <div class="box-header with-border">
                 <h3 class="box-title">Basic Information</h3>
               </div>
+
+
               <!-- /.box-header -->
               <!-- form start -->
+              <div class="div2">
               <%= form_for @toner do |f| %>
               
                     <div class="form-group">
@@ -50,7 +92,7 @@
                   </div>
 
 
-                <div class="form-group">
+                
                      <div class="form-group">
                     <label>Username</label>
                    <%= f.text_field :username, required: true, class: 'form-control', value:@toner.username  %>
@@ -86,15 +128,20 @@
                   </div>
 
 
-<% end %>
-
+              <% end %>
+</div>
  <% if current_user.cmisuser == "YES" %>
 <%= link_to 'Edit/Issue Toner', edit_toner_path(@toner) %> |
 <% end %>
+<%= link_to 'print', 'your_link_here', :onclick => 'window.print();return false;'%>
 <%= link_to 'Back', toners_path %>
 <%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
+
 </div>
 </div>
-</div>
+</div></section></div>
+
+
+
 </div>
 </body>
