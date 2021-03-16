@@ -130,13 +130,14 @@ body {
 
               <% end %>
 </div>
+<div class="no-print">
  <% if current_user.cmisuser == "YES" %>
 <%= link_to 'Edit/Issue Toner', edit_toner_path(@toner) %> |
 <% end %>
-<%= link_to 'print', 'your_link_here', :onclick => 'window.print();return false;'%>
-<%= link_to 'Back', toners_path %>
+<%= link_to 'print', 'your_link_here', :onclick => 'window.print();return false;'%> | 
+<%= link_to 'Back', toners_path %> | 
 <%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
-
+</div>
 </div>
 </div>
 </div></section></div>
