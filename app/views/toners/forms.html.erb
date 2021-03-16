@@ -33,14 +33,14 @@
         </a>
 
                 <h5>  <a href="<%= requisitions_path %>">
-          <i class=""></i>
-          <span>All Requisitions</span>
+          <i class="fa fa-search"></i>
+          <span style="color:white;">All Requisitions:</span> 
         </a> <%=Toner.count-1%>
                 </h5>
                
                 <h5>       <a href="<%= toners_path %>">
-          <i class="fa fa-user-plus"></i>
-          <span>Outstanding Requisitions</span>
+          <i class="fa fa-search"></i>
+          <span style="color:white;">Outstanding Requisitions:</span> 
         </a> <%=Toner.where(issuedby: [nil, ""]).count%>
                 </h5>
               
