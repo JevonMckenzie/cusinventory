@@ -31,10 +31,17 @@
           <i class="fa fa-user-plus"></i>
           <span style="color:white;">CMIS Requisition Form</span>
         </a>
-                <h5>Total Forms Submitted: <%=Toner.count-1%>
+
+                <h5>  <a href="<%= requisitions_path %>">
+          <i class=""></i>
+          <span>All Requisitions</span>
+        </a> <%=Toner.count-1%>
                 </h5>
                
-                <h5>Total Forms Outstanding: <%=Toner.where(issuedby: [nil, ""]).count%>
+                <h5>       <a href="<%= toners_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>Outstanding Requisitions</span>
+        </a> <%=Toner.where(issuedby: [nil, ""]).count%>
                 </h5>
               
               </div>
