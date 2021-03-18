@@ -31,6 +31,7 @@
               </div>
               <!-- /.box-header -->
               <div class="box-body">
+    <div class="table-responsive fix-table-height">
                 <table class="table table-bordered table-hover">
                   <thead>
                     <tr>
@@ -81,7 +82,7 @@
                         <%= link_to "", { :controller => :orders, :action => :renew, :id => order.id, }, { class: "ion ion-loop"} %>
                       </td>
                     
-                      <td >
+                      <td>
                         <%= link_to order, method: :delete, data: { confirm: 'Are you sure? If you are trying to return an item it is recommended to use the "return" button.' } do %>
                         <i class="ion ion-trash-b"></i>
                         
@@ -92,6 +93,7 @@
                     <% end %>
                   </tbody>
                 </table>
+              </div>
               </div>
             </div>
             <!-- /.box -->

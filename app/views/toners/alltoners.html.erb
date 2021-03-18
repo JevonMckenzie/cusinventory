@@ -3,7 +3,7 @@
 <title> Customs IT Inventory</title>
 <style>
 table, th, td, tr {
-  border: 1px solid black;
+  
   border-collapse: collapse;
   text-align: center;
 }
@@ -11,7 +11,7 @@ table, th, td, tr {
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
-  <div class="wrapper">
+  <div class="">
     <%= render 'layouts/header' %>
     <div class="content-wrapper">
 
@@ -19,7 +19,7 @@ table, th, td, tr {
       <section class="content-header">
         <h1>
           Inventory
-          <small>All Toner Requisitions</small>
+          <small>All Item Requisitions</small>
         </h1>
         <ol class="breadcrumb">
           <li>
@@ -40,7 +40,7 @@ table, th, td, tr {
       
           <a href="<%= new_toner_path %>">
           <i class="fa fa-user-plus"></i>
-          <span>New Toner Requisitions</span>
+          <span>New Item Requisitions</span>
         </a> <br>
         <div class="row">
           <div class="col-xs-12">
@@ -49,6 +49,7 @@ table, th, td, tr {
 
               <!-- /.box-header -->
               <div class="box-body">
+                <div class="table-responsive fix-table-height">
                 <table id="example1" class="table-bordered table-striped">
                   <thead>
                     <tr>
@@ -94,8 +95,9 @@ table, th, td, tr {
               </div>
               <!-- /.box-body -->
             </div>
+            </div>
           </div>
-        </div><
+        </div>
       </section>
     </div>
     <%= render 'layouts/footer' %>
