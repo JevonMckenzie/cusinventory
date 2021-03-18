@@ -1,6 +1,6 @@
 class Member < ApplicationRecord
   has_many :orders
-  #has_many :users
+  has_many :members
   has_many :items, through: :orders
 
   validates :name, presence: true

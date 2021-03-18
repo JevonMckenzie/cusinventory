@@ -85,7 +85,10 @@
                   </div>
                        <div class="form-group">
                     <label>Section Name</label>
-                    <%= f.select(:sectionname, [["Select Section","Corozal-Cargo","Corozal-Passenger"],["Cargo","Cargo"], ["Passenger","Passenger"], ["San-Pedro","San-Pedro"], ["Toledo","Toledo"], ["Big Creek","Big Creek"],["Orange Walk","Orange Walk"],["Dangriga","Dangriga"],["BZ CMIS","BZ CMIS"],["BZ Shipping","BZ Shipping"],["BZ Valuation","BZ Valuation"],["BZ Risk Management","BZ Risk Management"],["BZ Trade","BZ Trade"],["BZ Queens Bond","BZ Queens Bond"],["BZ Port","BZ Port"],["BZ Training","BZ Training"],["BZ Deputy Gordon Office","BZ Deputy Gordon Office"],["BZ-Comproller Office","BZ-Comproller Office"],["BZ-Legal Council","BZ-Legal Council"],["BZ-Internal Auditor","BZ-Internal Auditor"],["BZ-Excise","BZ-Excise"],["BZ-Post Audit","BZ-Post Audit"],["BZ-Accounts","BZ-Accounts"],["BZ-Records","BZ - Records"],["BZ - Investigation","BZ - Investigation"],["BZ - Private Warehouse","BZ - Private Warehouse"],["Blue Creek","Blue Creek"],["Harvest Caye","Harvest Caye"],["BZ - Examination","BZ - Examination"],["Add Item","Add Item"],["Add Item","Add Item"],["Add Item","Add Item"],["Add Item","Add Item"]], {}, { :class => 'form-control' })%>
+                    <% @members = Member.all %>
+                      
+
+                    <%= f.select(:sectionname, [["Select Section"],[@members[0].name],[@members[1].name],[@members[2].name], [@members[3].name], [@members[4].name], [@members[5].name], [@members[6].name],[@members[7].name],[@members[8].name],[@members[9].name],[@members[10].name],[@members[11].name],[@members[12].name],[@members[13].name],[@members[14].name],[@members[15].name],[@members[16].name],[@members[17].name],[@members[18].name],[@members[19].name],[@members[20].name],[@members[21].name],[@members[22].name],[@members[23].name],[@members[24].name],[@members[25].name],[@members[26].name],[@members[27].name],[@members[28].name],[@members[29].name],[@members[30].name],[@members[30].name],[@members[30].name],[@members[30].name],["Add Item","Add Item"]], {}, { :class => 'form-control' })%>
                   </div>
                        <div class="form-group">
                     <label>Request Date</label>
