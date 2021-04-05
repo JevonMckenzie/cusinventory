@@ -1,3 +1,16 @@
+
+<html>
+<head>
+<title> Customs IT Inventory</title>
+<style>
+table, th, td, tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+</style>
+</head>
+
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
 
@@ -32,10 +45,11 @@
               <!-- /.box-header -->
               <div class="box-body">
     <div class="table-responsive fix-table-height">
-                <table class="table table-bordered table-hover">
+                <table id="example1" class="table table-bordered table-hover">
                   <thead>
                     <tr>
                       <th>Category</th>
+                      <th>Requisition Number</th>
                       <th>Deployed By</th>
                       <th>Name</th>
                       <th>Service Tag/Serial#</th>
@@ -61,6 +75,9 @@
                     <tr>
                       <td>
                         <%= order.item.category %>
+                      </td>
+                       <td>
+                        <%= order.requisitionnumber %>
                       </td>
                        <td>
                         <%= order.deployedby %>
@@ -106,7 +123,7 @@
         <!-- /.row -->
       </section>
       <!-- /.content -->
-    </div>
+    </div></div>
     <!-- /.content-wrapper -->
     <%= render 'layouts/footer' %>
     <script>
