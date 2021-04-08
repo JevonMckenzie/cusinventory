@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
  
 
+  get 'reports/index'
+
   resources :toners
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -17,10 +19,16 @@ Rails.application.routes.draw do
   resources :members
   resources :users
   resources :items
+  resources :reports
+
+
+  get '/reports/clear', to: 'reports#clear', as: 'clear'
 
   get 'requisitions' => 'toners#alltoners'
-  root 'orders#deployed'
+  root 'toners#index'
+  get 'deployed_section' => 'orders#deployed_by_section'
   get 'home' => 'pages#index'
+  get 'reports' => 'reports#index'
   get 'inventory' => 'orders#deployed'
 
   get 'allitem' => 'items#allitem'
