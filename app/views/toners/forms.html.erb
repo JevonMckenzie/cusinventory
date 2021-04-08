@@ -31,7 +31,7 @@
           <i class="fa fa-user-plus"></i>
           <span style="color:white;">CMIS Requisition Form</span>
         </a>
-
+ <% if  current_user.admin? || current_user.cmisuser == "YES" %>
                 <h5>  <a href="<%= requisitions_path %>">
           <i class="fa fa-search"></i>
           <span style="color:white;">All Requisitions:</span> 
@@ -43,7 +43,7 @@
           <span style="color:white;">Outstanding Requisitions:</span> 
         </a> <%=Toner.where(issuedby: [nil, ""]).count%>
                 </h5>
-              
+              <% end %>
               </div>
               
             </div>
