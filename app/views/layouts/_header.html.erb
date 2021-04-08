@@ -28,6 +28,7 @@
       </div>
       <div class="pull-left info">
         <p><%= current_user.name %></p>
+
         <a href="<%= edit_user_path(current_user.id) %>">
           <i class="fa fa-edit"></i>
           Edit Profile</a>
@@ -42,6 +43,12 @@
      <% if current_user.admin? || current_user.cmisuser == "YES" %>
         <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
+                 <li>
+        <a href="<%= inventory_path %>">
+          <i class=""></i>
+          <span>Your Station: <%= current_user.stationname%></span>
+        </a>
+      </li>
               <li>
         <a href="<%= inventory_path %>">
           <i class="fa fa-search"></i>
@@ -115,6 +122,13 @@
 
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
+
+                  <li>
+        <a href="<%= inventory_path %>">
+          <i class=""></i>
+          <span>Your  Assigned Station: <%= current_user.stationname%></span>
+        </a>
+      </li>
               
           <li>
         <a href="<%= root_path %>">
