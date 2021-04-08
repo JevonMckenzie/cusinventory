@@ -44,8 +44,8 @@ table, th, td, tr {
               </div>
               <!-- /.box-header -->
               <div class="box-body">
-    <div class="table-responsive fix-table-height">
-                <table id="example1" class="table table-bordered table-hover">
+      <div class="table-responsive fix-table-height">
+                <table id="example1" class="table-bordered table-striped">
                   <thead>
                     <tr>
                       <th>Category</th>
@@ -63,15 +63,15 @@ table, th, td, tr {
                       <th>
                         <i class="ion ion-loop"></i>
                       </th>
-                      
+                       <% if current_user.admin?%> 
                       <th>
                         <i class="ion ion-trash-b"></i>
                       </th>
-                     
+                     <% end %>
                     </tr>
                   </thead>
                   <tbody>
-                    <% @active.each do |order| %>
+                    <% @orders.each do |order| %>
                     <tr>
                       <td>
                         <%= order.item.category %>
@@ -98,12 +98,12 @@ table, th, td, tr {
                       <td>
                         <%= link_to "", { :controller => :orders, :action => :renew, :id => order.id, }, { class: "ion ion-loop"} %>
                       </td>
-                    
+                      <% if current_user.admin?%> 
                       <td>
                         <%= link_to order, method: :delete, data: { confirm: 'Are you sure? If you are trying to return an item it is recommended to use the "return" button.' } do %>
                         <i class="ion ion-trash-b"></i>
                         
-                      </td>
+                      </td> <% end %>
                       <% end %>
                       <% end %>
                     </tr>
@@ -123,12 +123,13 @@ table, th, td, tr {
         <!-- /.row -->
       </section>
       <!-- /.content -->
-    </div></div>
+    </div>
     <!-- /.content-wrapper -->
     <%= render 'layouts/footer' %>
     <script>
       $.widget.bridge('uibutton', $.ui.button);
     </script>
+  </div>
     <script>
       $(function () {
         $("#example1").DataTable();
