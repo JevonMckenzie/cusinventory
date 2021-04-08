@@ -24,6 +24,7 @@
             
             <div class="box-header with-border">
               <h3 class="box-title">Basic Information</h3>
+              <h5> If you are only changing your station name and not changing your password please ensure that your password and confirmation fields are empty before clicking submit.
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -64,7 +65,7 @@
                   <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Enter Password Again", class: "form-control" %>
                 </div>
                 <div class="form-group">
-                    <label>Member</label>
+                    <label>Station Name</label>
                     <%= f.select(:stationname, options_from_collection_for_select(@member, 'name', 'name'), { include_blank: true }, { class: 'form-control', required: true }) %>
                   </div>
               </div>
