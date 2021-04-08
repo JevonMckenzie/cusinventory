@@ -7,5 +7,11 @@ class ApplicationController < ActionController::Base
     redirect_to('/') if current_user.cmisuser != "YES"
   end
 
+   def clear_session(*args)
+    args.each do |session_key|
+      session[session_key] = nil
+    end
+  end
+
   
 end
