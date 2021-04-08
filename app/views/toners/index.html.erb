@@ -68,7 +68,7 @@ table, th, td, tr {
                   </thead>
                   <tbody>
                     <% @toners.each do |toner| %>
-                     <% if toner.stationname == current_user.stationname || current_user.cmisuser == "YES" %>
+                     <% if toner.sectionname == current_user.stationname || current_user.cmisuser == "YES" %>
                     <% if toner.quantityissued.nil? and toner.id > 0 %>
                                      <tr>
                     
