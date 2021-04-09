@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210408221650) do
+ActiveRecord::Schema.define(version: 20210409201748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(version: 20210408221650) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string   "quantity"
     t.boolean  "status"
     t.date     "expire_at"
     t.integer  "item_id"
@@ -67,6 +66,7 @@ ActiveRecord::Schema.define(version: 20210408221650) do
     t.string   "deployedby"
     t.string   "returnedby"
     t.integer  "requisitionnumber"
+    t.integer  "quantity"
     t.index ["item_id"], name: "index_orders_on_item_id", using: :btree
     t.index ["member_id"], name: "index_orders_on_member_id", using: :btree
   end
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20210408221650) do
     t.datetime "updated_at",     null: false
     t.integer  "quantityissued"
     t.string   "member"
+    t.string   "signature"
     t.index ["user_id"], name: "index_toners_on_user_id", using: :btree
   end
 
