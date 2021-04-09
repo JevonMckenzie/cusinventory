@@ -34,15 +34,19 @@ class TonersController < ApplicationController
     @toner = @user.toners.build(toner_params)  
     
 # @toner.requestdate = DateTime.now
+ #if current_user.stationname == @toner.sectionname
     respond_to do |format|
-      if @toner.save
-        format.html { redirect_to @toner, notice: 'Toner was successfully created.' }
-        format.json { render :show, status: :created, location: @toner }
-      else
-        format.html { render :new }
-        format.json { render json: @toner.errors, status: :unprocessable_entity }
-      end
+     
+        if @toner.save 
+          format.html { redirect_to @toner, notice: 'Toner was successfully created.' }
+          format.json { render :show, status: :created, location: @toner }
+        else
+          format.html { render :new }
+          format.json { render json: @toner.errors, status: :unprocessable_entity }
+        end
     end
+ 
+  #end
   end
 
   # PATCH/PUT /toners/1
