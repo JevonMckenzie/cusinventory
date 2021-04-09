@@ -93,55 +93,59 @@ body {
               <!-- form start -->
               <div class="div2">
               <%= form_for @toner do |f| %>
-              
+              <table><tr><td>
                     <div class="form-group">
                     <label>Requisition Number</label>
                     <%= f.text_field :requisitionnumber, class: 'form-control', placeholder: 'Enter Section Name', value:@toner.requisitionnumber, required: true %>
                   </div>
-
+</td><td>
                     <div class="form-group">
                     <label>Item Name</label>
                     <%= f.text_field :requisitionnumber, class: 'form-control', placeholder: 'Enter Section Name', value:@toner.tonername, required: true %>
-                  </div>
+                  </div></td><td>
 
                           <div class="form-group">
                     <label>Request Date</label>
                     <%= f.date_field :requestdate, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
                   </div>
 
-
+</td></tr><tr><td>
                 
                      <div class="form-group">
                     <label>Username</label>
                    <%= f.text_field :username, required: true, class: 'form-control', value:@toner.username  %>
-                  </div>
+                  </div></td><td>
                 
                
                       <div class="form-group">
                     <label>Section Name</label>
                     <%= f.text_field :sectionname, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
-                  </div>
+                  </div></td><td>
                       <div class="form-group">
                     <label>Quantity Requested</label>
                     <%= f.text_field :quantity, class: 'form-control', placeholder: 'Enter Quantity Requested', required: true %>
-                  </div>
+                  </div></td></tr><tr><td>
                      <div class="form-group">
                     <label>Issued By</label>
                     <%= f.text_field :issuedby, class: 'form-control', placeholder: 'Enter Issued By', required: true %>
-                  </div>
+                  </div></td><td>
                     <div class="form-group">
                     <label>Quantity Issued</label>
                     <%= f.number_field :quantityissued, class: 'form-control', placeholder: 'Enter Quantity Issued', required: true %>
-                  </div>
+                  </div></td><td>
                       <div class="form-group">
                     <label>Date Issued</label>
                     <%= f.date_field :issuedate, class: 'form-control', placeholder: 'Enter Date Issued', required: true %>
-                  </div>
+                  </div></td><td></td></tr><tr><td>
                      <div class="form-group">
                     <label>Issue Comment</label>
-                    <%= f.text_field :issuecomment, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
+                    <%= f.text_area:issuecomment, class: 'form-control', placeholder: 'Enter Comment', required: true %>
+                  </div></td><td width="33.3%"></td><td>
+                     <div class="form-group">
+                    <label>Signature of Person Picking up / Receiving Item</label>
+                    <%= f.text_area:issuecomment, class: 'form-control', placeholder: 'Will Be Entered After Requisition Is Printed', required: true %>
                   </div>
-
+</td></tr></table>
 
               <% end %>
 </div>
