@@ -20,8 +20,18 @@ table, th, td, tr {
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Deployed
-          <small>Items</small>
+          Deployed Items
+          <small>
+
+          <% if current_user.cmisuser != "YES" %>
+                <% if current_user.stationname.present? %>
+                        <font color="green">At: <%= current_user.stationname %> </b></font>
+                <% else %>
+                        <p> <font color ="red">Please Click On Edit Profile To Select Station Name</font></p>
+                <% end %>
+          <% end %>
+
+          </small>
         </h1>
         <ol class="breadcrumb">
           <li class="active">
@@ -39,9 +49,11 @@ table, th, td, tr {
         <div class="row">
           <div class="col-md-12">
             <div class="box">
-              <div class="box-header with-border">
-                <h3 class="box-title"><%= @active.count %> Item(s) are Currently Deployed</h3>
-              </div>
+              <% if current_user.cmisuser=="YES" %>
+                  <div class="box-header with-border">
+                    <h3 class="box-title"><%= @active.count %> Item(s) are Currently Deployed</h3>
+                  </div>
+                  <% end %>
               <!-- /.box-header -->
               <div class="box-body">
       <div class="table-responsive fix-table-height">

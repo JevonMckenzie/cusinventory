@@ -21,7 +21,11 @@
             <div class="box box-header">
 
     
-      
+        <% if current_user.stationname.nil? %><span >
+          <p><font color="red">   Your  Assigned Station 
+            Is Not Set. <br>Please Click On Edit Profile To Select Your Assigned Station</font> </p>
+            </span>
+            <% end %>
               
 
     
@@ -36,6 +40,7 @@
           <i class="fa fa-search"></i>
           <span>All Requisitions from Your Station</span>
         </a>
+       
       
     
               <div class="box-header with-border">
@@ -81,11 +86,11 @@
                   </div>
                      <div class="form-group">
                     <label>You are Assigned to Station:</label>
-                 <%= f.text_field :stationname, class: 'form-control', placeholder: '', required: true, value: current_user.stationname, readonly: true %> Please ensure that your Assigned Station matches one of the Station Names in the Drop-Down list below. If your Assigned Station is currently blank or has the wrong information Plesae Edit your Assigned Station via the Edit Profile option in the Navigation Bar to the left of your screen. The Station Name that you choose below must match the station name above that the system currently has you assigned to.
+                 <%= f.text_field :stationname, class: 'form-control', placeholder: '', required: true, value: current_user.stationname, readonly: true %> Please ensure that the Assigned Station you choose in the drop-down list below matches the Assigned Station in your profile. If the Assigned Station in your profile is currently blank or has the wrong information Plesae click Edit Profile to select your assigned station.
                   </div>
                              <div class="form-group">
                     <label>Station Name</label>
-                    <%= f.select(:sectionname, [["Select Section","BELIZE CITY - RECORDS","BELIZE CITY - RECORDS","BELIZE CITY -CMIS","BELIZE CITY -CMIS"],["COROZAL-CARGO","COROZAL-CARGO"], ["COROZAL - PASSENGER","COROZAL - PASSENGER"], ["COROZAL - CIU","COROZAL - CIU"], ["BENQUE - CARGO","BENQUE - CARGO"], ["BENQUE - PASSENGER","BENQUE - PASSENGER"],["PUNTA GORDA","PUNTA GORDA"],["BIG CREEK","BIG CREEK"],["DANGRIGA","DANGRIGA"],["SAN PEDRO","SAN PEDRO"],["BELIZE CITY - PORT","BELIZE CITY - PORT"],["BELIZE CITY - VALUATION","BELIZE CITY - VALUATION"],["BELIZE CITY - RECORDS","BELIZE CITY - RECORDS"],["BELIZE CITY - SHIPPING","BELIZE CITY - SHIPPING"],["BELIZE CITY - EXAMINATION","BELIZE CITY - EXAMINATION"],["BELIZE CITY - CASHIER","BELIZE CITY - CASHIER"],["BELIZE CITY - ACCOUNTS","BELIZE CITY - ACCOUNTS"],["BELIZE CITY - TRAINING","BELIZE CITY - TRAINING"],["BELIZE CITY - LEGAL SECTION","BELIZE CITY - LEGAL SECTION"],["BELIZE CITY - COMPTROLLER","BELIZE CITY - COMPTROLLER"],["DEPUTY COMPTROLLER","DEPUTY COMPTROLLER"],["BELIZE CITY - POST AUDIT","BELIZE CITY - POST AUDIT"],["BELIZE CITY - EXCISE","BELIZE CITY - EXCISE"],["BELIZE CITY - PRIVATE WAREHOUSE","BELIZE CITY - PRIVATE WAREHOUSE"],["BELIZE CITY - ENFORCEMENT","BELIZE CITY - ENFORCEMENT"],["BELIZE CITY- SECURITY","BELIZE CITY- SECURITY"],["TOURIST VILLAGE","TOURIST VILLAGE"],["POST OFFICE","POST OFFICE"],["PGIA - CARGO","PGIA - CARGO"],["PGIA - PASSENGER","PGIA - PASSENGER"],["ORANGE WALK","ORANGE WALK"],["BELIZE CITY - TRADE","BELIZE CITY - TRADE"],["BELIZE CITY - RISK MANAGEMENT","BELIZE CITY - RISK MANAGEMENT"],["BELIZE CITY - QBOND SHED","BELIZE CITY - QBOND SHED"]], {}, { :class => 'form-control' })%>
+                    <%= f.select(:sectionname, [["Select Station","BELIZE CITY - RECORDS","BELIZE CITY - RECORDS","BELIZE CITY -CMIS","BELIZE CITY -CMIS"],["COROZAL-CARGO","COROZAL-CARGO"], ["COROZAL - PASSENGER","COROZAL - PASSENGER"], ["COROZAL - CIU","COROZAL - CIU"], ["BENQUE - CARGO","BENQUE - CARGO"], ["BENQUE - PASSENGER","BENQUE - PASSENGER"],["PUNTA GORDA","PUNTA GORDA"],["BIG CREEK","BIG CREEK"],["DANGRIGA","DANGRIGA"],["SAN PEDRO","SAN PEDRO"],["BELIZE CITY - PORT","BELIZE CITY - PORT"],["BELIZE CITY - VALUATION","BELIZE CITY - VALUATION"],["BELIZE CITY - RECORDS","BELIZE CITY - RECORDS"],["BELIZE CITY - SHIPPING","BELIZE CITY - SHIPPING"],["BELIZE CITY - EXAMINATION","BELIZE CITY - EXAMINATION"],["BELIZE CITY - CASHIER","BELIZE CITY - CASHIER"],["BELIZE CITY - ACCOUNTS","BELIZE CITY - ACCOUNTS"],["BELIZE CITY - TRAINING","BELIZE CITY - TRAINING"],["BELIZE CITY - LEGAL SECTION","BELIZE CITY - LEGAL SECTION"],["BELIZE CITY - COMPTROLLER","BELIZE CITY - COMPTROLLER"],["DEPUTY COMPTROLLER","DEPUTY COMPTROLLER"],["BELIZE CITY - POST AUDIT","BELIZE CITY - POST AUDIT"],["BELIZE CITY - EXCISE","BELIZE CITY - EXCISE"],["BELIZE CITY - PRIVATE WAREHOUSE","BELIZE CITY - PRIVATE WAREHOUSE"],["BELIZE CITY - ENFORCEMENT","BELIZE CITY - ENFORCEMENT"],["BELIZE CITY- SECURITY","BELIZE CITY- SECURITY"],["TOURIST VILLAGE","TOURIST VILLAGE"],["POST OFFICE","POST OFFICE"],["PGIA - CARGO","PGIA - CARGO"],["PGIA - PASSENGER","PGIA - PASSENGER"],["ORANGE WALK","ORANGE WALK"],["BELIZE CITY - TRADE","BELIZE CITY - TRADE"],["BELIZE CITY - RISK MANAGEMENT","BELIZE CITY - RISK MANAGEMENT"],["BELIZE CITY - QBOND SHED","BELIZE CITY - QBOND SHED"]], {}, { :class => 'form-control' })%>
                   </div>
                        <div class="form-group">
                     <label>Request Date</label>
