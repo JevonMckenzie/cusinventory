@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get 'requisitions' => 'toners#alltoners'
   root 'orders#deployed'
   get 'deployed_section' => 'orders#deployed_by_section'
-  get 'learning' => 'pages#index'
+  get 'professionaldevelopment' => 'pages#index'
   get 'reports' => 'reports#index'
   get 'inventory' => 'orders#deployed'
 
