@@ -43,10 +43,15 @@
      <% if current_user.admin? || current_user.cmisuser == "YES" %>
         <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
-                 <li>
+                    <li>
         <a href="<%= inventory_path %>">
           <i class=""></i>
-          <span>Your Station: <%= current_user.stationname%></span>
+          <span ><% if current_user.stationname.nil? %>
+          <p><font color="red">  Your  Assigned Station 
+            Is <br>Not Set. Please Edit Your Profile & <br>Choose Assigned Station</font> </p>
+            <% else %>           
+            <h4 align="center"><font color="green">Your Assigned Station Is:<br> <%= current_user.stationname %></font></h4></span>
+            <% end %>
         </a>
       </li>
               <li>
@@ -126,7 +131,12 @@
                   <li>
         <a href="<%= inventory_path %>">
           <i class=""></i>
-          <span>Your  Assigned Station: <%= current_user.stationname%></span>
+          <span ><% if current_user.stationname.nil? %>
+          <p><font color="red">  Your  Assigned Station 
+            Is <br>Not Set. Please Edit Your Profile & <br>Choose Assigned Station</font> </p>
+            <% else %>           
+            <h4 align="center"><font color="green">Your Assigned Station Is:<br> <%= current_user.stationname %></font></h4></span>
+            <% end %>
         </a>
       </li>
               
