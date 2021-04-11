@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210409201748) do
+ActiveRecord::Schema.define(version: 20210410141454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20210409201748) do
     t.string   "returnedby"
     t.integer  "requisitionnumber"
     t.integer  "quantity"
+    t.string   "depcategory"
     t.index ["item_id"], name: "index_orders_on_item_id", using: :btree
     t.index ["member_id"], name: "index_orders_on_member_id", using: :btree
   end

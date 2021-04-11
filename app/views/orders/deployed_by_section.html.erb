@@ -1,0 +1,209 @@
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+
+    <%= render 'layouts/header' %>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Dashboard
+          <small>The Following Items Are Currently Deployed At Your Section (Inventory List is still being populated. This will be completed before the end of the month.)</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li class="active">
+            <a href="#">
+              <i class="fa fa-home"></i>
+              Home Page</a>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+               <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             
+            <div class="small-box bg-aqua">
+              <br>
+          
+            <h2 align="center">Desktops: <%= Order.where(:depcategory => "Desktop", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+       
+            <br>
+              </div>
+              
+            </div>
+      
+            <!-- small box -->
+
+          
+          <!-- ./col -->
+             
+                 <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             
+            <div class="small-box bg-aqua">
+              <br>
+           
+            <h2 align="center">Laptops: <%= Order.where(:depcategory => "Laptop", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+          
+            <br>
+              </div>
+              
+            </div>
+      
+          <!-- ./col -->
+             
+           <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             
+            <div class="small-box bg-aqua">
+              <br>
+          
+            <h2 align="center">Monitors: <%= Order.where(:depcategory => "Monitor", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+        
+            <br>
+              </div>
+              
+            </div>
+
+          </div>
+
+         
+
+
+          <!-- ./col -->
+        
+        <!-- /.row -->
+<div class="row">
+         <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             
+            <div class="small-box bg-aqua">
+              <br>
+         
+            <h2 align="center">MiFi: <%= Order.where(:depcategory => "MiFi", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+         
+            <br>
+              </div>
+              
+            </div>
+          <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             
+            <div class="small-box bg-aqua">
+              <br>
+        
+            <h2 align="center">USB Adapters: <%= Order.where(:depcategory => "USB Adapter", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+          
+            <br>
+              </div>
+              
+            </div>
+
+          <!-- ./col -->
+     <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             
+            <div class="small-box bg-aqua">
+              <br>
+       
+            <h2 align="center">Webcams: <%= Order.where(:depcategory => "Webcam", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+        
+            <br>
+              </div>
+              
+            </div>
+          <!-- ./col -->
+            
+
+          <!-- ./col -->
+        </div>
+
+
+        <div class="row">
+              <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             
+            <div class="small-box bg-aqua">
+          <br> 
+            <h2 align="center">Headsets: <%= Order.where(:depcategory => "Headset", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+           <br>
+              </div>
+              
+            </div>
+          <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             
+            <div class="small-box bg-aqua">
+          <br> 
+            <h2 align="center">Projectors: <%= Order.where(:depcategory => "Projector", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+          <br>
+              </div>
+              
+            </div>
+          <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             
+            <div class="small-box bg-aqua">
+          <br> 
+            <h2 align="center">Projector Screens: <%= Order.where(:depcategory => "Projector Screen", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+         <br>
+              </div>
+              
+            </div>
+        </div>
+
+
+          <div class="row">
+             
+            <!-- small box -->
+           <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             
+            <div class="small-box bg-aqua">
+          <br> 
+            <h2 align="center">Flash Drive: <%= Order.where(:depcategory => "Flashdrive", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+            <br>
+              </div>
+              
+            </div>
+          
+       
+          <!-- ./col -->
+
+
+          <!-- ./col -->
+        </div></section>
+        
+        </div>
+        <!-- /.row -->
+     
+
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <%= render 'layouts/footer' %>
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <script>
+      $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+      });
+    </script>
+  </body>

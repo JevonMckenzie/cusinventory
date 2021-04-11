@@ -48,6 +48,7 @@ table, th, td, tr {
                 <table id="example1" class="table-bordered table-striped">
                   <thead>
                     <tr>
+                       <th>Order ID</th>
                       <th>Category</th>
                       <th>Requisition Number</th>
                       <th>Deployed By</th>
@@ -71,8 +72,11 @@ table, th, td, tr {
                     </tr>
                   </thead>
                   <tbody>
-                    <% @orders.each do |order| %>
+                    <% @active.each do |order| %>
                     <tr>
+                       <td>
+                        <%= order.id %>
+                      </td>
                       <td>
                         <%= order.item.category %>
                       </td>

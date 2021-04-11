@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+   before_action :initialize_search, only: :deployed_by_section
 
   def index
     @orders = Order.all
@@ -11,6 +12,25 @@ class OrdersController < ApplicationController
 
   def old
     @inactive = Order.inactive?
+  end
+
+  def deployed
+    @orders = Order.all
+    @members = Member.all
+    @items = Item.all
+    @active = Order.active?
+    @expired = Order.expired?
+  end
+
+    def deployed_by_section
+        @orders = Order.all
+    @members = Member.all
+    @items = Item.all
+    @active = Order.active?
+    @expired = Order.expired?
+    # Use cookie to store filter and search data until user clears it
+   # handle_search_name
+    handle_filters
   end
 
   def station
@@ -70,6 +90,9 @@ class OrdersController < ApplicationController
     if Item.find_by_id(params[:order][:item_id]).remaining_quantity >= params[:order][:quantity].to_i
       params[:order][:status] = true
       @order = Order.new(order_params)
+      @order.section = @order.member.name
+      @order.depcategory = @order.item.category
+
       if @order.save
         @current_user = current_user
         @borrowed_item = Item.find_by_id(params[:order][:item_id])
@@ -102,12 +125,62 @@ class OrdersController < ApplicationController
     end
   end
 
+
+    def clear
+    clear_session(:search_name, :filter_name, :filter)
+    redirect_to reports_path
+  end
+
+  def show
+    @order = Order.find(params[:id])
+  end
+
+
+
+
+
   private
+
+
     def set_order
       @order = Order.find(params[:id])
     end
 
     def order_params
-      params.require(:order).permit(:requisitionnumber, :quantity, :expire_at, :deployedby, :status, :item_id, :member_id)
+      params.require(:order).permit(:requisitionnumber, :quantity, :expire_at, :deployedby, :status, :item_id, :member_id, :section)
     end
+
+
+
+    def initialize_search
+    @orders = Order.all
+    session[:search_name] ||= params[:search_name]
+    session[:filter] = params[:filter]
+    params[:filter_option] = nil if params[:filter_option] == ""
+    session[:filter_option] = params[:filter_option]
+  end
+
+  def handle_search_name
+    if session[:search_name]
+      @orders = Order.where("name LIKE ?", "%#{session[:search_name].titleize}%")
+     # @orders = @orders.where(section: @order.pluck(:order))
+    else
+      @reports = Order.all
+    end
+  end
+
+  def handle_filters
+    if session[:filter_option] && session[:filter] == "station"
+      @orders = @orders.where(position: session[:filter_option])
+    #  @orders = @orders.where(section: @orders.pluck(:order))
+    elsif session[:filter_option] && session[:filter] == "section"
+      @orders = @orders.where(section: session[:filter_option])
+    end
+  end
+
+
+
+
+
+
 end
