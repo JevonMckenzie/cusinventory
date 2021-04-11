@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get '/reports/clear', to: 'reports#clear', as: 'clear'
 
   get 'requisitions' => 'toners#alltoners'
-  root 'toners#forms'
+  root 'orders#deployed'
   get 'deployed_section' => 'orders#deployed_by_section'
   get 'home' => 'pages#index'
   get 'reports' => 'reports#index'
