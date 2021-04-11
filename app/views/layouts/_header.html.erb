@@ -131,7 +131,7 @@
                   <li>
         <a href="<%= inventory_path %>">
           <i class=""></i>
-          <span ><% if current_user.stationname.nil? %>
+         <% if current_user.stationname.nil? %> <span >
           <p><font color="red">  Your  Assigned Station 
             Is <br>Not Set. Please Edit Your Profile & <br>Choose Assigned Station</font> </p>
             <% else %>           
@@ -144,6 +144,13 @@
         <a href="<%= root_path %>">
           <i class="fa fa-home"></i>
           <span>Dashboard</span>
+        </a>
+      </li>
+
+      <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>View Deployed Items</span>
         </a>
       </li>
     
