@@ -6,9 +6,16 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>
+        <h1 >
           Dashboard
-          <small>The Following Items Are Currently Deployed At Your Section (Inventory List is still being populated. This will be completed before the end of the month.)</small>
+          <small>  <% if current_user.stationname.present? %><font color="green">The Following Items Are Currently Deployed At:<b>
+
+          
+           <%= current_user.stationname %>.</b> <br>(Inventory List is still being populated)</font></small>
+              <% else %>
+              <p align=""><font color="red">  Your  Assigned Station 
+            Is Not Set.<br> You can only see inventory of items deployed at your assigned station.<br> Please Click on Edit Profile to select your Assigned Station</font> </p>
+            <% end %>
         </h1>
         <ol class="breadcrumb">
           <li class="active">
