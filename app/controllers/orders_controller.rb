@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
    before_action :initialize_search, only: :deployed_by_section
+    # before_action :admin_required, except: [:deployed_by_section]
+    # before_action :authenticate_user!
 
   def index
     @orders = Order.all
@@ -15,11 +17,15 @@ class OrdersController < ApplicationController
   end
 
   def deployed
+       if current_user.cmisuser != "YES"
+         redirect_to deployed_section_path
+       else
     @orders = Order.all
     @members = Member.all
     @items = Item.all
     @active = Order.active?
     @expired = Order.expired?
+   end
   end
 
     def deployed_by_section
