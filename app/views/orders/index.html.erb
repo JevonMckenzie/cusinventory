@@ -68,26 +68,26 @@ table, th, td, tr {
                       <th>Service Tag/Serial#</th>
                       
                       <th>Deployed To</th>
-                      <% if current_user.cmisuser == "YES" %>
-                      <th>
-                        Service/Return
-                      </th>
-                   
-                      <th>
-                        <i class="ion ion-loop"></i>
-                      </th>
-        <% if current_user.admin?%> 
-                      <th>
-                        <i class="ion ion-trash-b"></i>
-                      </th>
-                     <% end %>
-                     <% end %>
+                      <% if current_user.admin? %>
+                                    <th>
+                                      Service/Return
+                                    </th>
+                                 
+                                    <th>
+                                      <i class="ion ion-loop"></i>
+                                    </th>
+                                       <% if current_user.admin?%> 
+                                                <th>
+                                                  <i class="ion ion-trash-b"></i>
+                                                </th>
+                                        <% end %>
+                      <% end %>
                     </tr>
                   </thead>
                   <tbody>
                     <% @active.each do |order| %>
                         
-                            <% if current_user.stationname == order.section || current_user.cmisuser == "YES" %>
+                            <% if current_user.stationname == order.section || current_user.admin? %>
                                 <tr>
                                    <td>
                                     <%= order.id %>
@@ -109,7 +109,7 @@ table, th, td, tr {
                                   <td>
                                     <%= order.member.name %>
                                   </td>
-                                    <% if current_user.cmisuser == "YES" %>
+                                    <% if current_user.admin? %>
 
                                       <% if order.item.consumable != "Yes" %>  
                                             <td align="center">
