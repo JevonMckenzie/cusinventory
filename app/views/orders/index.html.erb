@@ -68,70 +68,70 @@ table, th, td, tr {
                       <th>Service Tag/Serial#</th>
                       
                       <th>Deployed To</th>
-                      <% if current_user.admin? %>
-                                    <th>
-                                      Service/Return
-                                    </th>
-                                 
-                                    <th>
-                                      <i class="ion ion-loop"></i>
-                                    </th>
-                                       <% if current_user.admin?%> 
+                                <% if current_user.cmisuser == "YES" %>
                                                 <th>
-                                                  <i class="ion ion-trash-b"></i>
+                                                  Service/Return
                                                 </th>
-                                        <% end %>
-                      <% end %>
+                                             
+                                                <th>
+                                                  <i class="ion ion-loop"></i>
+                                                </th>
+                                         <% if current_user.admin?%> 
+                                                  <th>
+                                                    <i class="ion ion-trash-b"></i>
+                                                  </th>
+                                         <% end %>
+                               <% end %>
                     </tr>
                   </thead>
                   <tbody>
                     <% @active.each do |order| %>
                         
-                            <% if current_user.stationname == order.section || current_user.admin? %>
-                                <tr>
-                                   <td>
-                                    <%= order.id %>
-                                  </td>
-                                  <td>
-                                    <%= order.item.category %>
-                                  </td>
-                                   <td>
-                                    <%= order.requisitionnumber %>
-                                  </td>
-                                   <td>
-                                    <%= order.deployedby %>
-                                  </td>
-                                  <td>
-                                    <%= order.item.name %>
-                                  </td>
-                                  <td><%= order.item.serial %></td>
-                                
-                                  <td>
-                                    <%= order.member.name %>
-                                  </td>
-                                    <% if current_user.admin? %>
-
-                                      <% if order.item.consumable != "Yes" %>  
-                                            <td align="center">
-                                              <%= link_to "", { :controller => :orders, :action => :disable, data: { confirm: 'Are you sure you want to delete this alert?' }, :id => order.id }, { class: "ion ion-log-in"} %>
-                                            </td>
-                                            
-                                            <td>
-                                              <%= link_to "", { :controller => :orders, :action => :renew, :id => order.id, }, { class: "ion ion-loop"} %>
-                                            </td>
-
-                                                  <% if current_user.admin?%> 
-                                                  <td>
-                                                    <%= link_to order, method: :delete, data: { confirm: 'Are you sure? If you are trying to return an item it is recommended to use the "return" button.' } do %>
-                                                    <i class="ion ion-trash-b"></i>
+                            <% if current_user.stationname == order.section || current_user.cmisuser == "YES" %>
+                                                    <tr>
+                                                       <td>
+                                                        <%= order.id %>
+                                                      </td>
+                                                      <td>
+                                                        <%= order.item.category %>
+                                                      </td>
+                                                       <td>
+                                                        <%= order.requisitionnumber %>
+                                                      </td>
+                                                       <td>
+                                                        <%= order.deployedby %>
+                                                      </td>
+                                                      <td>
+                                                        <%= order.item.name %>
+                                                      </td>
+                                                      <td><%= order.item.serial %></td>
                                                     
-                                                  </td> 
-                                                  <% end %>
-                                      <% end %>
-                                      <% end %>
+                                                      <td>
+                                                        <%= order.member.name %>
+                                                      </td>
+                                             <% if current_user.cmisuser == "YES" %>
+
+                                                      
+                                                                    <td align="center">
+                                                                      <%= link_to "", { :controller => :orders, :action => :disable, data: { confirm: 'Are you sure you want to delete this alert?' }, :id => order.id }, { class: "ion ion-log-in"} %>
+                                                                    </td>
+                                                                    
+                                                                    <td>
+                                                                      <%= link_to "", { :controller => :orders, :action => :renew, :id => order.id, }, { class: "ion ion-loop"} %>
+                                                                    </td>
+
+                                                                      <% if current_user.admin?%> 
+                                                                                    <td>
+                                                                                      <%= link_to order, method: :delete, data: { confirm: 'Are you sure? If you are trying to return an item it is recommended to use the "return" button.' } do %>
+                                                                                      <i class="ion ion-trash-b"></i>
+                                                                                      
+                                                                                    </td> 
+                                                                      <% end %>
+                                                        
+                                               <% end %>
                               <% end %>
                            </tr> 
-                    <% end %> 
+                       <% end %> 
 
 
         <% end %>
