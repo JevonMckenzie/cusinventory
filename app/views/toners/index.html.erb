@@ -70,7 +70,7 @@ table, th, td, tr {
                   <tbody>
                     <% @toners.each do |toner| %>
                      <% if toner.sectionname == current_user.stationname || current_user.cmisuser == "YES" %>
-                    <% if toner.quantityissued.nil? and toner.id > 0 %>
+                    <% if toner.issuedby.nil? and toner.id > 0 %>
                                      <tr>
                     
                       <td><%= toner.id %></td>
