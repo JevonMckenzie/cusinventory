@@ -86,7 +86,7 @@ table, th, td, tr {
                   </thead>
                   <tbody>
                     <% @active.each do |order| %>
-                        <% if current_user.stationname.present? %>
+                        
                             <% if current_user.stationname == order.section || current_user.cmisuser == "YES" %>
                                 <tr>
                                    <td>
@@ -131,7 +131,7 @@ table, th, td, tr {
                                       <% end %>
                               <% end %>
                            </tr> 
-                    <% end %> <% end %>
+                    <% end %> 
 
 
         <% end %>
