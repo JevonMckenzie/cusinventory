@@ -217,9 +217,9 @@
             <!-- small box -->
              <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Add Item</h3><h5>Total: <%=Item.where(:category => "").sum(:quantity)%>
+                <h3>Scanners</h3><h5>Total: <%=Item.where(:category => "Scanner").sum(:quantity)%>
                 </h5>
-                <h5>Available: <%=Item.where(:category => "").sum(:remaining_quantity)%>
+                <h5>Available: <%=Item.where(:category => "Scanner").sum(:remaining_quantity)%>
                 </h5>
               </div>
               
