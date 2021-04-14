@@ -62,6 +62,7 @@
                       <th>Service Tag/Serial#</th>
                       
                       <th>Deployed To</th>
+                      <th>Description</th>
                                 <% if current_user.cmisuser == "YES" %>
                                                 <th>
                                                   Service/Return
@@ -102,6 +103,9 @@
                                                     
                                                       <td>
                                                         <%= order.member.name %>
+                                                      </td>
+                                                      <td>
+                                                        <%= order.item.description %>
                                                       </td>
                                              <% if current_user.cmisuser == "YES" %>
 
