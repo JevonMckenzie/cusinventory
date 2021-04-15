@@ -99,9 +99,9 @@
             <!-- small box -->
              <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Mifi</h3><h5>Total: <%=Item.where(:category => "Mifi").sum(:quantity)%>
+                <h3>Mifi</h3><h5>Total: <%=Item.where(:category => "MiFi").sum(:quantity)%>
                 </h5>
-                <h5>Available: <%=Item.where(:category => "Mifi").sum(:remaining_quantity)%>
+                <h5>Available: <%=Item.where(:category => "MiFi").sum(:remaining_quantity)%>
                 </h5>
               </div>
               
