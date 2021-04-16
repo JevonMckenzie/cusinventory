@@ -191,6 +191,21 @@
             <h2 align="center">Printers: <%= Order.where(:depcategory => "Printer", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
             <br>
               </div>
+
+
+              
+            </div>
+
+                       <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             
+            <div class="small-box bg-aqua">
+          <br> 
+            <h2 align="center">Printers: <%= Order.where(:depcategory => "KVM Switch", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+            <br>
+              </div>
+
+              
               
             </div>
           
