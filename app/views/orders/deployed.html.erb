@@ -230,7 +230,7 @@
             <!-- small box -->
              <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>Scanners</h3><h5>Total: <%=Item.where(:category => "KVM Switch").sum(:quantity)%>
+                <h3>KVM Switch</h3><h5>Total: <%=Item.where(:category => "KVM Switch").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "KVM Switch").sum(:remaining_quantity)%>
                 </h5>
