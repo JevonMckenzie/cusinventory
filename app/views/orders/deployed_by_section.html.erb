@@ -36,9 +36,9 @@
              
             <div class="small-box bg-aqua">
               <br>
-          
-            <h2 align="center">Desktops: <%= Order.where(:depcategory => "Desktop", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-       
+        
+                  <h2 align="center">Desktops:  <% if current_user.stationname.present? %> <%= Order.where(:depcategory => "Desktop", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+          <% end %>
             <br>
               </div>
               
@@ -105,7 +105,7 @@
             <div class="small-box bg-aqua">
               <br>
         
-            <h2 align="center">USB Adapters: <%= Order.where(:depcategory => "USB Adapter", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+            <h2 align="center">USB Adapters: <%= Order.where(:depcategory => "Wireless USB Adapter", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2> 
           
             <br>
               </div>

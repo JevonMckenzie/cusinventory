@@ -112,7 +112,7 @@
             <!-- small box -->
         <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>USB Adpters</h3><h5>Total: <%=Item.where(:category => "USB Adapter").sum(:quantity)%>
+                <h3>USB Adpters</h3><h5>Total: <%=Item.where(:category => "Wireless USB Adapter").sum(:quantity)%>
                 </h5>
                 <h5>Available: <%=Item.where(:category => "USB Adapter").sum(:remaining_quantity)%>
                 </h5>
