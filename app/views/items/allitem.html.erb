@@ -1,3 +1,15 @@
+<html>
+<head>
+<title> Customs IT Inventory</title>
+<style>
+table, th, td, tr {
+ 
+  border-collapse: collapse;
+  text-align: center;
+}
+</style>
+</head>
+
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
     <%= render 'layouts/header' %>
@@ -28,11 +40,12 @@
               <!-- /.box-header -->
               <div class="box-body">
                     <div class="table-responsive fix-table-height">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example1" class="table-bordered table-striped">
                   <thead>
                     <tr>
                       <th>ID</th>
                       <th>Category</th>
+                      <th>Consumable?</th>
                      <th>Quantity</th>
                       <th>Availability</th>
                       <th>S/T</th>
@@ -49,11 +62,12 @@
                   </thead>
                   <tbody>
                     <% @items.each do |item| %>
-                    
+                   <% if item.remaining_quantity < 3 %>
                                      <tr>
                      
                       <td><%= item.id %></td>
                       <td><%= item.category %></td>
+                      <td><%= item.consumable %></td>
                       <td><%= item.quantity %></td>
                       <td><%=item.remaining_quantity%></td>
                       <td><%= item.serial %></td>
@@ -69,8 +83,9 @@
 
                       <td><%= link_to 'Deploy', new_order_path(item: item.id) %></td>
                     </tr>
-                   
                     <% end %>
+                    <% end %>
+                    
                   </tbody>
                 </table>
               </div>
@@ -97,3 +112,4 @@
     });
   </script>
 </body>
+</html>
