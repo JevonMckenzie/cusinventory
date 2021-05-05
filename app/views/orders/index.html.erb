@@ -57,14 +57,15 @@
                        <th>Order ID</th>
                         <th>Item ID</th>
                       <th>Category</th>
-                       <th>Consumable?</th>
+                       <th>Name</th>
                       <th>Quantity</th>
                       <th>Requisition Number</th>
                       <th>Deployed By</th>
-                      <th>Name</th>
+                      
                       <th>Service Tag/Serial#</th>
                       
                       <th>Deployed To</th>
+                      <th>Condemn</th>
                       <th>Description</th>
                                 <% if current_user.cmisuser == "YES" %>
                                                 <th>
@@ -93,9 +94,11 @@
                                                            <td>
                                                         <%= order.item.id %>
                                                       </td>
-                                                      <td><%= order.condemn %></td>
                                                       <td>
                                                         <%= order.item.category %>
+                                                      </td>
+                                                          <td>
+                                                        <%= order.item.name %>
                                                       </td>
                                                             <td>
                                                         <%= order.quantity %>
@@ -106,13 +109,14 @@
                                                        <td>
                                                         <%= order.deployedby %>
                                                       </td>
-                                                      <td>
-                                                        <%= order.item.name %>
-                                                      </td>
+                                                  
                                                       <td><%= order.item.serial %></td>
                                                     
                                                       <td>
                                                         <%= order.member.name %>
+                                                      </td>
+                                                         <td>
+                                                        <%= order.condemn %>
                                                       </td>
                                                       <td>
                                                         <%= order.item.description %>
