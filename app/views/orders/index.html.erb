@@ -57,6 +57,7 @@
                        <th>Order ID</th>
                         <th>Item ID</th>
                       <th>Category</th>
+                       <th>Consumable?</th>
                       <th>Quantity</th>
                       <th>Requisition Number</th>
                       <th>Deployed By</th>
@@ -92,6 +93,7 @@
                                                            <td>
                                                         <%= order.item.id %>
                                                       </td>
+                                                      <td><%= order.category %></td>
                                                       <td>
                                                         <%= order.item.category %>
                                                       </td>
