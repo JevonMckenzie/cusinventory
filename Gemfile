@@ -17,6 +17,9 @@ gem 'delayed_job'
 gem 'delayed_job_active_record'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
+gem 'rubyzip', '= 1.0.0'
+gem 'axlsx', '= 2.0.1'
+gem 'axlsx_rails' 
 
 group :development, :test do
   gem 'byebug', platform: :mri

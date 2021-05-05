@@ -10,6 +10,11 @@ class OrdersController < ApplicationController
     @items = Item.all
     @active = Order.active?
     @expired = Order.expired?
+
+    respond_to do |format|
+      format.html
+      format.xlsx
+    end
   end
 
   def old

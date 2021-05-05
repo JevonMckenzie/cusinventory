@@ -45,6 +45,13 @@ GEM
     arel (7.1.4)
     autoprefixer-rails (10.2.0.0)
       execjs
+    axlsx (2.0.1)
+      htmlentities (~> 4.3.1)
+      nokogiri (>= 1.4.1)
+      rubyzip (~> 1.0.0)
+    axlsx_rails (0.5.2)
+      actionpack (>= 3.1)
+      axlsx (>= 2.0.1)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootstrap-sass (3.3.7)
@@ -82,6 +89,7 @@ GEM
     haml (5.2.0)
       temple (>= 0.8.0)
       tilt
+    htmlentities (4.3.4)
     i18n (1.8.7)
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
@@ -179,6 +187,7 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rubyzip (1.0.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -232,6 +241,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  axlsx (= 2.0.1)
+  axlsx_rails
   bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.2)
@@ -247,6 +258,7 @@ DEPENDENCIES
   rails (~> 5.0.2)
   rails_12factor
   rails_admin (~> 2.0)
+  rubyzip (= 1.0.0)
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

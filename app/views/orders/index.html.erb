@@ -14,7 +14,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Deployed Items
+         
           <small>
 
           <% if current_user.cmisuser != "YES" %>
@@ -50,6 +50,7 @@
                   <% end %>
               <!-- /.box-header -->
               <div class="box-body">
+                 Deployed Items <br><%= link_to "Export Deployed Items as a Spreadsheet", orders_path(format: "xlsx") %><br><br>
       <div class="table-responsive fix-table-height">
                 <table id="example1" class="table-bordered table-striped">
                   <thead>
