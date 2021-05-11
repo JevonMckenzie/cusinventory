@@ -77,6 +77,19 @@
               
             </div>
 
+                 <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             
+            <div class="small-box bg-aqua">
+              <br>
+         
+            <h2 align="center">MiFi: <%= Order.where(:depcategory => "MiFi", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+         
+            <br>
+              </div>
+              
+            </div>
+
           </div>
 
          
@@ -86,15 +99,13 @@
         
         <!-- /.row -->
 <div class="row">
-         <div class="col-lg-3 col-xs-6">
+             <div class="col-lg-3 col-xs-6">
             <!-- small box -->
              
             <div class="small-box bg-aqua">
-              <br>
-         
-            <h2 align="center">MiFi: <%= Order.where(:depcategory => "MiFi", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-         
-            <br>
+          <br> 
+            <h2 align="center">Headsets: <%= Order.where(:depcategory => "Head Set", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+           <br>
               </div>
               
             </div>
@@ -125,24 +136,7 @@
               </div>
               
             </div>
-          <!-- ./col -->
-            
 
-          <!-- ./col -->
-        </div>
-
-
-        <div class="row">
-              <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-             
-            <div class="small-box bg-aqua">
-          <br> 
-            <h2 align="center">Headsets: <%= Order.where(:depcategory => "Head Set", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-           <br>
-              </div>
-              
-            </div>
           <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
             <!-- small box -->
@@ -165,13 +159,9 @@
               </div>
               
             </div>
-        </div>
 
 
-          <div class="row">
-             
-            <!-- small box -->
-           <div class="col-lg-3 col-xs-6">
+            <div class="col-lg-3 col-xs-6">
             <!-- small box -->
              
             <div class="small-box bg-aqua">
@@ -208,6 +198,18 @@
               
               
             </div>
+
+          
+          
+
+
+        </div>
+
+
+          <div class="row">
+             
+            <!-- small box -->
+         
 
           
           
@@ -263,6 +265,19 @@
                           
                         </div>
 
+                                                         <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                         
+                        <div class="small-box bg-aqua">
+                      <br> 
+                        <h2 align="center">Kitchenets: <%= Order.where(:depcategory => "Kitchen Supplies", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+                        <br>
+                          </div>
+
+                          
+                          
+                        </div>
+
 
 
             </div>
@@ -271,18 +286,7 @@
             <div class="row">
 
 
-                                           <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                         
-                        <div class="small-box bg-aqua">
-                      <br> 
-                        <h2 align="center">Kitchen Supplies: <%= Order.where(:depcategory => "Kitchen Supplies", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-                        <br>
-                          </div>
-
-                          
-                          
-                        </div>
+                      
 
 
                                                   <div class="col-lg-3 col-xs-6">
