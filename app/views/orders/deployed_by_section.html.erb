@@ -270,7 +270,7 @@
                          
                         <div class="small-box bg-aqua">
                       <br> 
-                        <h2 align="center">Kitchenets: <%= Order.where(:depcategory => "Kitchen Supplies", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
+                        <h2 align="center">Kitchenette: <%= Order.where(:depcategory => "Kitchen Supplies", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
                         <br>
                           </div>
 
