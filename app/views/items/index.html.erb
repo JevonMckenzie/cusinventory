@@ -43,6 +43,7 @@ table, th, td, tr {
                 <table id="example1" class="table-bordered table-striped">
                   <thead>
                     <tr>
+                      <th>Receipt Number</th>
                       <th>ID</th>
                       <th>Category</th>
                       <th>Consumable?</th>
@@ -64,7 +65,7 @@ table, th, td, tr {
                     <% @items.each do |item| %>
                    
                                      <tr>
-                     
+                     <td><%= item.receipt %></td>
                       <td><%= item.id %></td>
                       <td><%= item.category %></td>
                       <td><%= item.consumable %></td>

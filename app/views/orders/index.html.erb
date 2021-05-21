@@ -107,6 +107,7 @@ body {
                               <tr>
                              <th>Order ID</th>
                               <th>Item ID</th>
+                               <th>Receipt Number</th>
                             <th>Category</th>
                              <th>Name</th>
                                <th>Service Tag/Serial#</th>
@@ -146,6 +147,9 @@ body {
                                                             </td>
                                                                  <td align="center">
                                                               <%= order.item.id %>
+                                                            </td>
+                                                            <td align="center">
+                                                              <%= order.item.receipt %>
                                                             </td>
                                                             <td align="center">
                                                               <%= order.item.category %>
