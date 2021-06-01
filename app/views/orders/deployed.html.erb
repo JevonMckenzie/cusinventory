@@ -258,7 +258,18 @@
           </div>
           <!-- ./col -->
     
-      
+           <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Backup UPS - Battery</h3><h5>Total: <%=Item.where(:category => "Backup UPS - Battery").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Backup UPS - Battery).sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
 
           <!-- ./col -->
         </div>
