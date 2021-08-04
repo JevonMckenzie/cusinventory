@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-	#has_many :toners
+	#has_many :maintenances
+    has_many :toners
 	#belongs_to :members
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
