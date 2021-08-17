@@ -3,6 +3,47 @@ Rails.application.routes.draw do
 
  
 
+  get 'applications/index'
+
+  get 'oranks/index'
+
+  get 'supervisors/index'
+
+  get 'supervisors/new'
+
+  get 'custations/index'
+
+  get 'cusections/new'
+
+  get 'cusections/index'
+
+  get 'supnames/new'
+
+  get 'asyfxn/new'
+
+   get 'asyfxn/create'
+
+   get 'function' => 'asyfxns#new'
+
+    get 'section' => 'cusections#new'
+
+     get 'station' => 'custations#new'
+
+  get 'account_type' => 'acctypes#new'
+
+   get 'supervisor' => 'supnames#new'
+
+   get 'supervisor_code' => 'supervisors#new'
+
+   get 'ranks' => 'oranks#new'
+
+   get 'applications' => 'applications#index'
+
+  get 'acctype/create'
+
+  get 'acctype/new'
+
+  resources :maintenances
   get 'reports/index'
 
   resources :toners
@@ -20,6 +61,12 @@ Rails.application.routes.draw do
   resources :users
   resources :items
   resources :reports
+  resources :acctypes
+  resources :cusections
+  resources :custations
+  resources :oranks
+  resources :supervisors
+  resources :supnames
 
 
   get '/reports/clear', to: 'reports#clear', as: 'clear'
@@ -33,6 +80,10 @@ Rails.application.routes.draw do
 
   get 'allitem' => 'items#allitem'
 
+   get 'corozal_cargo' => 'orders#corozal_cargo'
+
+
+
   get 'toners' => 'toners#index'
 
   get 'forms' => 'toners#forms'
@@ -44,9 +95,9 @@ Rails.application.routes.draw do
   get 'renew/:id' => 'orders#renew'
   get 'return/:id' => 'orders#disable'
   
+  get "/IT_Support" => 'maintenances#new'
   
-  
- #get "/sign_up" => 'devise/registrations#new'
+ get "/sign_up" => 'devise/registrations#new'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
