@@ -1,0 +1,63 @@
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <%= render 'layouts/header' %>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Application Forms
+        </h1>
+        <ol class="breadcrumb">
+          <li>
+            <a href="#">
+              <i class="fa fa-home"></i>
+              Home Page</a>
+          </li>
+          <li class="active">Application Forms</li>
+        </ol>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <% if current_user.admin? %>
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-6">
+            <!-- general form elements -->
+            <br><br>
+
+
+<%= link_to 'Add Rank', ranks_path %><br><br>
+<%= link_to 'Add Supervisor', supervisor_path %><br><br>
+<%= link_to 'Add Section', section_path %><br><br>
+<%= link_to 'Add Station', station_path %><br><br>
+<%= link_to 'Add Account Type', account_type_path %><br><br>
+<%= link_to 'Add Station', station_path %>
+<br><br>
+          <!--/.col (right) -->
+        </div>
+
+        <% else %>
+
+        <h3 align="center"> Add Item Not Acessible </h3>
+        <!-- /.row -->
+         <% end %>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>Version</b>
+        0.1
+      </div>
+      Content available under
+      <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0</a>.
+    </footer>
+    <!-- ./wrapper -->
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+  </body>
