@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210505160154) do
+ActiveRecord::Schema.define(version: 20210813141439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "acctypes", primary_key: "acctcode", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
+    t.string   "code"
+  end
+
+  create_table "asyfxns", primary_key: "asyfxn", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "code"
+    t.string   "description"
+  end
+
+  create_table "cusections", primary_key: "secode", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "code"
+    t.string   "description"
+  end
+
+  create_table "custations", primary_key: "stncode", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "code"
+    t.string   "description"
+  end
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -30,6 +58,18 @@ ActiveRecord::Schema.define(version: 20210505160154) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
   end
 
+  create_table "emails", force: :cascade do |t|
+    t.boolean  "passwordreset"
+    t.boolean  "unblockemail"
+    t.boolean  "newuser"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "reason"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.string   "category"
@@ -42,6 +82,32 @@ ActiveRecord::Schema.define(version: 20210505160154) do
     t.decimal  "price",              precision: 8, scale: 2
     t.string   "consumable"
     t.string   "condemn"
+    t.string   "receipt"
+  end
+
+  create_table "maintenances", force: :cascade do |t|
+    t.boolean  "nointernet"
+    t.boolean  "compnopower"
+    t.boolean  "compshutdown"
+    t.boolean  "novideo"
+    t.boolean  "keyboard"
+    t.boolean  "mouse"
+    t.boolean  "printerjam"
+    t.boolean  "printernowork"
+    t.boolean  "scanner"
+    t.boolean  "other"
+    t.string   "explanation"
+    t.string   "location"
+    t.boolean  "office"
+    t.boolean  "asycuda"
+    t.boolean  "slonfreeze"
+    t.boolean  "othersoftware"
+    t.string   "explanationsoft"
+    t.string   "locationsoft"
+    t.boolean  "hardware"
+    t.boolean  "software"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "members", force: :cascade do |t|
@@ -53,6 +119,13 @@ ActiveRecord::Schema.define(version: 20210505160154) do
     t.string   "supstaff"
     t.string   "oic"
     t.string   "section"
+  end
+
+  create_table "oranks", primary_key: "rankcode", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "code"
+    t.string   "description"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -84,8 +157,26 @@ ActiveRecord::Schema.define(version: 20210505160154) do
     t.string   "station"
     t.string   "category"
     t.string   "section"
+    t.integer  "order_id"
     t.index ["item_id"], name: "index_reports_on_item_id", using: :btree
     t.index ["member_id"], name: "index_reports_on_member_id", using: :btree
+    t.index ["order_id"], name: "index_reports_on_order_id", using: :btree
+  end
+
+  create_table "supervisors", primary_key: "supcode", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "code"
+    t.string   "description"
+  end
+
+  create_table "supnames", primary_key: "sup_id", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "supcode"
+    t.integer  "user_id"
+    t.index ["supcode"], name: "index_supnames_on_supcode", using: :btree
+    t.index ["user_id"], name: "index_supnames_on_user_id", using: :btree
   end
 
   create_table "toners", primary_key: "requisitionnumber", force: :cascade do |t|
@@ -125,8 +216,27 @@ ActiveRecord::Schema.define(version: 20210505160154) do
     t.boolean  "admin"
     t.string   "stationname"
     t.string   "cmisuser"
+    t.boolean  "cusadmin"
+    t.integer  "asyfxn"
+    t.integer  "stncode"
+    t.integer  "rankcode"
+    t.integer  "secode"
+    t.integer  "acctype_id"
+    t.integer  "asyfxn_id"
+    t.integer  "custation_id"
+    t.integer  "orank_id"
+    t.integer  "section_id"
+    t.integer  "supervisor_id"
+    t.integer  "acctcode"
+    t.string   "supcode"
+    t.index ["acctcode"], name: "index_users_on_acctcode", using: :btree
+    t.index ["asyfxn"], name: "index_users_on_asyfxn", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["rankcode"], name: "index_users_on_rankcode", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["secode"], name: "index_users_on_secode", using: :btree
+    t.index ["stncode"], name: "index_users_on_stncode", using: :btree
+    t.index ["supcode"], name: "index_users_on_supcode", using: :btree
   end
 
   add_foreign_key "orders", "items"
