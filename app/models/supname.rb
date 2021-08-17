@@ -1,0 +1,2 @@
+class Supname < ApplicationRecord
+end
