@@ -18,6 +18,36 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+   <div class="field">
+    <%= f.label :rank %><br />
+    <%= f.number_field :orank_id%>
+  </div>
+
+   <div class="field">
+    <%= f.label :station %><br />
+    <%= f.number_field :custation_id %>
+  </div>
+
+   <div class="field">
+    <%= f.label :account_type%><br />
+    <%= f.number_field :acctype_id %>
+  </div>
+
+   <div class="field">
+    <%= f.label :function_type%><br />
+    <%= f.number_field :asyfxn_id %>
+  </div>
+
+   <div class="field">
+    <%= f.label :supervisor %><br />
+    <%= f.number_field :supervisor_id%>
+  </div>
+
+   <div class="field">
+    <%= f.label :section %><br />
+    <%= f.number_field :cusection_id%>
+  </div>
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>

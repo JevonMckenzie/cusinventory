@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+   skip_before_action :verify_authenticity_token
   before_action :set_user
 
   def new
@@ -9,9 +10,30 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def create
+    @user = User.new(user_params)
+    if @user.save
+   #   @user.send_activation_email
+   #   flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
+    else
+      render 'user_new_path'
+    end
+  end
+
   def edit
+    # @user = User.find(params[:id])
      @member = Member.all
   end
+
+    def username
+    @awuser_with_class = User.where(email: params[:username] )
+      respond_to do |format|
+        format.js 
+        format.html
+      end
+  end
+
 
   def update
     if params[:user][:password].blank? && params[:user][:password_confirmation].blank?
@@ -36,6 +58,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :stationname)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :cmisuser, :cusadmin, :orank_id, :cusection_id, :custation_id, :acctype_id, :asyfxn_id, :section_id, :supervisor_id, :stationname)
     end
 end

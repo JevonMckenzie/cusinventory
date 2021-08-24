@@ -137,6 +137,157 @@
     </ul>
 
 
+
+<% elsif current_user.cusadmin? %>
+
+    <ul class="sidebar-menu">
+      <li class="header">MAIN NAVIGATION</li>
+
+                  <li>
+        <a href="<%= inventory_path %>">
+          <i class=""></i>
+         <% if current_user.stationname.nil? %> <span >
+          <p><font color="red">  Your  Assigned Station 
+            Is <br>Not Set. Please Edit Your Profile & <br>Choose Assigned Station</font> </p>
+            <% else %>           
+            <h4 align="center"><font color="green">Your Assigned Station Is:<br> <%= current_user.stationname %></font></h4></span>
+            <% end %>
+        </a>
+      </li>
+              
+          <li>
+        <a href="<%= inventory_path %>">
+          <i class="fa fa-home"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+            <li>
+          <a href="professionaldevelopment">
+          <i class="fa fa-search"></i>
+          <span>Learn MS Excel & MS Access</span>
+        </a>
+      </li>
+    
+
+      <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>Corozal - Passenger</span>
+        </a>
+      </li>
+
+          <li>
+          <a href="<%= corozal_cargo_path %>">
+          <i class="fa fa-search"></i>
+          <span>Corozal - Cargo</span>
+        </a>
+      </li>
+
+      <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>Benque - Passenger</span>
+        </a>
+      </li>
+
+            <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>Benque - Cargo</span>
+        </a>
+      </li>
+
+            <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>Belize City- Port</span>
+        </a>
+      </li>
+
+            <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>Belize City- Tourist Village</span>
+        </a>
+      </li>
+
+            <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>Belize City - Post Office</span>
+        </a>
+      </li>
+
+            <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>Belize City - Accounts </span>
+        </a>
+      </li>
+
+
+            <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>Belize City - Records </span>
+        </a>
+      </li>
+
+               <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>Belize City - Shipping</span>
+        </a>
+      </li>
+
+               <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>Belize City - Examination </span>
+        </a>
+      </li>
+    
+             <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>Belize City - Valuation </span>
+        </a>
+      </li>
+    
+             <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>Belize City - Post Audit</span>
+        </a>
+      </li>
+
+               <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>Belize City - Excise </span>
+        </a>
+      </li>
+    
+    
+    
+   
+      <li>
+        <a href="<%= forms_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>Electronic Forms</span>
+        </a>
+      </li>
+      
+    </ul>
+
+
+
+
+
+
+
+
  <% else %>
 
     <ul class="sidebar-menu">

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
  
 
+  get 'awusers/index'
+
   get 'applications/index'
 
   get 'oranks/index'
@@ -11,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'supervisors/new'
 
+    get 'awusers/new'
+
   get 'custations/index'
 
   get 'cusections/new'
@@ -18,6 +22,10 @@ Rails.application.routes.draw do
   get 'cusections/index'
 
   get 'supnames/new'
+
+  get 'awusers/new'
+
+   
 
   get 'asyfxn/new'
 
@@ -39,12 +47,32 @@ Rails.application.routes.draw do
 
    get 'applications' => 'applications#index'
 
+    get 'asyworlduser' => 'awusers#new'
+
   get 'acctype/create'
 
   get 'acctype/new'
 
+  #get "awusers/username" => 'awusers#username', as: "username" 
+  ##resources :awusers do
+  ##  collection { post :import }
+  #end
+
+    get "users/username" => 'users#username', as: "username" 
+  resources :awusers do
+    collection { post :import }
+  end
+
+  get 'awusers' => 'awusers#index'
+
+  get 'awuser/new'
+
   resources :maintenances
   get 'reports/index'
+
+  get 'search_user' => 'users#index'
+
+  
 
   resources :toners
   devise_for :admins
@@ -67,6 +95,8 @@ Rails.application.routes.draw do
   resources :oranks
   resources :supervisors
   resources :supnames
+  resources :awusers
+
 
 
   get '/reports/clear', to: 'reports#clear', as: 'clear'
