@@ -1,0 +1,13 @@
+ <script>
+   $(document).ready(function() {
+    $('#username').change(function() {
+       $.ajax({
+         url: "/awusers/new",
+         data: {username: $("#username option:selected").val()},
+         dataType: "script",
+         method: "get",
+         success: function(r){}
+       });
+     });
+   });
+</script>

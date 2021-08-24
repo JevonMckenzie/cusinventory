@@ -1,0 +1,248 @@
+<html>
+<head>
+<title> Customs Application For Refund Of Duty </title>
+<style>
+table, th, td, tr {
+ border: 1px solid black;
+ border-collapse: collapse;
+ text-align: center;
+ background-color:#f5f3f2;
+}
+
+label{
+display: block
+}
+</style>
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
+
+</head> 
+<body class="container">
+
+<%= link_to 'Home', root_path %>
+
+<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<br><br>
+
+<%= link_to 'View List of Applications Submitted for Refund of Duty', refunds_path %><br><br>
+<br><br>
+
+
+<%= form_with(model: refund, local: true) do |form| %>
+  <% if refund.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(refund.errors.count, "error") %> prohibited this refund from being saved:</h2>
+
+      <ul>
+        <% refund.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Vessel_Name %>
+    <%= form.text_field :vessel %>
+    <%= form.label :Rotation_Number %>
+    <%= form.number_field :rotNum %>
+    <%= form.label :Entry_Number %>
+    <%= form.number_field :entryNum %>  
+</div>
+<br>
+  <div class="field">
+    <p> Application is hereby made for a 
+    <%= form.label :refundOf %>
+    <%= form.text_field :refundof %> (1)
+    in respect of the undermentioned goods imported/exported on the above mentioned entry.
+    </p>
+  </div>
+<table width="100%"><tr><th>Description of Goods</th><th>Quantity (2)</th><th>Value</th><th>Rate</th><th>Duty</th> </tr>
+          
+<tr align="center">
+
+<td>
+  <div class="field">
+    <%= form.label :Entered_As %>
+    <%= form.text_field :enteredAs %>
+  </div>
+</td>
+
+<td>
+  <div class="field">
+    <%= form.label :Entered_As_Quantity %>
+    <%= form.number_field :enteredAsQ %>
+  </div> 
+</td>
+
+<td>
+  <div class="field">
+   <%= form.label :Entred_As_Value %>
+   <%= form.text_field :entredAsV %>
+ </div>
+</td>
+
+<td>
+  <div class="field">
+    <%= form.label :Entered_As_Rate %> 
+    <%= form.text_field :enteredAsR %>
+  </div>
+</td>
+
+<td>
+   <div class="field">
+     <%= form.label :Entered_As_Duty %>
+     <%= form.text_field :enteredAsD %>
+   </div>
+</td>
+
+</tr>
+
+<tr align="center">
+
+<td>
+  <div class="field">
+    <%= form.label :should_Be %>
+   <%= form.text_field :shouldBe %>
+  </div>
+</td>
+
+<td>
+  <div class="field">
+    <%= form.label :should_Be_Quantity %>
+    <%= form.number_field :shouldBeQ %>
+  </div>
+</td>
+
+<td>
+  <div class="field">
+    <%= form.label :should_Be_Value %>
+    <%= form.text_field :shouldBeV %>
+  </div>
+</td>
+
+<td>
+ <div class="field">
+   <%= form.label :should_Be_Rate %>
+    <%= form.text_field :shouldBeR %>
+  </div>
+</td>
+
+<td>
+  <div class="field">
+    <%= form.label :should_Be_Duty %>
+    <%= form.text_field :shouldBeD %>
+  </div>
+</td>
+
+</tr>
+</table>
+<br>
+<hr>
+ <br>
+
+<div style="float:left">
+(3)
+</div>
+
+<div style="float:center">
+  <div class="field">
+    <%= form.label :reason_In_Support_of_Refund, class: "hidden" %>
+    <%= form.text_field :reasonSupportRefund %>
+  </div>
+</div>
+<br>
+
+
+  <div class="field">
+    <%= form.label :Amount_of_refund_Claimed %>
+    <%= form.text_field :refundClaimed %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_field :date, value:refund.created_at, :readonly => true %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :signature %>
+    <%= form.text_field :signature, value:current_user.email, :readonly => true  %>
+  </div>
+<br>
+<hr>
+<br>
+
+<% if current_user.admin == true %>
+<h2 align="center"> FOR OFFICIAL USE ONLY </h2>
+<table width="100%">
+<tr>
+<td valign="top" width="50%">
+<p>II</p>
+<p>Certified refund correct and payment in order </p><br>
+<table width="100%"><thead><th>$</th><th>cts.</th><th>Head</th><th>Subhead</th></thead>
+<tbody><td>place holder</td><td>place holder</td><td>placeholder</td><td>placeholder</td></tbody>
+<tbody><td>place holder</td><td>place holder</td><td>placeholder</td><td>placeholder</td></tbody>
+<tbody><td>place holder</td><td>place holder</td><td>placeholder</td><td>placeholder</td></tbody>
+</table>
+</td>
+
+<td valign="top">
+<p>III</p>
+<p> Payment Approved </p>
+  <div class="field">
+    <%= form.label :approved_Date %>
+    <%= form.date_select :appDate %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :comptroller_Signature %>
+    <%= form.text_field :compSig %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :claim_Number %>
+    <%= form.number_field :claimNum %>
+  </div>
+</td>
+</tr>
+</table>
+
+<br><br>
+  <div class="field">
+    <%= form.label :Received_Date %>
+    <%= form.date_select :receivedDate %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :claimant_Signature %>
+    <%= form.text_field :claimantSig %>
+  </div>
+<% end %>
+<br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<br>
+<% end %>
+
+<hr>
+<br>
+<p> This form is to be usd for refund duty, entry tax and export duty only and 2 copies must be lodged for retention.
+<br>
+<i>Notes</i>
+<ol>
+<li>Insert here description of refund claimed e.g. entry tax, export tax or duty.</li>
+<li> To be completed when refind is occasioned by shortage </li>
+<li> Full acurate details to be supplied, e.g. pillage, ullage, damage, etc.</li>
+</ol>
+<br>
+7838-K41-2M
+</p>
+</body>
+</html>
+

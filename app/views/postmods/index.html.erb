@@ -1,0 +1,84 @@
+<html>
+<head>
+<title> Customs Application For Post Modification</title>
+<style>
+table, th, td, tr {
+ border: 1px solid black;
+ border-collapse: collapse;
+ text-align: center;
+ background-color:#f5f3f2;
+}
+</style>
+
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+ 
+
+</head>
+<body class="container">
+
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">Submitted Applications For Post Modification</h1>
+<br><br>
+<%= link_to 'Home', root_path %>
+
+<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<br><br>
+<a href="http://customsapplications.herokuapp.com/admin">Administration Panel</a><br><br>
+<%= link_to 'View List of Applications Submitted for Refund of Duty', refunds_path %><br><br>
+<%= link_to 'New Application for Refund of Duty', new_refund_path %><br><br>
+<%= link_to 'View List of Applications Submitted for Post Modification', postmods_path %><br><br>
+<%= link_to 'New Application for Post Modification', new_postmod_path %>
+<br><br>
+
+
+<p id="notice"><%= notice %></p>
+
+<h2 align="center">Requests For Post Modification</h2>
+
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th>Request ID</th>
+      <th>Entry Number</th>
+      <th>Office Code</th>
+      <th>Username</th>
+      <th>Date/Time Created</th> 
+      <th>Date/Time Updated</th>  
+    </tr>
+  </thead>
+<tbody>
+    <% @postmods.each do |postmod| %>
+    <% if postmod.user.username == current_user.username || current_user.admin == true %>
+      <tr>
+        <td><%= postmod.id %></td>
+        <td><%= postmod.entrynum %></td>
+        <td><%= postmod.officecode%></td>
+        <td><%= postmod.user.username %></td>
+         <td><%= postmod.created_at %></td>
+         <td><%= postmod.updated_at %></td>
+      
+        <td><%=link_to 'Show', postmod %></td> 
+        <% if current_user.admin == true %>
+        <td><%= link_to 'Edit', edit_postmod_path(postmod) %></td>
+        <% end %>
+        <% if current_user.admin == true %>
+        <td><%= link_to 'Destroy', postmod, method: :delete, data: {confirm: 'Are You Sure?' } %>
+        <% end %>
+       </td>
+      </tr>
+    <% end %>
+
+<%end%>
+</tbody>
+</table>
+</body></html>
+
+
+

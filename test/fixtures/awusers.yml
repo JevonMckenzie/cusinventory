@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  newstn: MyString
+  newsec: MyString
+  acctype: MyString
+  fxntype: MyString
+  supname: MyString
+
+two:
+  newstn: MyString
+  newsec: MyString
+  acctype: MyString
+  fxntype: MyString
+  supname: MyString

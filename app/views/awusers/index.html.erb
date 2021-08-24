@@ -1,0 +1,28 @@
+ <script>
+   $(document).ready(function() {
+    $('#username').change(function() {
+       $.ajax({
+         url: "<%= username_path %>",
+         data: {
+         	username: $("#username option:selected").text()
+         		},
+         dataType: "script",
+         
+       });
+     });
+   });
+</script>
+
+
+<p id="notice"> <%= notice %> </p>
+
+<%= select_tag "username", options_for_select(User.all.map{|c| [c.name, c.email]}), {:id=>"username"} %>
+
+
+<div id= "result_div">
+	<h4> New User To Add </h4>
+</div>
+<br>
+
+ <%= link_to 'New Asycuda World User', new_awuser_path %>         
+                          

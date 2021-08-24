@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-   before_action :initialize_search, only: :deployed_by_section
+   before_action :initialize_search, only: :index
     # before_action :admin_required, except: [:deployed_by_section]
     # before_action :authenticate_user!
 
@@ -32,6 +33,16 @@ class OrdersController < ApplicationController
     @expired = Order.expired?
    end
   end
+
+    def corozal_cargo
+  
+    @orders = Order.all
+    @members = Member.all
+    @items = Item.all
+    @active = Order.active?
+    @expired = Order.expired?
+   end
+
 
     def deployed_by_section
         @orders = Order.all
@@ -137,9 +148,43 @@ class OrdersController < ApplicationController
   end
 
 
-    def clear
+
+  def clear
     clear_session(:search_name, :filter_name, :filter)
-    redirect_to reports_path
+    redirect_to orders_path
+  end
+
+  def show
+  
+  end
+
+  private
+
+  def initialize_search
+    @reports = Order.all
+   
+    session[:search_name] ||= params[:search_name]
+    session[:filter] = params[:filter]
+    params[:filter_option] = nil if params[:filter_option] == ""
+    session[:filter_option] = params[:filter_option]
+  end
+
+ # def handle_search_name
+ #   if session[:search_name]
+ #     @reports = Report.where("name LIKE ?", "%#{session[:search_name].titleize}%")
+ #     @orders = @orders.where(section: @report.pluck(:order))
+ #   else
+ #     @reports = Report.all
+ #   end
+ # end
+
+  def handle_filters
+    if session[:filter_option] && session[:filter] == "station"
+      @reports = @reports.where(position: session[:filter_option])
+      @orders = @orders.where(section: @orders.pluck(:order))
+    elsif session[:filter_option] && session[:filter] == "section"
+      @reports = @reports.where(section: session[:filter_option])
+    end
   end
 
   def show

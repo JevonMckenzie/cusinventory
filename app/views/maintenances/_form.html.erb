@@ -1,0 +1,117 @@
+<%= form_for(maintenance) do |f| %>
+  <% if maintenance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(maintenance.errors.count, "error") %> prohibited this maintenance from being saved:</h2>
+
+      <ul>
+      <% maintenance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nointernet %>
+    <%= f.check_box :nointernet %>
+  </div>
+
+  <div class="field">
+    <%= f.label :compnopower %>
+    <%= f.check_box :compnopower %>
+  </div>
+
+  <div class="field">
+    <%= f.label :compshutdown %>
+    <%= f.check_box :compshutdown %>
+  </div>
+
+  <div class="field">
+    <%= f.label :novideo %>
+    <%= f.check_box :novideo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :keyboard %>
+    <%= f.check_box :keyboard %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mouse %>
+    <%= f.check_box :mouse %>
+  </div>
+
+  <div class="field">
+    <%= f.label :printerjam %>
+    <%= f.check_box :printerjam %>
+  </div>
+
+  <div class="field">
+    <%= f.label :printernowork %>
+    <%= f.check_box :printernowork %>
+  </div>
+
+  <div class="field">
+    <%= f.label :scanner %>
+    <%= f.check_box :scanner %>
+  </div>
+
+  <div class="field">
+    <%= f.label :other %>
+    <%= f.check_box :other %>
+  </div>
+
+  <div class="field">
+    <%= f.label :explanation %>
+    <%= f.text_field :explanation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :office %>
+    <%= f.check_box :office %>
+  </div>
+
+  <div class="field">
+    <%= f.label :asycuda %>
+    <%= f.check_box :asycuda %>
+  </div>
+
+  <div class="field">
+    <%= f.label :slonfreeze %>
+    <%= f.check_box :slonfreeze %>
+  </div>
+
+  <div class="field">
+    <%= f.label :othersoftware %>
+    <%= f.check_box :othersoftware %>
+  </div>
+
+  <div class="field">
+    <%= f.label :explanationsoft %>
+    <%= f.text_field :explanationsoft %>
+  </div>
+
+  <div class="field">
+    <%= f.label :locationsoft %>
+    <%= f.text_field :locationsoft %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hardware %>
+    <%= f.check_box :hardware %>
+  </div>
+
+  <div class="field">
+    <%= f.label :software %>
+    <%= f.check_box :software %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

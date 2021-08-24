@@ -1,0 +1,954 @@
+<html>
+<head>
+<title> Customs Application For Refund Of Duty </title>
+  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<style>
+table, th, td, tr {
+ border: ;
+ border-collapse: collapse;
+}
+label{
+display: ;
+}
+
+.field_with_errors input{
+  border: 1px solid red !important;
+  background-color: ;
+}
+
+.area_with_errors input{
+  border: 1px solid red !important;
+  background-color: ;
+}
+</style>
+</head> 
+
+<body style="background-color:#f5f3f2;" class="container">
+
+  
+<%= link_to 'Home', root_path %>
+
+<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<br><br>
+
+<%= link_to 'View List of Applications Submitted for Post Modification', postmods_path %><br><br>
+<br><br>
+<%= form_for @postmod, html:{ multipart: true } do |form| %> <!--(model: postmod, local: true) do |form| %>   -->
+  <% if postmod.errors.any? %>
+
+    <div id="error_explanation" style="font-color: red;">
+      <h2 style="color:red"><%= pluralize(postmod.errors.count, "error") %> prohibited this postmod from being saved:</h2>
+
+      <ul>
+        <% postmod.errors.full_messages.each do |message| %>
+          <li style="color: red;"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<!--<table><tr><td>
+<div class="field" style="">
+          <!--  <%= form.label :Brokers_Email %><br><%= form.text_field :entrynum, value:@postmod.user_id %>    -->
+              
+          <!--  </div> </td></tr>
+ </table>  -->
+<% if current_user.superadmin_role? || current_user.supervisor_role? %>
+  <h2> Section I </h2>
+  <table align="" width=100%>
+
+    <tr><td align="left" width="33.3%">
+          <div class="field" style="">
+            <%= form.label :Entry_number %><br><%= form.text_field :entrynum, :disabled=>true%>
+              
+          </div> 
+         </td>
+
+         <td align="left" width="33.3%"> 
+          <div class="field" style="">
+            <%= form.label :Office_code%> <br> <%= form.text_field :officecode, :disabled=>true %>
+               
+          </div> 
+         </td>
+
+         <td align="left" width="33.3%">
+
+         </td> 
+    </tr>
+</table>
+<hr>
+  <h2> Section II </h2>
+  <h3><u>Certifications</u></h3>
+  <table width="100%">
+    <tr><td width="33.3%" align="left">
+            <h4>Exemptions:</h4></td>
+         <td width="33.3%" align="left"><h4>Agreements:</h4></td>
+         <td width="33.3%" align="left"><h4>Permits/Certificates:</h4></td>
+    </tr>
+    <tr>
+         <td width="33.3%" align="left">
+            <div class="field" style="display: inline;">
+                 <%= form.check_box :mof, :disabled=>true %>
+                  <%= form.label :ministry_Of_Finance %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+
+  <div class="field" style="display: inline;">
+    <%= form.check_box :government, :disabled=>true %>
+    <%= form.label :government %>
+    
+  </div></td><td width="33.3%" align="left">
+      <div class="field" style="display: inline;">
+        <%= form.check_box :doe, :disabled=>true %>
+    <%= form.label :dOE %>
+    
+  </div>
+  </td></tr>
+  <tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :beltrade, :disabled=>true %>
+    <%= form.label :beltraid %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :nagreement, :disabled=>true %>
+    <%= form.label :national_Agreements, :disabled=>true %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :cpharmacy, :disabled=>true %>
+    <%= form.label :chief_Pharmacy %>
+    
+  </div></td>
+</tr>
+<tr>
+  <td width="33.3%" align="left">
+      <div class="field" style="display: inline;">
+        <%= form.check_box :motourism, :disabled=>true %>
+    <%= form.label :ministry_of_tourism %>
+    
+  </div>
+</td>
+  <td width="33.3%" align="left">
+
+
+
+    </td>
+
+  <td width="33.3%" align="left">  <div class="field" style="display: inline;">
+    <%= form.check_box :townership, :disabled=>true %>
+    <%= form.label :transfer_of_ownership %>
+    
+  </div></td></tr>
+  <tr><td width="33.3%" align="left">
+
+
+
+  <div class="field" style="display: inline;">
+    <%= form.check_box :mohealth, :disabled=>true %>
+    <%= form.label :ministry_of_health %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+
+
+
+
+  </td>
+  <td width="33.3%" align="left">
+      <div class="field" style="display: inline;">
+        <%= form.check_box :centralbank, :disabled=>true %>
+    <%= form.label :central_Bank %>
+    
+  </div>
+</td></tr>
+<tr>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :moeducation, :disabled=>true %>
+    <%= form.label :ministry_of_education %>
+    
+  </div>
+</td></tr>
+<tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :mosecurity, :disabled=>true %>
+    <%= form.label :ministry_of_national_security %>
+    
+  </div>
+</td></tr>
+<tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :dciagency, :disabled=>true %>
+    <%= form.label :diplomatic_Consulate_International_Agency %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :bosie, :disabled=>true %>
+    <%= form.label :bureau_of_Standards_Import_Export %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">   
+  <div class="field" style="display: inline;">
+    <%= form.label :other%><br>
+    <%= form.text_area :otherexcert, :disabled=>true %>
+  </div>
+  </td></tr>
+
+</table>
+<br><br>
+<table width="100%">
+
+<tr><td width="33.3%" align="left"><h3><u>General Modification</u>:</h3></td> 
+    <td width="33.3%" align="left">
+    <div class="field" style="display: inline;">
+      <%= form.label :amenment_fee_receipt_for_general_modification %>
+       <%= form.number_field :amendfeerecgm, :disabled=>true %>
+    </div>
+    </td>
+    <td width="33.3%" align="left"></td>
+</tr>
+<tr>
+<td width="33.3%" align="left">
+
+ <div class="field" style="display: inline;">
+  <%= form.check_box :exporter, :disabled=>true %>
+    <%= form.label :exporter %>  
+  </div>
+</td>
+
+
+  <td width="33.3%" align="left">
+
+
+  <div class="field" style="display: inline;">
+    <%= form.check_box :importer, :disabled=>true %>
+    <%= form.label :importer %>
+    
+  </div>
+</td>
+
+
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :noitems, :disabled=>true %>
+    <%= form.label :number_of_items %>
+    
+  </div>
+</td>
+</tr>
+<tr>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :nopackage, :disabled=>true %>
+    <%= form.label :no_package %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :vessel, :disabled=>true %>
+    <%= form.label :Vessel %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.check_box :fccontainernum, :disabled=>true %> <%= form.label :full_container_Container_number %>
+    
+  </div>
+</td></tr>
+<tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :location, :disabled=>true %> <%= form.label :location %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :nmass, :disabled=>true %> <%= form.label :net_mass %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :tainvoice, :disabled=>true %> <%= form.label :total_Amount_invoice %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.check_box :description, :disabled=>true %> <%= form.label :description %>
+    
+  </div>
+</td>
+  <td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+  <%= form.check_box :commcode, :disabled=>true %>  <%= form.label :commodity_code %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :vinserial, :disabled=>true %><%= form.label :vin_serial_or__number %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.check_box :airbill, :disabled=>true %> <%= form.label :airway_bill %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.check_box :origin, :disabled=>true %> <%= form.label :origin %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :gmass, :disabled=>true %><%= form.label :gross_mass %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :currency, :disabled=>true %> <%= form.label :currency %>
+   
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :iquantity, :disabled=>true %><%= form.label :item_Quantity %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :procexproccode, :disabled=>true %><%= form.label :procedure_Extended_Procedure_Code %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :itemvalue, :disabled=>true %><%= form.label :item_value %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :prevdocrefnum, :disabled=>true %><%= form.label :previous_Document_Reference_Number %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :bolading, :disabled=>true %><%= form.label :bolading %>
+    
+  </div>
+</td></tr></table><br><br>
+
+ <table width="100%">
+  <tr><td width="33.3%" align="left"><h3><u>Attachment of Supporting Documents</u>:</h3></td> 
+    <td width="33.3%" align="left">
+    <div class="field" style="">
+     <%= form.label :ammendment_fee_receipt_for_attachment_of_supporting_document %> <%= form.number_field :amendfeerec, :disabled=>true %>
+       
+    </div>
+    </td>
+    <td width="33.3%" align="left"></td>
+  </tr></table>
+
+<table width="100%">
+  <tr>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.check_box :transletter, :disabled=>true %> <%= form.label :transletter %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :invoice, :disabled=>true %><%= form.label :invoice %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :vvslip, :disabled=>true %><%= form.label :vehicle_Valuation_Slip %>
+    
+  </div>
+</td></tr>
+<tr>
+  <td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :sscertificate, :disabled=>true %><%= form.label :short_Shipment_Certificate %>
+    
+  </div>
+</td>
+
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :popayment, :disabled=>true %><%= form.label :proof_of_payment %>
+    
+  </div>
+</td>
+
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :certorigin, :disabled=>true %><%= form.label :certificate_of_origin %>
+    
+  </div>
+</td></tr>
+<tr>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :worksheet, :disabled=>true %><%= form.label :worksheet %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :overlandedcert, :disabled=>true %><%= form.label :overlanded_Certificate %>
+    
+  </div>
+</td>
+</tr>
+
+<tr><td width="33.3%" align="left">
+ <div class="field" style="display: inline;">
+    <%= form.label :Other %><br><%= form.text_area :othercertbox, :disabled=>true %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.label :reason %> <br><%= form.text_area :reason, :disabled=>true %>
+    
+  </div></td>
+  <td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.label :attach_file %> <%= form.file_field :pdfile, :disabled=>true %>
+    
+  </div></td> 
+</tr>
+</table>
+
+
+
+<% else %>
+
+
+  <h2> Section I </h2>
+  <table align="" width=100%>
+    <tr><td align="left" width="33.3%">
+          <div class="field" style="">
+            <%= form.label :Entry_number %><br><%= form.text_field :entrynum%>
+              
+          </div> 
+         </td>
+
+         <td align="left" width="33.3%"> 
+          <div class="field" style="">
+            <%= form.label :Office_code %> <br> <%= form.text_field :officecode %>
+               
+          </div> 
+         </td>
+
+         <td align="left" width="33.3%">
+
+         </td> 
+    </tr>
+</table>
+<hr>
+  <h2> Section II </h2>
+  <h3><u>Certifications</u></h3>
+  <table width="100%">
+    <tr><td width="33.3%" align="left">
+            <h4>Exemptions:</h4></td>
+         <td width="33.3%" align="left"><h4>Agreements:</h4></td>
+         <td width="33.3%" align="left"><h4>Permits/Certificates:</h4></td>
+    </tr>
+    <tr>
+         <td width="33.3%" align="left">
+            <div class="field" style="display: inline;">
+                 <%= form.check_box :mof %>
+                  <%= form.label :ministry_Of_Finance %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+
+  <div class="field" style="display: inline;">
+    <%= form.check_box :government %>
+    <%= form.label :government %>
+    
+  </div></td><td width="33.3%" align="left">
+      <div class="field" style="display: inline;">
+        <%= form.check_box :doe %>
+    <%= form.label :dOE %>
+    
+  </div>
+  </td></tr>
+  <tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :beltrade %>
+    <%= form.label :beltraid %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :nagreement %>
+    <%= form.label :national_Agreements %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :cpharmacy %>
+    <%= form.label :chief_Pharmacy %>
+    
+  </div></td>
+</tr>
+<tr>
+  <td width="33.3%" align="left">
+      <div class="field" style="display: inline;">
+        <%= form.check_box :motourism %>
+    <%= form.label :ministry_of_tourism %>
+    
+  </div>
+</td>
+  <td width="33.3%" align="left">
+
+
+
+    </td>
+
+  <td width="33.3%" align="left">  <div class="field" style="display: inline;">
+    <%= form.check_box :townership %>
+    <%= form.label :transfer_of_ownership %>
+    
+  </div></td></tr>
+  <tr><td width="33.3%" align="left">
+
+
+
+  <div class="field" style="display: inline;">
+    <%= form.check_box :mohealth %>
+    <%= form.label :ministry_of_health %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+
+
+
+
+  </td>
+  <td width="33.3%" align="left">
+      <div class="field" style="display: inline;">
+        <%= form.check_box :centralbank %>
+    <%= form.label :central_Bank %>
+    
+  </div>
+</td></tr>
+<tr>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :moeducation %>
+    <%= form.label :ministry_of_education %>
+    
+  </div>
+</td></tr>
+<tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :mosecurity %>
+    <%= form.label :ministry_of_national_security %>
+    
+  </div>
+</td></tr>
+<tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :dciagency %>
+    <%= form.label :diplomatic_Consulate_International_Agency %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :bosie %>
+    <%= form.label :bureau_of_Standards_Import_Export %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">   
+  <div class="field" style="display: inline;">
+    <%= form.label :other%><br>
+    <%= form.text_area :otherexcert %>
+  </div>
+  </td></tr>
+
+</table>
+<br><br>
+<table width="100%">
+
+<tr><td width="33.3%" align="left"><h3><u>General Modification</u>:</h3></td> 
+    <td width="33.3%" align="left">
+    <div class="field" style="display: inline;">
+      <%= form.label :amenment_fee_receipt_for_general_modification %>
+       <%= form.number_field :amendfeerecgm %>
+    </div>
+    </td>
+    <td width="33.3%" align="left"></td>
+</tr>
+<tr>
+<td width="33.3%" align="left">
+
+ <div class="field" style="display: inline;">
+  <%= form.check_box :exporter %>
+    <%= form.label :exporter %>  
+  </div>
+</td>
+
+
+  <td width="33.3%" align="left">
+
+
+  <div class="field" style="display: inline;">
+    <%= form.check_box :importer %>
+    <%= form.label :importer %>
+    
+  </div>
+</td>
+
+
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :noitems %>
+    <%= form.label :number_of_items %>
+    
+  </div>
+</td>
+</tr>
+<tr>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :nopackage %>
+    <%= form.label :no_package %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :vessel %>
+    <%= form.label :Vessel %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.check_box :fccontainernum %> <%= form.label :full_container_Container_number %>
+    
+  </div>
+</td></tr>
+<tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :location %> <%= form.label :location %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :nmass %> <%= form.label :net_mass %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :tainvoice %> <%= form.label :total_Amount_invoice %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.check_box :description %> <%= form.label :description %>
+    
+  </div>
+</td>
+  <td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+  <%= form.check_box :commcode %>  <%= form.label :commodity_code %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :vinserial %><%= form.label :vin_serial_or__number %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.check_box :airbill %> <%= form.label :airway_bill %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.check_box :origin %> <%= form.label :origin %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :gmass %><%= form.label :gross_mass %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :currency %> <%= form.label :currency %>
+   
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :iquantity %><%= form.label :item_Quantity %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :procexproccode %><%= form.label :procedure_Extended_Procedure_Code %>
+    
+  </div>
+</td></tr><tr><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :itemvalue %><%= form.label :item_value %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :prevdocrefnum %><%= form.label :previous_Document_Reference_Number %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :bolading %><%= form.label :bolading %>
+    
+  </div>
+</td></tr></table><br><br>
+
+ <table width="100%">
+  <tr><td width="33.3%" align="left"><h3><u>Attachment of Supporting Documents</u>:</h3></td> 
+    <td width="33.3%" align="left">
+    <div class="field" style="">
+     <%= form.label :ammendment_fee_receipt_for_attachment_of_supporting_document %> <%= form.number_field :amendfeerec %>
+       
+    </div>
+    </td>
+    <td width="33.3%" align="left"></td>
+  </tr></table>
+
+<table width="100%">
+  <tr>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.check_box :transletter %> <%= form.label :transletter %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :invoice %><%= form.label :invoice %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :vvslip %><%= form.label :vehicle_Valuation_Slip %>
+    
+  </div>
+</td></tr>
+<tr>
+  <td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :sscertificate %><%= form.label :short_Shipment_Certificate %>
+    
+  </div>
+</td>
+
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :popayment %><%= form.label :proof_of_payment %>
+    
+  </div>
+</td>
+
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :certorigin %><%= form.label :certificate_of_origin %>
+    
+  </div>
+</td></tr>
+<tr>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :worksheet %><%= form.label :worksheet %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :overlandedcert %><%= form.label :overlanded_Certificate %>
+    
+  </div>
+</td>
+</tr>
+
+<tr><td width="33.3%" align="left">
+ <div class="field" style="display: inline;">
+    <%= form.label :Other %><br><%= form.text_area :othercertbox %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.label :reason %> <br><%= form.text_area :reason %>
+    
+  </div></td>
+  <td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+   <%= form.label :attach_file %> <%= form.file_field :pdfile %>
+    
+  </div></td> 
+</tr>
+</table>
+<hr>
+
+<% end %>
+
+
+
+
+
+<% if current_user.superadmin_role? || current_user.supervisor_role? %>
+
+      <h2>Section III</h2>
+      <h2 align="center"> For Official Use Only </h2>
+
+
+      <table width="100%">
+        <tr>
+       <td width="33.3%" align="left">
+        <div class="field" style="display: inline;">
+          <%= form.check_box :approved %><%= form.label :Approved %>
+          
+        </div>
+      </td>
+      <td width="33.3%" align="left">
+        <div class="field" style="display: inline;">
+          <%= form.check_box :denied %><%= form.label :Denied %>
+          
+        </div>
+      </td>
+        <td width="33.3%" align="left">
+        <div class="field" style="display: inline;">
+          <%= form.check_box :addinfo %><%= form.label :Add_Info %>
+          
+        </div>
+      </td></tr>
+      </table><table width="100%">
+        <tr>
+       <td width="33.3%" align="left">
+       
+        <div class="field" style=";">
+          <%= form.label :reason_denial_or_add_info %><br><%= form.text_area :adminreason %>
+          
+        </div>
+      </td>
+
+      <td width="33.3%" align="left">
+        <div class="field" style=";">
+          <%= form.label :ammendment_cost_to_be_paid %><br><%= form.number_field :ammendcost %>
+          
+        </div>
+      </td><td width="33.3%" align="left">
+        <div class="field" style=";">
+          
+          
+        </div>
+      </td></tr>
+      </table>
+      <table><tr>
+        <td width="50%" align="left">
+        <div class="field" style="display: inline;">
+          <%= form.check_box :recorded %><%= form.label :record_postmodification %>
+          
+        </div>
+      </td></tr>
+
+      </table>
+
+
+      <br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% else
+  %>
+
+
+
+<h2>Section III </h2>
+<h2 align="center"> For Official Use Only  (Read Only for Brokers)</h2>
+
+
+<table width="100%">
+  <tr>
+ <td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :approved, :disabled=>true %><%= form.label :Approved %>
+    
+  </div>
+</td>
+<td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :denied, :disabled=>true %><%= form.label :Denied %>
+    
+  </div>
+</td>
+  <td width="33.3%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :addinfo, :disabled=>true %><%= form.label :Add_Info %>
+    
+  </div>
+</td></tr>
+</table><table width="100%">
+  <tr>
+ <td width="33.3%" align="left">
+ 
+  <div class="field" style=";">
+    <%= form.label :reason_denial_or_add_info %><br><%= form.text_area :adminreason, :disabled=>true %>
+    
+  </div>
+</td>
+
+<td width="33.3%" align="left">
+  <div class="field" style=";">
+    <%= form.label :ammendment_cost_to_be_paid %><br><%= form.number_field :ammendcost, :disabled=>true %>
+    
+  </div>
+</td><td width="33.3%" align="left">
+  <div class="field" style=";">
+    
+    
+  </div>
+</td></tr>
+</table>
+<table><tr>
+  <td width="50%" align="left">
+  <div class="field" style="display: inline;">
+    <%= form.check_box :recorded, :disabled=>true %><%= form.label :record_postmodification %>
+    
+  </div>
+</td></tr>
+
+</table>
+
+<br>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+
+
+<% end %>
+
+<% end %>
+</div>
+</html>

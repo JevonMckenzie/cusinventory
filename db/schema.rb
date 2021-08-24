@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210813141439) do
+ActiveRecord::Schema.define(version: 20210824152834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20210813141439) do
     t.datetime "updated_at",  null: false
     t.string   "code"
     t.string   "description"
+  end
+
+  create_table "awusers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "username"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_awusers_on_user_id", using: :btree
+    t.index ["username"], name: "index_awusers_on_username", using: :btree
   end
 
   create_table "cusections", primary_key: "secode", force: :cascade do |t|
@@ -218,9 +227,6 @@ ActiveRecord::Schema.define(version: 20210813141439) do
     t.string   "cmisuser"
     t.boolean  "cusadmin"
     t.integer  "asyfxn"
-    t.integer  "stncode"
-    t.integer  "rankcode"
-    t.integer  "secode"
     t.integer  "acctype_id"
     t.integer  "asyfxn_id"
     t.integer  "custation_id"
@@ -228,9 +234,14 @@ ActiveRecord::Schema.define(version: 20210813141439) do
     t.integer  "section_id"
     t.integer  "supervisor_id"
     t.integer  "acctcode"
+    t.integer  "stncode"
+    t.integer  "rankcode"
+    t.integer  "secode"
     t.string   "supcode"
+    t.integer  "cusection_id"
     t.index ["acctcode"], name: "index_users_on_acctcode", using: :btree
     t.index ["asyfxn"], name: "index_users_on_asyfxn", using: :btree
+    t.index ["cusection_id"], name: "index_users_on_cusection_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["rankcode"], name: "index_users_on_rankcode", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

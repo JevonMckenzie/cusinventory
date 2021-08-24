@@ -83,7 +83,87 @@ body {
              
               <div class="row div2">
                 <div class="col-md-12">
+
+<form action="/orders" method="GET">
+  <label for="filter">Filter Options</label>
+  <select id="filter" name="filter" onchange="this.form.submit()">
+    <option value="">Pick a Filter Option</option>
+    <option value="station" <%= "selected" if session[:filter] == "station" %>>Filter by Station-Test</option>
+    <option value="section" <%= "selected" if session[:filter] == "section" %>>Filter by Station</option>
+  </select>
+
+
+  <% if session[:filter] == "station" %>
+    <select name="filter_option" onchange="this.form.submit()">
+      <option value="">Pick a Position</option>
+      <option value="QB">Quarterbacks</option>
+      <option value="RB">Running Backs</option> 
+      <option value="WR">Wide Recievers</option>
+      <option value="TE">Tight Ends</option>
+      <option value="K">Kickers</option>
+      <option value="DEF">Defenses</option>
+    </select>
+
+  <% elsif session[:filter] == "section" %>
+    <select name="filter_option" onchange="this.form.submit()">
+      <option value="">Choose Station</option>
+
+      <% @orders.each do |report| %>
+
+        <option value="<%= report.member.name %>"><%= report.member.name %></option>
+       
+
+      <% end %>
+    </select>
+  <% end %>
+</form>
+
+<%= link_to "Clear Filter Options", clear_path %><br>
+
+              <div class="box-body">
+                    <div class="table-responsive fix-table-height">
+                <table id="example1" class="table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Requisition Number</th>
+                      <th>Category</th>
+                      <th>Name</th>
+                      <th>serial</th>
+                     <th>Deployed By</th>
+                     <th>Deployed On</th>
+                     
+                  
+                      
+                    </tr>
+                  </thead>
+                   <tbody>
+
+<% @orders.each do |report| %>
+
+
+    <% if report.section == session[:filter_option] %>  
+  
+
+ 
+  <tr>
+<td><%= link_to "#{report.requisitionnumber}", report%> </td>
+<td><%= link_to "#{report.item.category}", report%></td>
+<td><%= link_to "#{report.item.name} ", report%></td>
+<td><%= link_to "#{report.item.serial} ", report%></td>
+<td><%= link_to "#{report.deployedby}", report%></td>
+<td><%= link_to "#{report.created_at}", report%></td>
+
+
+        </tr></tbody>
+       <% end %>
+
+
+  <% end %> </table>
+
+</div></div>
+ </div></div>
                   <div class="box">
+
                     <% if current_user.cmisuser=="YES" %>
                         <div class="box-header with-border no-print">
                           <h3 class="box-title"><%= @active.count %> Item(s) are Currently Deployed</h3>
@@ -221,7 +301,11 @@ body {
               <!-- /.row -->
             </section>
       <!-- /.content -->
-            </div></div>
+           
+
+
+
+
 
 
         <div class="no-print">

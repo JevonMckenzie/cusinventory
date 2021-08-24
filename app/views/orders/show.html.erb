@@ -1,0 +1,16 @@
+<h1> <%= @report.name %> | <%= @report.team %> </h1>
+
+<% if session[:position_search] && session[:user_id] %>
+  <%= link_to "Add to Roster", add_player_path(report_id: @report.id) %><br>
+  <%= link_to "Back to  #{session[:position_search]}'s", report_search_path %>
+<% end %>
+
+<ul>
+  <li>
+    Position: <%= @report.station %>
+  </li>
+  <li>
+    DOB: <%= @report.category %>
+  </li>
+
+</ul>
