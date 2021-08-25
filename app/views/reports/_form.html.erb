@@ -1,6 +1,0 @@
-  <%= form_for(@report) do |b| %>
-                    
-    <%= b.label :Stationname%><br>
-    <%= b.collection_select(:member_id, Member.all, :id, :name, prompt: true) %>
-     <%= b.submit 'Submit', class: 'btn btn-primary' %>
-  <% end %> 
