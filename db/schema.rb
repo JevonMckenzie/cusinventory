@@ -91,32 +91,6 @@ ActiveRecord::Schema.define(version: 20210824152834) do
     t.decimal  "price",              precision: 8, scale: 2
     t.string   "consumable"
     t.string   "condemn"
-    t.string   "receipt"
-  end
-
-  create_table "maintenances", force: :cascade do |t|
-    t.boolean  "nointernet"
-    t.boolean  "compnopower"
-    t.boolean  "compshutdown"
-    t.boolean  "novideo"
-    t.boolean  "keyboard"
-    t.boolean  "mouse"
-    t.boolean  "printerjam"
-    t.boolean  "printernowork"
-    t.boolean  "scanner"
-    t.boolean  "other"
-    t.string   "explanation"
-    t.string   "location"
-    t.boolean  "office"
-    t.boolean  "asycuda"
-    t.boolean  "slonfreeze"
-    t.boolean  "othersoftware"
-    t.string   "explanationsoft"
-    t.string   "locationsoft"
-    t.boolean  "hardware"
-    t.boolean  "software"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
   end
 
   create_table "members", force: :cascade do |t|
@@ -159,17 +133,8 @@ ActiveRecord::Schema.define(version: 20210824152834) do
   create_table "reports", force: :cascade do |t|
     t.string   "quantity"
     t.boolean  "status"
-    t.integer  "item_id"
-    t.integer  "member_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "station"
-    t.string   "category"
-    t.string   "section"
-    t.integer  "order_id"
-    t.index ["item_id"], name: "index_reports_on_item_id", using: :btree
-    t.index ["member_id"], name: "index_reports_on_member_id", using: :btree
-    t.index ["order_id"], name: "index_reports_on_order_id", using: :btree
   end
 
   create_table "supervisors", primary_key: "supcode", force: :cascade do |t|
@@ -226,33 +191,23 @@ ActiveRecord::Schema.define(version: 20210824152834) do
     t.string   "stationname"
     t.string   "cmisuser"
     t.boolean  "cusadmin"
-    t.integer  "asyfxn"
-    t.integer  "acctype_id"
-    t.integer  "asyfxn_id"
-    t.integer  "custation_id"
-    t.integer  "orank_id"
-    t.integer  "section_id"
-    t.integer  "supervisor_id"
     t.integer  "acctcode"
+    t.integer  "asyfxn_user"
     t.integer  "stncode"
     t.integer  "rankcode"
     t.integer  "secode"
-    t.string   "supcode"
     t.integer  "cusection_id"
     t.index ["acctcode"], name: "index_users_on_acctcode", using: :btree
-    t.index ["asyfxn"], name: "index_users_on_asyfxn", using: :btree
+    t.index ["asyfxn_user"], name: "index_users_on_asyfxn_user", using: :btree
     t.index ["cusection_id"], name: "index_users_on_cusection_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["rankcode"], name: "index_users_on_rankcode", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["secode"], name: "index_users_on_secode", using: :btree
     t.index ["stncode"], name: "index_users_on_stncode", using: :btree
-    t.index ["supcode"], name: "index_users_on_supcode", using: :btree
   end
 
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "members"
-  add_foreign_key "reports", "items"
-  add_foreign_key "reports", "members"
   add_foreign_key "toners", "users"
 end
