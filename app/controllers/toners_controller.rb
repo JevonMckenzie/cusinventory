@@ -1,6 +1,6 @@
 class TonersController < ApplicationController
   before_action :set_toner, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!#, except: [:show, :index]
+  #before_action :authenticate_user!#, except: [:show, :index]
   # GET /toners
   # GET /toners.json
   def index
