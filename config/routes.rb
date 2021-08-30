@@ -107,6 +107,7 @@ Rails.application.routes.draw do
   get 'professionaldevelopment' => 'pages#index'
   get 'reports' => 'reports#index'
   get 'inventory' => 'orders#deployed'
+  # get 'tonereq' => 'items#new'
 
   get 'allitem' => 'items#allitem'
 

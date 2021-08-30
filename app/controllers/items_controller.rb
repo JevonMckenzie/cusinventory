@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   #before_action :authenticate_user!
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-    before_action :admin_required
+   # before_action :admin_required
 
   def index
     @items = Item.all
@@ -48,6 +48,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :consumable, :category, :quantity, :description, :remaining_quantity, :price, :serial)
+    params.require(:item).permit(:name, :consumable, :category, :quantity, :description, :remaining_quantity, :price, :serial, :receipt)
   end
 end
