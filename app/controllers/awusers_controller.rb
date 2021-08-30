@@ -1,5 +1,5 @@
 class AwusersController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
   
   def index
     @awusers = Awuser.all
