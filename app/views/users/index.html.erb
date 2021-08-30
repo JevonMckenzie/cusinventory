@@ -30,6 +30,8 @@
               <div class="box-header with-border">
                 <h3 class="box-title">Basic Information</h3>
               </div>
+
+
               <script>
    $(document).ready(function() {
     $('#username').change(function() {
@@ -48,12 +50,15 @@
 
 <p id="notice"> <%= notice %> </p>
 
-<%= select_tag "username", options_for_select(User.all.map{|c| [c.email, c.email]}), {:id=>"username"} %>
+<%= select_tag "username", options_for_select(User.all.map{|c| [c.name, c.email]}), {:id=>"username"} %>
+
+
 
 
 <div id= "result_div">
   <h4> New User To Add </h4>
 </div>
+
 <br>
               <!-- /.box-header -->
               <!-- form start -->

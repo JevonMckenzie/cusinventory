@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210830172126) do
+ActiveRecord::Schema.define(version: 20210830190619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -198,6 +198,7 @@ ActiveRecord::Schema.define(version: 20210830172126) do
     t.integer  "rankcode"
     t.integer  "secode"
     t.integer  "cusection_id"
+    t.string   "username"
     t.index ["acctcode"], name: "index_users_on_acctcode", using: :btree
     t.index ["asyfxn_user"], name: "index_users_on_asyfxn_user", using: :btree
     t.index ["cusection_id"], name: "index_users_on_cusection_id", using: :btree
