@@ -12,10 +12,10 @@ table, th, td, tr {
 </head>
 
 
-<% if @awuser_with_class.empty? %>
+<% if @selected_user.empty? %>
 	<h4> No records to Testing</h4>
 <% else %>
-
+  <%= puts @selected_user %>
 	<table width="100%">
 		<thead>
 			<tr>
@@ -29,8 +29,10 @@ table, th, td, tr {
 			</tr>
 		</thead>
 		<tbody>
-		<% @awuser_with_class.each do |user| %>
+		<% @selected_user.each do |user| %>
+
 		<tr>
+			<td>@selected_user</td>
 			<td> <%= user.email%> </td>
 			<td> <%= user.orank_id%> </td>
 			<td> <%= user.asyfxn_id%> </td>

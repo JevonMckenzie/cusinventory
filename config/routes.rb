@@ -58,8 +58,8 @@ Rails.application.routes.draw do
   ##  collection { post :import }
   #end
 
-  get "users/username" => 'users#username', as: "username" 
-  resources :users do
+    get "users/username" => 'users#username', as: "username" 
+  resources :awusers do
     collection { post :import }
   end
 

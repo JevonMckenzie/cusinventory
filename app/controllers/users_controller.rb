@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-   skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
   before_action :set_user
 
   def new
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   end
 
     def username
-    @awuser_with_class = User.where(email: params[:username] )
+    @selected_user = User.where(email: params[:username] )
       respond_to do |format|
         format.js 
         format.html
@@ -58,6 +58,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :cmisuser, :cusadmin, :orank_id, :cusection_id, :custation_id, :acctype_id, :asyfxn_id, :section_id, :supervisor_id, :stationname)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :cmisuser, :cusadmin, :orank_id, :cusection_id, :custation_id, :acctype_id, :asyfxn_id, :section_id, :supervisor_id, :stationname, :username)
     end
 end
