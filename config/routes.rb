@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get 'awusers/new'
 
    
-
+  get 'users' => 'users#index'
   get 'asyfxn/new'
 
    get 'asyfxn/create'

@@ -46,20 +46,66 @@
               <div class="box-body">
 
                        <div class="form-group">
-                  <label>Function Code</label>
-                  <%= f.text_field :user_id, class: "form-control", placeholder: "Function ID"%>
+                  <label>Officer's Name</label>
+                  <%= f.text_field :username, class: "form-control", placeholder: "Function ID"%>
                 </div>
 
                         <div class="form-group">
-                  <label>Function Code </label>
+                  <label>Phisical Address </label>
                   <%= f.text_field :username, class: "form-control", placeholder: "Function Code", required: true  %>
                 </div>
 
                  <div class="form-group">
-                  <label>Description</label>
+                  <label>Contact Number</label>
                   <%= f.text_field :username, class: "form-control", placeholder: "Description of Function", required: true  %>
                 </div>
-                    
+
+                   <div class="form-group">
+                  <label>Email Address</label>
+                  <%= f.text_field :username, class: "form-control", placeholder: "Description of Function", required: true  %>
+                </div>
+               
+               <hr>
+ <h2> Officer's Current Rank </h2>
+               <table>
+                <tr>
+                  <td> 
+
+                    <div class="form-group">
+                  <label>Officer's Name</label>
+                  <%= f.check_box :username, class: "form-control"%>
+                    </div>
+
+                  </td><td>
+
+                    <div class="form-group">
+                  <label>Phisical Address </label>
+                  <%= f.check_box :username, class: "form-control", placeholder: "Function Code"  %>
+                   </div>
+
+                 </td>
+               </tr>
+
+               <tr>
+                <td>
+
+                 <div class="form-group">
+                  <label>Contact Number</label>
+                  <%= f.check_box :username, class: "form-control", placeholder: "Description of Function"  %>
+                </div>
+
+                   <div class="form-group">
+                  <label>Email Address</label>
+                  <%= f.check_box :username, class: "form-control", placeholder: "Description of Function"  %>
+                </div>
+               </td></tr>
+
+
+             </table>
+
+              
+
+
               
               <!-- /.box-body -->
               <div class="box-footer">
