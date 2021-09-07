@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210824152834) do
+ActiveRecord::Schema.define(version: 20210907202332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +30,84 @@ ActiveRecord::Schema.define(version: 20210824152834) do
   end
 
   create_table "awusers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "username"
     t.integer  "user_id"
+    t.boolean  "comptroller_of_customs"
+    t.boolean  "deputy_comptroller"
+    t.boolean  "internal_auditor"
+    t.boolean  "first_class_clerk"
+    t.boolean  "officer1"
+    t.boolean  "officerIII"
+    t.boolean  "examinerII"
+    t.boolean  "system_admin1"
+    t.boolean  "dbadmin2"
+    t.boolean  "netadmin1"
+    t.boolean  "legal_councel"
+    t.boolean  "fo"
+    t.boolean  "second_class_clerk"
+    t.boolean  "OfficerII"
+    t.boolean  "examiner1"
+    t.boolean  "examinerIII"
+    t.boolean  "system_adminII"
+    t.boolean  "developer"
+    t.boolean  "bze_city_headquarters"
+    t.boolean  "big_creek"
+    t.boolean  "consejo"
+    t.boolean  "dangriga"
+    t.boolean  "owalk"
+    t.boolean  "sanpedro"
+    t.boolean  "tvillage"
+    t.boolean  "benque"
+    t.boolean  "pgia"
+    t.boolean  "pg"
+    t.boolean  "santaelena"
+    t.boolean  "bluecreek"
+    t.boolean  "jalacte"
+    t.boolean  "postoffice"
+    t.boolean  "examination"
+    t.boolean  "shipping"
+    t.boolean  "postaudit"
+    t.boolean  "pwarehouse"
+    t.boolean  "rmanagement"
+    t.boolean  "cmis"
+    t.boolean  "examination_cargo"
+    t.boolean  "accounts"
+    t.boolean  "Excise"
+    t.boolean  "ciu"
+    t.boolean  "cusadministration"
+    t.boolean  "pgia_passenger"
+    t.boolean  "pgia_cargo"
+    t.boolean  "acct_containerexam"
+    t.boolean  "acct_accounts"
+    t.boolean  "acct_warehouse"
+    t.boolean  "acct_enforcement"
+    t.boolean  "acct_cusadmin"
+    t.boolean  "acct_pgia"
+    t.boolean  "acct_benque"
+    t.boolean  "acct_pg"
+    t.boolean  "acct_santaelena"
+    t.boolean  "acct_tvillage"
+    t.boolean  "acct_lcargoexam"
+    t.boolean  "acct_rmanagement"
+    t.boolean  "acct_shipping"
+    t.boolean  "acct_paudit"
+    t.boolean  "acct_aworldadmin"
+    t.boolean  "acct_bigcreek"
+    t.boolean  "acct_owalk"
+    t.boolean  "acct_sanpedro"
+    t.boolean  "acct_dangriga"
+    t.boolean  "acct_postoffice"
+    t.string   "sup_name"
+    t.datetime "oic_deputy_sigdate"
+    t.string   "oic_deputy"
+    t.datetime "sup_sigdate"
+    t.string   "vetted_approved"
+    t.datetime "vetted_approved_date"
+    t.boolean  "ass_comptroller"
+    t.boolean  "aworldadmin"
+    t.text     "addinfo"
     t.index ["user_id"], name: "index_awusers_on_user_id", using: :btree
     t.index ["username"], name: "index_awusers_on_username", using: :btree
   end
@@ -91,6 +165,7 @@ ActiveRecord::Schema.define(version: 20210824152834) do
     t.decimal  "price",              precision: 8, scale: 2
     t.string   "consumable"
     t.string   "condemn"
+    t.string   "receipt"
   end
 
   create_table "members", force: :cascade do |t|
@@ -198,6 +273,7 @@ ActiveRecord::Schema.define(version: 20210824152834) do
     t.integer  "rankcode"
     t.integer  "secode"
     t.integer  "cusection_id"
+    t.string   "username"
     t.index ["acctcode"], name: "index_users_on_acctcode", using: :btree
     t.index ["asyfxn_user"], name: "index_users_on_asyfxn_user", using: :btree
     t.index ["cusection_id"], name: "index_users_on_cusection_id", using: :btree

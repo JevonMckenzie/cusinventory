@@ -1,3 +1,8 @@
+<style>
+     table, span { background:; color: }
+     th, td { background: ; width: 20%; align="center"}
+</style>
+
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
     <%= render 'layouts/header' %>
@@ -23,8 +28,8 @@
         <% if current_user.admin? %>
         <div class="row">
           <!-- left column -->
-          <div class="col-md-6">
-            <!-- general form elements -->
+          <div class="">
+            <!-- general form elements col-md-6" for div above -->
             <div class="box box-header">
               <div class="box-header with-border">
                 <h3 class="box-title">Basic Information</h3>
@@ -47,63 +52,581 @@
 
                        <div class="form-group">
                   <label>Officer's Name</label>
-                  <%= f.text_field :username, class: "form-control", placeholder: "Function ID"%>
+                  <%= f.text_field :username, class: "form-control", placeholder: "Name of Officer"%>
                 </div>
 
                         <div class="form-group">
                   <label>Phisical Address </label>
-                  <%= f.text_field :username, class: "form-control", placeholder: "Function Code", required: true  %>
+                  <%= f.text_field :username, class: "form-control", placeholder: "Officer's Address", required: true  %>
                 </div>
 
                  <div class="form-group">
                   <label>Contact Number</label>
-                  <%= f.text_field :username, class: "form-control", placeholder: "Description of Function", required: true  %>
+                  <%= f.text_field :username, class: "form-control", placeholder: "Officer's Contact Number", required: true  %>
                 </div>
 
                    <div class="form-group">
                   <label>Email Address</label>
-                  <%= f.text_field :username, class: "form-control", placeholder: "Description of Function", required: true  %>
+                  <%= f.text_field :username, class: "form-control", placeholder: "Officer's Email Address", required: true  %>
                 </div>
                
                <hr>
  <h2> Officer's Current Rank </h2>
-               <table>
-                <tr>
-                  <td> 
-
-                    <div class="form-group">
-                  <label>Officer's Name</label>
-                  <%= f.check_box :username, class: "form-control"%>
-                    </div>
-
-                  </td><td>
-
-                    <div class="form-group">
-                  <label>Phisical Address </label>
-                  <%= f.check_box :username, class: "form-control", placeholder: "Function Code"  %>
-                   </div>
-
-                 </td>
-               </tr>
+ <hr>
+               <table style=display:inline-block width="100%">
+              
 
                <tr>
                 <td>
 
-                 <div class="form-group">
-                  <label>Contact Number</label>
-                  <%= f.check_box :username, class: "form-control", placeholder: "Description of Function"  %>
+                 <div class="checkbox">
+                  <label class="checkbox"><input type="checkbox"><%= f.check_box :comptroller_of_customs  %>Comptroller of Customs</label>
+
+               
+                </div>
+              </td>
+
+              <td>
+
+                   <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :ass_comptroller  %>Assistant Comptroller</label>
+                  
+                </div>
+              </td>
+           
+
+              <td>
+
+                        <div class="checkbox">
+                  <label class="checkbox"> <%= f.check_box :ass_comptroller  %><input type="checkbox">Assistant Comptroller</label>
+                 
+                </div>
+              </td>
+
+              <td>
+
+                        <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :internal_auditor  %><input type="checkbox">Internal Auditor</label>
+                  
                 </div>
 
-                   <div class="form-group">
-                  <label>Email Address</label>
-                  <%= f.check_box :username, class: "form-control", placeholder: "Description of Function"  %>
+              </td>
+
+              <td>
+                        <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :first_class_clerk  %><input type="checkbox">First Class Clerk</label>
+                  
                 </div>
-               </td></tr>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                           <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :officer1  %><input type="checkbox">Customs Officer1</label>
+                  
+                </div>
+              </td>
+
+              <td>
+                           <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :officerIII  %><input type="checkbox">Customs Officer III</label>
+                  
+                </div>
+              </td>
+
+              <td>
+
+                     <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :examinerII  %><input type="checkbox">Customs Examiner II</label>
+                  
+                </div>
+              </td>
+
+              <td>
+                  <div class="checkbox">
+                    <label class="checkbox"><input type="checkbox"><%= f.check_box :system_admin1  %>System Administrator I</label>
+                  
+                </div>
+              </td>
+
+              <td>
+
+                       <div class="checkbox">
+                  <label class="checkbox"><input type="checkbox"><%= f.check_box :dbadmin2  %>Database Administrator II</label>
+                  
+                </div>
+              </td>
+            </tr>
+
+              <tr>
+
+                <td>
+
+                  <div class="checkbox">
+                    <label class="checkbox"><input type="checkbox"><%= f.check_box :netadmin1  %>Network Administrator I</label>
+                  
+                </div>
+              </td>
+
+              <td>
+
+                  <div class="checkbox">
+                     <label><input type="checkbox"><%= f.check_box :deputy_comptroller  %>Deputy Comptroller</label>
+                  
+                </div>
+              </td>
+
+              <td>
+
+
+                  <div class="checkbox">
+                    <label><input type="checkbox"><%= f.check_box :deputy_comptroller  %>Legal Councel</label>
+                  
+                </div>
+              </td>
+
+              <td>
+
+
+
+                       <div class="checkbox">
+                  <label><input type="checkbox"> <%= f.check_box :deputy_comptroller  %>Finance Officer</label>
+                 
+                </div>
+              </td>
+
+              <td>
+
+
+                       <div class="checkbox">
+                  <label><input type="checkbox"><%= f.check_box :second_class_clerk  %>Second Class Clerk</label>
+                  
+                </div>
+              </td>
+
+            </tr>
+
+
+              <tr>
+
+              <td>
+                <div class="checkbox">
+                  <label><input type="checkbox">  <%= f.check_box :OfficerII  %>Customs Officer II</label>
+                
+                </div>
+              </td>
+
+              <td>
+                 <div class="checkbox">
+                   <label><input type="checkbox">  <%= f.check_box :examiner1  %>Customs Examiner I</label>
+                
+                </div>
+              </td>
+
+              <td>
+                       <div class="checkbox">
+                  <label><input type="checkbox"> <%= f.check_box :examinerIII  %>Customs Examiner III</label>
+                 
+                </div>
+              </td>
+
+              <td>
+
+                  <div class="checkbox">
+                    <label><input type="checkbox"><%= f.check_box :system_adminII  %>System Administrator II</label>
+                  
+                </div>
+              </td>
+
+                <td>
+                 <div class="checkbox">
+                    <label><input type="checkbox"><%= f.check_box :developer  %>Software Developer</label>
+                  
+                </div>
+
+               </td>
+
+             </tr>
+             <tr><td>
+               <hr>
+ <h2> Officer's New Customs Station </h2>
+ <hr>
+</td></tr>
+      <tr>
+                <td>
+
+                 <div class="checkbox">
+                  <label class="checkbox"><input type="checkbox"><%= f.check_box :examination  %>Examination Section (Container)</label>
+
+               
+                </div>
+              </td>
+
+              <td>
+
+                   <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :examination_cargo  %>Examination Section (Loose Cargo)</label>
+                  
+                </div>
+              </td>
+           
+
+              <td>
+
+                        <div class="checkbox">
+                  <label class="checkbox"> <%= f.check_box :shipping  %><input type="checkbox">Shipping Section</label>
+                 
+                </div>
+              </td>
+
+              <td>
+
+                        <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :accounts  %><input type="checkbox">Accoutns Section</label>
+                  
+                </div>
+
+              </td>
+
+              <td>
+                        <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :postaudit  %><input type="checkbox">Post Audit</label>
+                  
+                </div>
+              </td>
+            </tr>
+
+ <tr>
+                <td>
+
+                 <div class="checkbox">
+                  <label class="checkbox"><input type="checkbox"><%= f.check_box :Excise  %>Excise</label>
+
+               
+                </div>
+              </td>
+
+              <td>
+
+                   <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :ciu  %>CIU</label>
+                  
+                </div>
+              </td>
+           
+
+              <td>
+
+                        <div class="checkbox">
+                  <label class="checkbox"> <%= f.check_box :pwarehouse  %><input type="checkbox">Private Warehouse</label>
+                 
+                </div>
+              </td>
+
+              <td>
+
+                        <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :rmanagement  %><input type="checkbox">Risk Management</label>
+                  
+                </div>
+
+              </td>
+
+              <td>
+                        <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :cusadministration  %><input type="checkbox">Customs Administration</label>
+                  
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+              <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :cmis  %><input type="checkbox">Modernization</label>
+                  
+                </div></td>
+              </tr>
+
+              <tr><td>               <hr>
+ <h2>Applicable to PGIA Only </h2>
+ <hr></td></tr>
+
+ <tr>
+  <td>
+
+                        <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :pgia_passenger  %><input type="checkbox">PGIA Passenger</label>
+                  
+                </div>
+
+              </td>
+
+              <td>
+                        <div class="checkbox">
+                  <label class="checkbox"><%= f.check_box :pgia_cargo  %><input type="checkbox">PGIA Cargo</label>
+                  
+                </div>
+              </td>
+            </tr>
+<tr><td>
+            <hr>
+            <h2> Officer's New Account Type</h2>
+            <hr>
+</td></tr>
+
+              <tr>
+
+              <td>
+                <div class="checkbox">
+                  <label><input type="checkbox">  <%= f.check_box :acct_containerexam  %>Container Examination</label>
+                
+                </div>
+              </td>
+
+              <td>
+                 <div class="checkbox">
+                   <label><input type="checkbox">  <%= f.check_box :acct_accounts  %>Accounts</label>
+                
+                </div>
+              </td>
+
+              <td>
+                       <div class="checkbox">
+                  <label><input type="checkbox"> <%= f.check_box :acct_warehouse %>Warehouse</label>
+                 
+                </div>
+              </td>
+
+              <td>
+
+                  <div class="checkbox">
+                    <label><input type="checkbox"><%= f.check_box :acct_enforcement  %>Enforcement</label>
+                  
+                </div>
+              </td>
+
+                <td>
+                 <div class="checkbox">
+                    <label><input type="checkbox"><%= f.check_box :acct_cusadmin  %>Customs Administration</label>
+                  
+                </div>
+
+               </td>
+
+             </tr>
+
+             <tr>
+
+              <td>
+                <div class="checkbox">
+                  <label><input type="checkbox">  <%= f.check_box :acct_pgia  %>Customs PGIA</label>
+                
+                </div>
+              </td>
+
+              <td>
+                 <div class="checkbox">
+                   <label><input type="checkbox">  <%= f.check_box :acct_benque  %>Customs Benque Viejo</label>
+                
+                </div>
+              </td>
+
+              <td>
+                       <div class="checkbox">
+                  <label><input type="checkbox"> <%= f.check_box :acct_pg  %>Customs Punta Gorda</label>
+                 
+                </div>
+              </td>
+
+              <td>
+
+                  <div class="checkbox">
+                    <label><input type="checkbox"><%= f.check_box :acct_santaelena  %>Customs Santa Elena</label>
+                  
+                </div>
+              </td>
+
+                <td>
+                 <div class="checkbox">
+                    <label><input type="checkbox"><%= f.check_box :acct_tvillage  %>Customs Tourist Village</label>
+                  
+                </div>
+
+               </td>
+
+             </tr>
+
+                      <tr>
+
+              <td>
+                <div class="checkbox">
+                  <label><input type="checkbox">  <%= f.check_box :acct_lcargoexam  %>Loose Cargo Examination</label>
+                
+                </div>
+              </td>
+
+              <td>
+                 <div class="checkbox">
+                   <label><input type="checkbox">  <%= f.check_box :acct_rmanagement  %>Risk Management</label>
+                
+                </div>
+              </td>
+
+              <td>
+                       <div class="checkbox">
+                  <label><input type="checkbox"> <%= f.check_box :acct_shipping  %>Shipping</label>
+                 
+                </div>
+              </td>
+
+              <td>
+
+                  <div class="checkbox">
+                    <label><input type="checkbox"><%= f.check_box :acct_paudit  %>Post Audit</label>
+                  
+                </div>
+              </td>
+
+                <td>
+                 <div class="checkbox">
+                    <label><input type="checkbox"><%= f.check_box :aworldadmin  %>Asycuda World Administration</label>
+                  
+                </div>
+
+               </td>
+
+             </tr>
+
+                      <tr>
+
+              <td>
+                <div class="checkbox">
+                  <label><input type="checkbox">  <%= f.check_box :acct_bigcreek  %>Customs Big Creek</label>
+                
+                </div>
+              </td>
+
+              <td>
+                 <div class="checkbox">
+                   <label><input type="checkbox">  <%= f.check_box :acct_owalk  %>Customs Orage Walk</label>
+                
+                </div>
+              </td>
+
+              <td>
+                       <div class="checkbox">
+                  <label><input type="checkbox"> <%= f.check_box :acct_sanpedro  %>San Pedro</label>
+                 
+                </div>
+              </td>
+
+              <td>
+
+                  <div class="checkbox">
+                    <label><input type="checkbox"><%= f.check_box :acct_dangriga  %>Dangriga</label>
+                  
+                </div>
+              </td>
+
+                <td>
+                 <div class="checkbox">
+                    <label><input type="checkbox"><%= f.check_box :acct_postoffice  %>Post Office</label>
+                  
+                </div>
+
+               </td>
+
+             </tr>
 
 
              </table>
 
-              
+
+            <hr>
+            <h2> Additional Information Regarding Special Access Required</h2>
+            <hr>
+<div class="">
+                    <label><%= f.text_area :addinfo, size: "100x10"  %></label>
+                  
+                </div>
+
+
+     <hr>
+
+     <h2> PLEASE READ CAREFULLY, THE NOTES BELOW, BEFORE SIGNING THIS APPLICATION.</h2>
+
+     <ol>
+     <li>All sections of this application form must be completed and all questions answered. </li>
+     <li> Regardless of individual responsibilities, the applicant to whom this form pertains shall be
+responsible for the requirements / conditions set out for individuals listed in this application. </li>
+<li>The applicant agrees to all requirements and conditions set out in the Internal Customs User
+Policy that he / she will receive at the submission of this form and any other reasonable conditions
+that may be imposed by the Comptroller in respect of the registration. </li>
+<li>This completed form must bear the signatures of the Officer's immediate Supervisor, and the
+Assistant Comptroller / Deputy Comptroller responsible for the pertinent Section to which the
+Officer is being newly assigned.</li>
+
+<h2> Declaration </h2>
+<p>
+The Officer understands that any approval may be withdrawn without notice if the ASYCUDAWorld
+facility is misused. 
+</p>
+<p>
+  The Officer undertakes responsibility for any comments, amendments, observations and any
+subsequent data handling authorized as such by my individual User Profile privileges regarding any
+registered/validated Trader Document submitted to Customs as stipulated in the Internal Customs
+User Policy, Section II: OBJECTIVES, sub-paragraph “b”. 
+</p>
+<p>
+  The Officer further undertakes that any comments, amendments, observations and any subsequent
+data handling authorized as such by his / her individual User Profile privileges regarding any
+registered/validated Trader Document submitted to Customs will be true, complete, and correct as
+stipulated in the Internal Customs User Policy, Section IV: ROLES AND RESPONSIBILITIES OF
+CUSTOMS INTERNAL USERS. 
+</p>
+
+     <div class="form-group">
+                    <label><%= f.text_field :addinfo  %>Officer's Supervisor's Name</label>
+                  
+      </div>
+
+         <div class="form-group">
+                    <label><%= f.text_field :addinfo  %>Supervisor's Rank</label>
+                  
+      </div>
+
+
+  <div class="form-group">
+                    <label><%= f.text_field :addinfo  %>Supervisor's Signature</label>
+                  
+      </div>
+       <div class="form-group">
+                    <label><%= f.date_field :addinfo  %>Date of Supervisor's Signature</label>
+                  
+      </div>
+
+      <br>
+
+     <div class="form-group">
+                    <label><%= f.text_field :addinfo  %>Name of Officer-In-Charge / Deputy Comptroller</label>
+                  
+      </div>
+
+         <div class="form-group">
+                    <label><%= f.text_field :addinfo  %>Officer-In-Charge Signature</label>
+                  
+      </div>
+
+              <div class="form-group">
+                    <label><%= f.text_field :addinfo  %>Date of OIC Signature </label>
+                  
+      </div>
+
+            </div>
+
+ 
 
 
               
