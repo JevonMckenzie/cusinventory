@@ -96,6 +96,7 @@ Rails.application.routes.draw do
   resources :supervisors
   resources :supnames
   resources :awusers
+  resources :asyfxns
 
 
 

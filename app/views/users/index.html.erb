@@ -7,7 +7,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Add ASYCUDA WORLD User
+          All Users
         </h1>
         <ol class="breadcrumb">
           <li>
@@ -24,14 +24,14 @@
         <% if current_user.admin? %>
         <div class="row">
           <!-- left column -->
-          <div class="col-md-6">
+          <div class="">
             <!-- general form elements -->
             <div class="box box-header">
               <div class="box-header with-border">
                 <h3 class="box-title">Basic Information</h3>
               </div>
 
-
+<!--
               <script>
    $(document).ready(function() {
     $('#username').change(function() {
@@ -60,7 +60,7 @@
 </div>
 
 <br>
-              <!-- /.box-header -->
+    -->          <!-- /.box-header -->
               <!-- form start -->
                     <section class="content">
         <div class="row">
@@ -142,4 +142,17 @@
     <script>
       $.widget.bridge('uibutton', $.ui.button);
     </script>
+     <script>
+    $(function () {
+      $("#example1").DataTable();
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false
+      });
+    });
+  </script>
   </body>
