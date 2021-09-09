@@ -64,10 +64,12 @@
                   <label>New Password Again</label>
                   <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Enter Password Again", class: "form-control" %>
                 </div>
+                <% if current_user.admin? %>
                 <div class="form-group">
                     <label>Station Name</label>
                     <%= f.select(:stationname, options_from_collection_for_select(@member, 'name', 'name'), { include_blank: true }, { class: 'form-control', required: true }) %>
-                  </div>
+                </div>
+                <% end %>
               </div>
               <!-- /.box-body -->
               
