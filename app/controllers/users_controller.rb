@@ -6,6 +6,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def index
+    @users = User.all
+  end
+
   def show
     @user = User.find(params[:id])
   end
@@ -58,6 +62,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :cmisuser, :cusadmin, :orank_id, :cusection_id, :custation_id, :acctype_id, :asyfxn_id, :section_id, :supervisor_id, :stationname, :username)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :cmisuser, :cusadmin, :rankcode, :secode, :stncode, :acctcode, :asyfxn_user, :username)
     end
 end

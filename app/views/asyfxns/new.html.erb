@@ -31,7 +31,7 @@
               </div>
               <!-- /.box-header -->
               <!-- form start -->
-              <%= form_for @asyfxn, url: function_path, method: :post do |f| %>
+              <%= form_for @asyfxn do |f| %>
               <% if @asyfxn.errors.any? %>
               <div id="error_explanation">
                 <h2><%= pluralize(@asyfxn.errors.count, "error") %>

@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get 'awusers/new'
 
    
-
+  get 'users' => 'users#index'
   get 'asyfxn/new'
 
    get 'asyfxn/create'
@@ -96,6 +96,7 @@ Rails.application.routes.draw do
   resources :supervisors
   resources :supnames
   resources :awusers
+  resources :asyfxns
 
 
 
