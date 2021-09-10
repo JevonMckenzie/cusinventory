@@ -12,7 +12,8 @@
           <li>
             <a href="#">
               <i class="fa fa-home"></i>
-              Home Page</a>
+              Home Page
+            </a>
           </li>
           <li class="active">Station Name</li>
         </ol>
@@ -30,13 +31,11 @@
                 <h3 class="box-title">Basic Information</h3>
               </div>
 
-<h2>Sign up</h2>
+              <h2>Sign up</h2>
 
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
+              <%= form_for @user do |f| %> <% if @user.errors.any? %>
               <div id="error_explanation">
-                <h2><%= pluralize(@user.errors.count, "error") %>
-                  prohibited this item from being saved:</h2>
+                <h2><%= pluralize(@user.errors.count, "error") %> prohibited this item from being saved:</h2>
                 <ul>
                   <% @user.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
@@ -45,81 +44,70 @@
               </div>
               <% end %>
 
-     <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name%>
-  </div>
+              <div class="form-group">
+                <%= f.label :name %> <%= f.text_field :name%>
+              </div>
 
-       <div class="form-group">
-    <%= f.label :Admin %>
-    <%= f.check_box :admin%>
-  </div>
+              <div class="form-group">
+                <%= f.label :Admin %> <%= f.check_box :admin%>
+              </div>
 
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+              <div class="form-group">
+                <%= f.label :email %> <%= f.email_field :email, autofocus: true %>
+              </div>
 
-     <div class="form-group">
-        <label>Account Type</label>
-        <%= f.collection_select :acctcode, Acctype.all, :acctcode, :description %>
-    </div>
+              <div class="form-group">
+                <label>Account Type</label>
+                <%= f.collection_select :acctcode, Acctype.all, :acctcode, :description %>
+              </div>
 
+              <div class="form-group">
+                <label>Rank</label>
+                <%= f.collection_select :rankcode, Orank.all, :rankcode, :description %>
+              </div>
 
-    <div class="form-group">
-        <label>Rank</label>
-        <%= f.collection_select :rankcode, Orank.all, :rankcode, :description %>
-    </div>
+              <div class="form-group">
+                <label>Section</label>
+                <%= f.collection_select :secode, Cusection.all, :secode, :description %>
+              </div>
 
-      <div class="form-group">
-        <label>Section</label>
-        <%= f.collection_select :secode, Cusection.all, :secode, :description %>
-    </div>
+              <div class="form-group">
+                <label>Station</label>
+                <%= f.collection_select :stncode, Custation.all, :stncode, :description %>
+              </div>
 
-       <div class="form-group">
-        <label>Station</label>
-        <%= f.collection_select :stncode, Custation.all, :stncode, :description %>
-    </div>
+              <div class="form-group">
+                <label>Asycuda World Function Type</label>
+                <%= f.collection_select :asyfxn_user, Asyfxn.all, :asyfxn, :description %>
+              </div>
 
+              <div class="field">
+                <%= f.label :password %> <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, autocomplete: "off" %>
+              </div>
 
-       <div class="form-group">
-        <label>Asycuda World Function Type</label>
-        <%= f.collection_select :asyfxn_user, Asyfxn.all, :asyfxn, :description %>
-    </div>
+              <div class="field">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "off" %>
+              </div>
 
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-
-</div>
-
-</div>
-            <!-- /.box -->
+              <div class="actions">
+                <%= f.submit "Sign up" %>
+              </div>
+              <% end %>
+            </div>
           </div>
-          <!--/.col (right) -->
+          <!-- /.box -->
         </div>
+        <!--/.col (right) -->
 
         <% else %>
 
-        <h3 align="center"> Add Item Not Acessible </h3>
+        <h3 align="center">Add Item Not Acessible</h3>
         <!-- /.row -->
-         <% end %>
+        <% end %>
       </section>
       <!-- /.content -->
     </div>
@@ -135,6 +123,7 @@
     <!-- ./wrapper -->
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-      $.widget.bridge('uibutton', $.ui.button);
+      $.widget.bridge("uibutton", $.ui.button);
     </script>
-  </body>
+  </div>
+</body>
