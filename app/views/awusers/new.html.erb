@@ -19,7 +19,7 @@
               <i class="fa fa-home"></i>
               Home Page</a>
           </li>
-          <li class="active">Function Type</li>
+          <li class="active">Asyworld User</li>
         </ol>
       </section>
 
@@ -51,18 +51,23 @@
               <div class="box-body">
 
                        <div class="form-group">
+                 <%= f.label :type_of_change %><br>
+    <%= f.select :type_of_migration , [ 'New Asycuda World User','Internal Transfer','National Transfer','Promotion', 'Temporary' ], :prompt => 'Select Type' %>
+</div>
+
+                       <div class="form-group">
                   <label>Officer's Name</label>
-                  <%= f.collection_select :user_id, User.all, :id, :name%>
+                  <%= f.collection_select :user_id, User.all, :id, :name, :prompt =>'select Officer'%>
                 </div>
 
                         <div class="form-group">
                   <label>Phisical Address </label>
-                  <%= f.text_field :username, class: "form-control", placeholder: "Officer's Address", required: true  %>
+                  <%= f.text_field :address, class: "form-control", placeholder: "Officer's Address", required: true  %>
                 </div>
 
                  <div class="form-group">
                   <label>Contact Number</label>
-                  <%= f.text_field :username, class: "form-control", placeholder: "Officer's Contact Number", required: true  %>
+                  <%= f.text_field :contact, class: "form-control", placeholder: "Officer's Contact Number", required: true  %>
                 </div>
 
                
@@ -616,7 +621,7 @@ CUSTOMS INTERNAL USERS.
       </div>
 
               <div class="form-group">
-                    <label><%= f.text_field :addinfo  %>Date of OIC Signature </label>
+                    <label><%= f.date_field :addinfo  %>Date of OIC Signature </label>
                   
       </div>
 

@@ -1,0 +1,73 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  acc_clerk: MyString
+  fo_sting: MyString
+  cusexaminer: MyString
+  surveyor: MyString
+  stn_manifest: MyString
+  rmanagement: MyString
+  pwarehouse: MyString
+  excise: MyString
+  s_postaudit: MyString
+  exchrates: MyString
+  report_user: MyString
+  enforcement: MyString
+  internal_auditor: MyString
+  ass_comp_exam: MyString
+  ass_comp_selena: MyString
+  ass_comp_pg: MyString
+  comptroller: MyString
+  cashier: MyString
+  chief_examiner: MyString
+  facevet: MyString
+  manifest: MyString
+  t1: MyString
+  swarehouse: MyString
+  valuation: MyString
+  postaudit: MyString
+  item_admin_approval: MyString
+  senforcement: MyString
+  legal_officer: MyString
+  ass_comp_postaudit: MyString
+  ass_comp_benque: MyString
+  ass_comp_pgia: MyString
+  deputy_comptroller: MyString
+  vetted_approvedby: MyString
+  vetted_approveddate: 2021-09-10 09:50:10
+
+two:
+  acc_clerk: MyString
+  fo_sting: MyString
+  cusexaminer: MyString
+  surveyor: MyString
+  stn_manifest: MyString
+  rmanagement: MyString
+  pwarehouse: MyString
+  excise: MyString
+  s_postaudit: MyString
+  exchrates: MyString
+  report_user: MyString
+  enforcement: MyString
+  internal_auditor: MyString
+  ass_comp_exam: MyString
+  ass_comp_selena: MyString
+  ass_comp_pg: MyString
+  comptroller: MyString
+  cashier: MyString
+  chief_examiner: MyString
+  facevet: MyString
+  manifest: MyString
+  t1: MyString
+  swarehouse: MyString
+  valuation: MyString
+  postaudit: MyString
+  item_admin_approval: MyString
+  senforcement: MyString
+  legal_officer: MyString
+  ass_comp_postaudit: MyString
+  ass_comp_benque: MyString
+  ass_comp_pgia: MyString
+  deputy_comptroller: MyString
+  vetted_approvedby: MyString
+  vetted_approveddate: 2021-09-10 09:50:10

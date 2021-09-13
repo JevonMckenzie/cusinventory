@@ -1,0 +1,132 @@
+<style>
+     table, span { background:; color: }
+     th, td { background: ; width: 20%; align="center"}
+</style>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <%= render 'layouts/header' %>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Enter User Details To Add
+        </h1>
+        <ol class="breadcrumb">
+          <li>
+            <a href="#">
+              <i class="fa fa-home"></i>
+              Home Page</a>
+          </li>
+          <li class="active">Asyworld User</li>
+        </ol>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <% if current_user.admin? %>
+        <div class="row">
+          <!-- left column -->
+          <div class="">
+            <!-- general form elements col-md-6" for div above -->
+            <div class="box box-header">
+              <div class="box-header with-border">
+                <h3 class="box-title">Basic Information</h3>
+              </div>
+              <!-- /.box-header -->
+              <!-- form start -->
+              <%= form_for @awuser_change do |f| %>
+              <% if @awuser_change.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@awuser_change.errors.count, "error") %>
+                  prohibited this item from being saved:</h2>
+                <ul>
+                  <% @awuser_change.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+              <% end %>
+              <div class="box-body">
+
+
+
+   
+       
+          You are creating a Change of User that is referenced to Request ID:   <%= @awuser_change.awuser_id   %>  <br>
+
+
+               
+               <hr>
+ <h2> Officer's Current Rank </h2>
+ <hr>
+               <table style=display:inline-block width="100%">
+              
+
+               <tr>
+                <td>
+
+                 <div class="checkbox">
+                  <label class="checkbox"><input type="checkbox"><%= f.check_box :acc_clerk  %>Accounts Clerk</label>
+
+               
+                </div>
+              </td>
+
+              
+
+          
+
+             </tr>
+             <tr><td>
+               <hr>
+ <h2> Officer's New Customs Station </h2>
+ <hr>
+</td></tr>
+
+
+
+             </table>
+
+
+
+ 
+
+
+              
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <%= f.submit "Submit", class: "btn btn-primary"%>
+              </div>
+              <% end %>
+             
+            </div>
+            <!-- /.box -->
+          </div>
+          <!--/.col (right) -->
+        </div>
+
+        <% else %>
+
+        <h3 align="center"> Add Item Not Acessible </h3>
+        <!-- /.row -->
+         <% end %>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>Version</b>
+        0.1
+      </div>
+      Content available under
+      <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0</a>.
+    </footer>
+    <!-- ./wrapper -->
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+  </body>

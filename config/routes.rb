@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
  
 
+  get 'awuser_change/index'
+
+  get 'awuser_change/new'
+
+  get 'awuser_change/create'
+
   get 'awusers/index'
 
   get 'applications/index'
@@ -49,6 +55,8 @@ Rails.application.routes.draw do
 
     get 'asyworlduser' => 'awusers#new'
 
+    get 'change_awuser' => 'awuser_changes#new'
+
   get 'acctype/create'
 
   get 'acctype/new'
@@ -64,6 +72,7 @@ Rails.application.routes.draw do
   end
 
   get 'awusers' => 'awusers#index'
+    get 'awuser_changes' => 'awuser_changes#index'
 
   get 'awuser/new'
 
@@ -97,6 +106,12 @@ Rails.application.routes.draw do
   resources :supnames
   resources :awusers
   resources :asyfxns
+  resources :awuser_changes do 
+    resources :awusers
+  end
+  #resources :awuser_change
+
+  
 
 
 

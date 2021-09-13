@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210907202332) do
+ActiveRecord::Schema.define(version: 20210911195547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,48 @@ ActiveRecord::Schema.define(version: 20210907202332) do
     t.datetime "updated_at",  null: false
     t.string   "code"
     t.string   "description"
+  end
+
+  create_table "awuser_changes", force: :cascade do |t|
+    t.boolean  "acc_clerk"
+    t.boolean  "fo_sting"
+    t.boolean  "cusexaminer"
+    t.boolean  "surveyor"
+    t.boolean  "stn_manifest"
+    t.boolean  "rmanagement"
+    t.boolean  "pwarehouse"
+    t.boolean  "excise"
+    t.boolean  "s_postaudit"
+    t.boolean  "exchrates"
+    t.boolean  "report_user"
+    t.boolean  "enforcement"
+    t.boolean  "internal_auditor"
+    t.boolean  "ass_comp_exam"
+    t.boolean  "ass_comp_selena"
+    t.boolean  "ass_comp_pg"
+    t.boolean  "comptroller"
+    t.boolean  "cashier"
+    t.boolean  "chief_examiner"
+    t.boolean  "facevet"
+    t.boolean  "manifest"
+    t.boolean  "t1"
+    t.boolean  "swarehouse"
+    t.boolean  "valuation"
+    t.boolean  "postaudit"
+    t.boolean  "item_admin_approval"
+    t.boolean  "senforcement"
+    t.boolean  "legal_officer"
+    t.boolean  "ass_comp_postaudit"
+    t.boolean  "ass_comp_benque"
+    t.boolean  "ass_comp_pgia"
+    t.boolean  "deputy_comptroller"
+    t.boolean  "vetted_approvedby"
+    t.datetime "vetted_approveddate"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "awuser_id"
+    t.string   "type_of_migration"
+    t.index ["awuser_id"], name: "index_awuser_changes_on_awuser_id", using: :btree
   end
 
   create_table "awusers", force: :cascade do |t|
@@ -108,6 +150,9 @@ ActiveRecord::Schema.define(version: 20210907202332) do
     t.boolean  "ass_comptroller"
     t.boolean  "aworldadmin"
     t.text     "addinfo"
+    t.string   "type_of_migration"
+    t.string   "address"
+    t.string   "contact"
     t.index ["user_id"], name: "index_awusers_on_user_id", using: :btree
     t.index ["username"], name: "index_awusers_on_username", using: :btree
   end
@@ -274,6 +319,8 @@ ActiveRecord::Schema.define(version: 20210907202332) do
     t.integer  "secode"
     t.integer  "cusection_id"
     t.string   "username"
+    t.string   "address"
+    t.string   "contact"
     t.index ["acctcode"], name: "index_users_on_acctcode", using: :btree
     t.index ["asyfxn_user"], name: "index_users_on_asyfxn_user", using: :btree
     t.index ["cusection_id"], name: "index_users_on_cusection_id", using: :btree
