@@ -20,7 +20,7 @@
 
       <!-- Main content -->
       <section class="content">
-        <% if current_user.admin? %>
+       
         <div class="row">
           <!-- left column -->
           <div class="col-md-6">
@@ -28,6 +28,7 @@
             <br><br>
 
 <%= link_to 'Item Requisition Form', forms_path %><br><br>
+ <% if current_user.admin? %>
 <%= link_to 'Add ASYCUDA WORLD User', asyworlduser_path %><br><br>
 <%= link_to 'Add Rank', ranks_path %> <br><br>
 <%= link_to 'Add Supervisor', supervisor_path %><br><br>
