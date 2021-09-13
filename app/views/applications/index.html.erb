@@ -28,22 +28,23 @@
             <br><br>
 
 <%= link_to 'Item Requisition Form', new_toner_path %><br><br>
- <% if current_user.admin? %>
+ <% if current_user.cusadmin? %>
 <%= link_to 'Add ASYCUDA WORLD User', asyworlduser_path %><br><br>
+ <% elsif current_user.admin? %>
 <%= link_to 'Add Rank', ranks_path %> <br><br>
 <%= link_to 'Add Supervisor', supervisor_path %><br><br>
 <%= link_to 'Add Section', section_path %><br><br>
 <%= link_to 'Add Station', station_path %><br><br>
 <%= link_to 'Add Accounts', account_type_path %><br><br>
 <%= link_to 'Add Functions', function_path %><br><br>
-
+  <% end %>
 <br><br>
           <!--/.col (right) -->
         </div>
 
       
         <!-- /.row -->
-         <% end %>
+       
       </section>
 </div>
 
