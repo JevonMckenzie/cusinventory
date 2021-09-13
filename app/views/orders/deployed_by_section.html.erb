@@ -1,354 +1,282 @@
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
-
     <%= render 'layouts/header' %>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1 >
+        <h1>
           Dashboard
-          <small>  <% if current_user.stationname.present? %><font color="green">The Following Items Are Currently Deployed At:<b>
-
-          
-           <%= current_user.stationname %>.</b> <br>(Inventory List is still being populated)</font></small>
-              <% else %>
-              <p align=""><font color="red">  Your  Assigned Station 
-            Is Not Set.<br> You can only see inventory of items deployed at your assigned station.<br> Please Click on Edit Profile to select your Assigned Station</font> </p>
-            <% end %>
+          <small>
+            <% if current_user.stationname.present? %>
+            <font color="green">
+              The Following Items Are Currently Deployed At:<b> <%= current_user.stationname %>.</b> <br />
+              (Inventory List is still being populated)
+            </font>
+          </small>
+          <% else %>
+          <p align="">
+            <font color="red">
+              Your Assigned Station Is Not Set.<br />
+              You can only see inventory of items deployed at your assigned station.<br />
+              Please Click on Edit Profile to select your Assigned Station
+            </font>
+          </p>
+          <% end %>
         </h1>
         <ol class="breadcrumb">
           <li class="active">
             <a href="#">
               <i class="fa fa-home"></i>
-              Home Page</a>
+              Home Page
+            </a>
           </li>
         </ol>
       </section>
 
       <!-- Main content -->
       <section class="content">
-
         <!-- Small boxes (Stat box) -->
         <div class="row">
-               <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-             
-            <div class="small-box bg-aqua">
-              <br>
-        
-                  <h2 align="center">Desktops:  <% if current_user.stationname.present? %> <%= Order.where(:depcategory => "Desktop", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-          <% end %>
-            <br>
-              </div>
-              
-            </div>
-      
+          <div class="col-lg-3 col-xs-6">
             <!-- small box -->
 
-          
-          <!-- ./col -->
-             
-                 <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-             
             <div class="small-box bg-aqua">
-              <br>
-           
-            <h2 align="center">Laptops: <%= Order.where(:depcategory => "Laptop", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-          
-            <br>
-              </div>
-              
-            </div>
-      
-          <!-- ./col -->
-             
-           <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-             
-            <div class="small-box bg-aqua">
-              <br>
-          
-            <h2 align="center">Monitors: <%= Order.where(:depcategory => "Monitor", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-        
-            <br>
-              </div>
-              
-            </div>
+              <br />
 
-                 <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-             
-            <div class="small-box bg-aqua">
-              <br>
-         
-            <h2 align="center">MiFi: <%= Order.where(:depcategory => "MiFi", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-         
-            <br>
-              </div>
-              
+              <h2 align="center">Desktops: <% if current_user.stationname.present? %> <%= Order.where(:depcategory => "Desktop", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+              <% end %>
+              <br />
             </div>
-
           </div>
 
-         
-
+          <!-- small box -->
 
           <!-- ./col -->
-        
+
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+
+            <div class="small-box bg-aqua">
+              <br />
+
+              <h2 align="center">Laptops: <%= Order.where(:depcategory => "Laptop", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+
+              <br />
+            </div>
+          </div>
+
+          <!-- ./col -->
+
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+
+            <div class="small-box bg-aqua">
+              <br />
+
+              <h2 align="center">Monitors: <%= Order.where(:depcategory => "Monitor", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+
+              <br />
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+
+            <div class="small-box bg-aqua">
+              <br />
+
+              <h2 align="center">MiFi: <%= Order.where(:depcategory => "MiFi", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+
+              <br />
+            </div>
+          </div>
+        </div>
+
+        <!-- ./col -->
+
         <!-- /.row -->
-<div class="row">
-             <div class="col-lg-3 col-xs-6">
+        <div class="row">
+          <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-             
+
             <div class="small-box bg-aqua">
-          <br> 
-            <h2 align="center">Headsets: <%= Order.where(:depcategory => "Head Set", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-           <br>
-              </div>
-              
+              <br />
+              <h2 align="center">Headsets: <%= Order.where(:depcategory => "Head Set", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+              <br />
             </div>
+          </div>
           <!-- ./col -->
-      <div class="col-lg-3 col-xs-6">
+          <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-             
+
             <div class="small-box bg-aqua">
-              <br>
-        
-            <h2 align="center">USB Adapters: <%= Order.where(:depcategory => "Wireless USB Adapter", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2> 
-          
-            <br>
-              </div>
-              
+              <br />
+
+              <h2 align="center">USB Adapters: <%= Order.where(:depcategory => "Wireless USB Adapter", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+
+              <br />
             </div>
+          </div>
 
           <!-- ./col -->
-     <div class="col-lg-3 col-xs-6">
+          <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-             
+
             <div class="small-box bg-aqua">
-              <br>
-       
-            <h2 align="center">Webcams: <%= Order.where(:depcategory => "Webcam", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-        
-            <br>
-              </div>
-              
+              <br />
+
+              <h2 align="center">Webcams: <%= Order.where(:depcategory => "Webcam", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+
+              <br />
             </div>
+          </div>
 
           <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+          <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-             
+
             <div class="small-box bg-aqua">
-          <br> 
-            <h2 align="center">Projectors: <%= Order.where(:depcategory => "Projector", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-          <br>
-              </div>
-              
+              <br />
+              <h2 align="center">Projectors: <%= Order.where(:depcategory => "Projector", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+              <br />
             </div>
+          </div>
           <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+          <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-             
+
             <div class="small-box bg-aqua">
-          <br> 
-            <h2 align="center">Project Screen: <%= Order.where(:depcategory => "Projector Screen", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-         <br>
-              </div>
-              
+              <br />
+              <h2 align="center">Project Screen: <%= Order.where(:depcategory => "Projector Screen", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+              <br />
             </div>
+          </div>
 
-
-            <div class="col-lg-3 col-xs-6">
+          <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-             
+
             <div class="small-box bg-aqua">
-          <br> 
-            <h2 align="center">Flash Drives: <%= Order.where(:depcategory => "Flashdrive", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-            <br>
-              </div>
-              
+              <br />
+              <h2 align="center">Flash Drives: <%= Order.where(:depcategory => "Flashdrive", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+              <br />
             </div>
+          </div>
 
-
-               <div class="col-lg-3 col-xs-6">
+          <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-             
+
             <div class="small-box bg-aqua">
-          <br> 
-            <h2 align="center">Printers: <%= Order.where(:depcategory => "Printer", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-            <br>
-              </div>
-
-
-              
+              <br />
+              <h2 align="center">Printers: <%= Order.where(:depcategory => "Printer", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+              <br />
             </div>
+          </div>
 
-                       <div class="col-lg-3 col-xs-6">
+          <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-             
+
             <div class="small-box bg-aqua">
-          <br> 
-            <h2 align="center">Scanners: <%= Order.where(:depcategory => "Scanner", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-            <br>
-              </div>
-
-              
-              
+              <br />
+              <h2 align="center">Scanners: <%= Order.where(:depcategory => "Scanner", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+              <br />
             </div>
-
-          
-          
-
-
+          </div>
         </div>
 
+        <div class="row">
+          <!-- small box -->
 
-          <div class="row">
-             
-            <!-- small box -->
-         
-
-          
-          
-       
           <!-- ./col -->
-
 
           <!-- ./col -->
         </div>
 
-            <div class="row">
+        <div class="row">
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
 
-
-                                           <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                         
-                        <div class="small-box bg-aqua">
-                      <br> 
-                        <h2 align="center">KVM Switch: <%= Order.where(:depcategory => "KVM Switch", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-                        <br>
-                          </div>
-
-                          
-                          
-                        </div>
-
-
-                                                  <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                         
-                        <div class="small-box bg-aqua">
-                      <br> 
-                        <h2 align="center">Filing Cabinet: <%= Order.where(:depcategory => "Metal Filing Cabinets", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-                        <br>
-                          </div>
-
-                          
-                          
-                        </div>
-
-
-
-                                                  <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                         
-                        <div class="small-box bg-aqua">
-                      <br> 
-                        <h2 align="center">Banners: <%= Order.where(:depcategory => "Banners", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-                        <br>
-                          </div>
-
-                          
-                          
-                        </div>
-
-                                                         <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                         
-                        <div class="small-box bg-aqua">
-                      <br> 
-                        <h2 align="center">Kitchenette: <%= Order.where(:depcategory => "Kitchen Supplies", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-                        <br>
-                          </div>
-
-                          
-                          
-                        </div>
-
-
-
+            <div class="small-box bg-aqua">
+              <br />
+              <h2 align="center">KVM Switch: <%= Order.where(:depcategory => "KVM Switch", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+              <br />
             </div>
+          </div>
 
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
 
-            <div class="row">
-
-
-                      
-
-
-                                                  <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                         
-                        <div class="small-box bg-aqua">
-                      <br> 
-                        <h2 align="center">Office Equip/Stationary: <%= Order.where(:depcategory => "Office Equipment/Stationary", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-                        <br>
-                          </div>
-
-                          
-                          
-                        </div>
-
-
-
-                                                  <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                         
-                        <div class="small-box bg-aqua">
-                      <br> 
-                        <h2 align="center">Water Dispenser: <%= Order.where(:depcategory => "Water Dispenser", :status => true, :section => current_user.stationname).sum(:quantity)%> </h2>
-                        <br>
-                          </div>
-
-                          
-                          
-                        </div>
-
-
-
+            <div class="small-box bg-aqua">
+              <br />
+              <h2 align="center">Filing Cabinet: <%= Order.where(:depcategory => "Metal Filing Cabinets", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+              <br />
             </div>
+          </div>
 
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
 
+            <div class="small-box bg-aqua">
+              <br />
+              <h2 align="center">Banners: <%= Order.where(:depcategory => "Banners", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+              <br />
+            </div>
+          </div>
 
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
 
+            <div class="small-box bg-aqua">
+              <br />
+              <h2 align="center">Kitchenette: <%= Order.where(:depcategory => "Kitchen Supplies", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+              <br />
+            </div>
+          </div>
+        </div>
 
+        <div class="row">
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+
+            <div class="small-box bg-aqua">
+              <br />
+              <h2 align="center">Office Equip/Stationary: <%= Order.where(:depcategory => "Office Equipment/Stationary", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+              <br />
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+
+            <div class="small-box bg-aqua">
+              <br />
+              <h2 align="center">Water Dispenser: <%= Order.where(:depcategory => "Water Dispenser", :status => true, :section => current_user.stationname).sum(:quantity)%></h2>
+              <br />
+            </div>
+          </div>
+        </div>
       </section>
-        
-        </div>
-        <!-- /.row -->
-     
-
-      <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-    <%= render 'layouts/footer' %>
-    <script>
-      $.widget.bridge('uibutton', $.ui.button);
-    </script>
-    <script>
-      $(function () {
-        $("#example1").DataTable();
-        $('#example2').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false
-        });
+    <!-- /.row -->
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <%= render 'layouts/footer' %>
+  <script>
+    $.widget.bridge("uibutton", $.ui.button);
+  </script>
+  <script>
+    $(function () {
+      $("#example1").DataTable();
+      $("#example2").DataTable({
+        paging: true,
+        lengthChange: false,
+        searching: false,
+        ordering: true,
+        info: true,
+        autoWidth: false,
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
