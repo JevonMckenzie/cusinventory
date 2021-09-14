@@ -12,7 +12,8 @@
           <li>
             <a href="#">
               <i class="fa fa-home"></i>
-              Home Page</a>
+              Home Page
+            </a>
           </li>
           <li class="active">Station Name</li>
         </ol>
@@ -23,20 +24,21 @@
         <% if current_user.admin? %>
         <div class="row">
           <!-- left column -->
-          <div class="col-md-6">
+          <div class="col-md-12">
             <!-- general form elements -->
             <div class="box box-header">
-              <div class="box-header with-border">
-                <h3 class="box-title">Basic Information</h3>
+              <div class="row">
+                <div class="col-md-12">
+                  <h2 class="text-center">SignUp</h2>
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Basic Information</h3>
+                  </div>
+                </div>
               </div>
 
-<h2>Sign up</h2>
-
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
+              <%= form_for @user do |f| %> <% if @user.errors.any? %>
               <div id="error_explanation">
-                <h2><%= pluralize(@user.errors.count, "error") %>
-                  prohibited this item from being saved:</h2>
+                <h2><%= pluralize(@user.errors.count, "error") %> prohibited this item from being saved:</h2>
                 <ul>
                   <% @user.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
@@ -45,91 +47,81 @@
               </div>
               <% end %>
 
-     <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name%>
-  </div>
+              <div class="container" style="margin-top: 20px;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <%= f.label :name %> <%= f.text_field :name ,class: "form-control"%>
+                      </div>
+                      <div class="form-group">
+                        <%= f.label :email %> <%= f.email_field :email, autofocus: true ,class: "form-control"%>
+                      </div>
+                      <div class="form-group">
+                        <%= f.check_box :admin ,class: "form-check-input"%> 
+                        <%= f.label :Admin ,class:"form-check-label" %> 
+                      </div>
+                    <div class="field">
+                      <%= f.label :password %> <% if @minimum_password_length %>
+                      <em>(<%= @minimum_password_length %> characters minimum)</em>
+                      <% end %><br />
+                      <%= f.password_field :password, autocomplete: "off" ,class: "form-control" %>
+                    </div>
 
-    <div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_field :address%>
-  </div>
+                    <div class="field">
+                      <%= f.label :password_confirmation %><br />
+                      <%= f.password_field :password_confirmation, autocomplete: "off" ,class: "form-control" %>
+                    </div>
+                  </div>
 
-    <div class="form-group">
-    <%= f.label :contact %>
-    <%= f.text_field :contact%>
-  </div>
-
-       <div class="form-group">
-    <%= f.label :Admin %>
-    <%= f.check_box :admin%>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-     <div class="form-group">
-        <label>Account Type</label>
-        <%= f.collection_select :acctcode, Acctype.all, :acctcode, :description %>
-    </div>
-
-
-    <div class="form-group">
-        <label>Rank</label>
-        <%= f.collection_select :rankcode, Orank.all, :rankcode, :description %>
-    </div>
-
-      <div class="form-group">
-        <label>Section</label>
-        <%= f.collection_select :secode, Cusection.all, :secode, :description %>
-    </div>
-
-       <div class="form-group">
-        <label>Station</label>
-        <%= f.collection_select :stncode, Custation.all, :stncode, :description %>
-    </div>
-
-
-       <div class="form-group">
-        <label>Asycuda World Function Type</label>
-        <%= f.collection_select :asyfxn_user, Asyfxn.all, :asyfxn, :description %>
-    </div>
-
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-
-</div>
-
-</div>
-            <!-- /.box -->
+                  <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Account Type</label>
+                        <%= f.collection_select :acctcode, Acctype.all, :acctcode, :description ,class: "form-control" %>
+                      </div>
+                      <div class="form-group">
+                        <label>Rank</label>
+                        <%= f.collection_select :rankcode, Orank.all, :rankcode, :description ,class: "form-control" %>
+                      </div>
+                      <div class="form-group">
+                        <label>Asycuda World Function Type</label>
+                        <%= f.collection_select :asyfxn_user, Asyfxn.all, :asyfxn, :description ,class: "form-control" %>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Station</label>
+                        <%= f.collection_select :stncode, Custation.all, :stncode, :description ,class: "form-control" %>
+                      </div>
+                      <div class="form-group">
+                        <label>Section</label>
+                        <%= f.collection_select :secode, Cusection.all, :secode, :description ,class: "form-control" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="actions form-group text-center" style="margin-top: 15px;" >
+                        <%= f.submit "Sign up" ,class: "btn", style: "background-color: #3c8dbc; color: white;" %>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+            </div>
           </div>
-          <!--/.col (right) -->
         </div>
+        <!-- /.box -->
+        </div>
+        <!--/.col (right) -->
 
         <% else %>
 
-        <h3 align="center"> Add Item Not Acessible </h3>
+        <h3 align="center">Add Item Not Acessible</h3>
         <!-- /.row -->
-         <% end %>
+        <% end %>
       </section>
       <!-- /.content -->
     </div>
@@ -145,6 +137,7 @@
     <!-- ./wrapper -->
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-      $.widget.bridge('uibutton', $.ui.button);
+      $.widget.bridge("uibutton", $.ui.button);
     </script>
-  </body>
+  </div>
+</body>
