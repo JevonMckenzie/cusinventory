@@ -311,7 +311,6 @@ ActiveRecord::Schema.define(version: 20210911195547) do
     t.string   "stationname"
     t.string   "cmisuser"
     t.boolean  "cusadmin"
-    t.integer  "orank_id"
     t.integer  "acctcode"
     t.integer  "asyfxn_user"
     t.integer  "stncode"
@@ -319,6 +318,7 @@ ActiveRecord::Schema.define(version: 20210911195547) do
     t.integer  "secode"
     t.integer  "cusection_id"
     t.string   "username"
+    t.integer  "orank_id"
     t.string   "address"
     t.string   "contact"
     t.index ["acctcode"], name: "index_users_on_acctcode", using: :btree
