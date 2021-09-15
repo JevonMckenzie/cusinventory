@@ -48,7 +48,7 @@ table, th, td, tr {
               
                       
                       <% if current_user.admin? %>
-                      <th>Edit</th>
+                      <th>Add/Edit ASYWorld User</th>
                       <th>Delete</th>
                       <% end %>
                      
@@ -63,7 +63,7 @@ table, th, td, tr {
                       
                   
                       <% if current_user.admin? %>
-                      <td><%= link_to 'Edit', new_awuser_change_path(awuser: awuser.id) %></td>
+                      <td><%= link_to 'Add/Edit ASYWorld User', new_awuser_change_path(awuser: awuser.id) %></td>
                       <td><%= link_to 'Delete', awuser, method: :delete, data: { confirm: 'Are you sure you want to delete this awuser?' } %></td>
                       <% end %>
 
