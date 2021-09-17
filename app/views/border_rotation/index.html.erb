@@ -1,0 +1,148 @@
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <%= render 'layouts/header' %>
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Border Rotation
+        </h1>
+        <ol class="breadcrumb">
+          <li>
+            <a href="#">
+              <i class="fa fa-home"></i>
+              Home Page
+            </a>
+          </li>
+          <li class="active">Border Rotation</li>
+        </ol>
+      </section>
+
+      <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs style-1" id="tabs" role="tablist">
+                <li class="active nav-item"><a class="nav_links nav-link btn" data-toggle="tab" href="#imports" role="tab">Imports</a></li>
+                <li class="nav-item"><a data-toggle="tab" class="nav_links nav-link btn" href="#exports" role="tab">Exports</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="imports">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <!-- Main data table -->
+                                <div class="box">
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <div class="table-responsive fix-table-height">
+                                    <table id="example1" class="table-bordered table-striped table">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Exporter Name</th>
+                                            <th>Vehicle Color</th>
+                                            <th>License #</th>
+                                            <th>ROT #</th>
+                                            <th>Entry</th>
+                                            <th>Goods Description</th>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <% @border_rotation_import.each do |imps|%>
+                                        <tr>
+                                            <td><%= imps.id%></td>
+                                            <td><%= imps.exporter_name%></td>
+                                            <td><%= imps.vehicle_color%></td>
+                                            <td><%= imps.license_num%></td>
+                                            <td><%= imps.rot_num%></td>
+                                            <td><%= imps.entry%></td>
+                                            <td><%= imps.goods_description%></td>
+                                            <td><%= imps.current_date%></td>
+                                            <td><%= imps.current_time%></td>
+                                        </tr>
+                                        <% end %>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="exports">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <!-- Main data table -->
+                                <div class="box">
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <div class="table-responsive fix-table-height">
+                                    <table id="example2" class="table-bordered table-striped table">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Exporter Name</th>
+                                            <th>Vehicle Color</th>
+                                            <th>License #</th>
+                                            <th>ROT #</th>
+                                            <th>Entry</th>
+                                            <th>Goods Description</th>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <% @border_rotation_export.each do |exps|%>
+                                        <tr>
+                                            <td><%= exps.id%></td>
+                                            <td><%= exps.exporter_name%></td>
+                                            <td><%= exps.vehicle_color%></td>
+                                            <td><%= exps.license_num%></td>
+                                            <td><%= exps.rot_num%></td>
+                                            <td><%= exps.entry%></td>
+                                            <td><%= exps.goods_description%></td>
+                                            <td><%= exps.current_date%></td>
+                                            <td><%= exps.current_time%></td>
+                                        </tr>
+                                        <% end %>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    </div>
+    <%= render 'layouts/footer' %>
+  </div>
+  <script>
+    $(function () {
+        $("#example1").DataTable({
+            paging: true,
+            lengthChange: false,
+            searching: true,
+            ordering: true,
+            info: true,
+            autoWidth: false,
+        });
+        $("#example2").DataTable({
+            paging: true,
+            lengthChange: false,
+            searching: true,
+            ordering: true,
+            info: true,
+            autoWidth: false,
+        });
+    });
+  </script>
+</body>

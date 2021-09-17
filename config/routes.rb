@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   
+  get 'rotation' => 'border_rotation#index'
 
- 
+  get 'rotation/create' => 'border_rotation#create'
+
+  get 'border_rotation/show'
+
+  get 'border_rotation/new'
 
   get 'awuser_change/index'
 

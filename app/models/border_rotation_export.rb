@@ -1,0 +1,2 @@
+class BorderRotationExport < ApplicationRecord
+end

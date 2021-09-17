@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210911195547) do
+ActiveRecord::Schema.define(version: 20210917183207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -155,6 +155,32 @@ ActiveRecord::Schema.define(version: 20210911195547) do
     t.string   "contact"
     t.index ["user_id"], name: "index_awusers_on_user_id", using: :btree
     t.index ["username"], name: "index_awusers_on_username", using: :btree
+  end
+
+  create_table "border_rotation_exports", force: :cascade do |t|
+    t.string   "exporter_name"
+    t.string   "vehicle_color"
+    t.string   "rot_num"
+    t.string   "current_date"
+    t.time     "current_time"
+    t.string   "goods_description"
+    t.string   "license_num"
+    t.string   "entry"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "border_rotation_imports", force: :cascade do |t|
+    t.string   "importer_name"
+    t.string   "vehicle_color"
+    t.string   "rot_num"
+    t.string   "current_date"
+    t.time     "current_time"
+    t.string   "goods_description"
+    t.string   "license_num"
+    t.string   "entry"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "cusections", primary_key: "secode", force: :cascade do |t|
@@ -332,7 +358,4 @@ ActiveRecord::Schema.define(version: 20210911195547) do
     t.index ["stncode"], name: "index_users_on_stncode", using: :btree
   end
 
-  add_foreign_key "orders", "items"
-  add_foreign_key "orders", "members"
-  add_foreign_key "toners", "users"
 end

@@ -2,8 +2,7 @@
   <!-- Logo -->
   <a href="<%= root_url %>" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini">
-      <b>f</b>Customs</span>
+    <span class="logo-mini"> <b>f</b>Customs</span>
     <!-- logo for regular state and mobile devices -->
     <span class="logo-lg">
       <b>Customs MIS</b>
@@ -16,6 +15,52 @@
       <span class="sr-only">Toggle navigation</span>
     </a>
   </nav>
+  <style>
+    .sidenav {
+      height: 100%;
+      width: 200px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    /* Style the sidenav links and the dropdown button */
+    .sidenav a,
+    .dropdown-btn {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #818181;
+      display: block;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      outline: none;
+    }
+    /* Main content */
+    .main {
+      margin-left: 200px; /* Same as the width of the sidenav */
+      font-size: 20px; /* Increased text to enable scrolling */
+      padding: 0px 10px;
+    }
+
+    /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+    .dropdown-container {
+      display: none;
+      padding-left: 8px;
+    }
+
+    /* Optional: Style the caret down icon */
+    .fa-caret-down {
+      float: right;
+      padding-right: 8px;
+    }
+  </style>
 </header>
 <!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
@@ -31,30 +76,42 @@
 
         <a href="<%= edit_user_path(current_user.id) %>">
           <i class="fa fa-edit"></i>
-          Edit Profile</a>
+          Edit Profile
+        </a>
         <a href="">
-          <%= link_to destroy_user_session_path, method: :delete  do %>
-          <i class="fa fa-sign-out"></i>Log Out
-        <% end %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fa fa-sign-out"></i>Log Out <% end %>
         </a>
       </div>
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
-     <% if current_user.admin? || current_user.cmisuser == "YES" %>
-        <ul class="sidebar-menu">
+    <% if current_user.admin? || current_user.cmisuser == "YES" %>
+    <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
-                    <li>
+      <li>
         <a href="<%= inventory_path %>">
           <i class=""></i>
-          <span ><% if current_user.stationname.nil? %>
-          <p><font color="red">  Your  Assigned Station 
-            Is <br>Not Set. Please Edit Your Profile & <br>Choose Assigned Station</font> </p>
-            <% else %>           
-            <h4 align="center"><font color="green">Your Assigned Station Is:<br> <%= current_user.stationname %></font></h4></span>
-            <% end %>
+          <span>
+            <% if current_user.stationname.nil? %>
+            <p>
+              <font color="red">
+                Your Assigned Station Is <br />
+                Not Set. Please Edit Your Profile & <br />
+                Choose Assigned Station
+              </font>
+            </p>
+            <% else %>
+            <h4 align="center">
+              <font color="green">
+                Your Assigned Station Is:<br />
+                <%= current_user.stationname %>
+              </font>
+            </h4>
+          </span>
+          <% end %>
         </a>
       </li>
-              <li>
+      <li>
         <a href="<%= inventory_path %>">
           <i class="fa fa-search"></i>
           <span>Dashboard</span>
@@ -62,132 +119,184 @@
       </li>
 
       <li>
-          <a href="professionaldevelopment">
+        <a href="professionaldevelopment">
           <i class="fa fa-search"></i>
           <span>Learn MS Excel & MS Access</span>
         </a>
       </li>
 
-           <li>
-          <a href="<%= rails_admin_path %>">
+      <li>
+        <a class="dropdown-btn" id="class_toggle">
+             <small><i class="fa fa-caret-right" id="rotate_fa" style="margin-right: 5px;"></i> Border Rotation</small>
+        </a>
+        <div class="dropdown-container">
+            <div class="container" style="margin-left: 14px;">
+              <div class="row">
+                <div class="col-md-12">
+                  <a href="<%= rotation_create_path %>">
+                     <i class="fa fa-level-up fa-rotate-90" style="font-size: 20px; margin-right: 10px;"></i>
+                    <span>Create</span>
+                  </a>
+                </div>
+                <div class="col-md-12">
+                  <a href="<%= rotation_path %>">
+                  <i class="fa fa-level-up fa-rotate-90" style="font-size: 20px; margin-right: 10px;"></i>
+                    <span>View</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </li>
+
+      <li>
+        <a href="<%= rails_admin_path %>">
           <i class="fa fa-search"></i>
           <span>Admin</span>
         </a>
       </li>
-      
+
       <li>
-          <a href="<%= items_path %>">
+        <a href="<%= items_path %>">
           <i class="fa fa-search"></i>
           <span>View All Items</span>
         </a>
       </li>
 
-         <li>
-          <a href="<%= users_path %>">
+      <li>
+        <a href="<%= users_path %>">
           <i class="fa fa-search"></i>
           <span>View All Users</span>
         </a>
       </li>
 
-           <li>
-          <a href="<%= applications_path %>">
+      <li>
+        <a href="<%= applications_path %>">
           <i class="fa fa-search"></i>
           <span>Electronic Forms</span>
         </a>
       </li>
 
-<li>
-          <a href="<%= orders_path %>">
+      <li>
+        <a href="<%= orders_path %>">
           <i class="fa fa-search"></i>
           <span>View Deployed Items</span>
         </a>
       </li>
-        
-          <li>
-          <a href="<%= serviced_items_path %>">
+
+      <li>
+        <a href="<%= serviced_items_path %>">
           <i class="fa fa-search"></i>
           <span>View Serviced/Returned Items</span>
         </a>
       </li>
-        
-          <li>
-          <a href="<%= station_info_path %>">
+
+      <li>
+        <a href="<%= station_info_path %>">
           <i class="fa fa-search"></i>
           <span>View Customs Stations</span>
         </a>
       </li>
-       
+
       <li>
-       <a href="<%= new_item_path %>">
+        <a href="<%= new_item_path %>">
           <i class="fa fa-user-plus"></i>
           <span>Add Item to Inventory</span>
         </a>
       </li>
-<li>
-        <li>
+      <li></li>
+      <li>
         <a href="<%= new_member_path %>">
           <i class="fa fa-user-plus"></i>
           <span>Add Customs Station</span>
         </a>
-</li>
-   
-
-    
-   
-  
-     
+      </li>
     </ul>
 
-
- <% else %>
+    <% else %>
 
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
 
-                  <li>
+      <li>
         <a href="<%= inventory_path %>">
           <i class=""></i>
-         <% if current_user.stationname.nil? %> <span >
-          <p><font color="red">  Your  Assigned Station 
-            Is <br>Not Set. Please Edit Your Profile & <br>Choose Assigned Station</font> </p>
-            <% else %>           
-            <h4 align="center"><font color="green">Your Assigned Station Is:<br> <%= current_user.stationname %></font></h4></span>
-            <% end %>
+          <% if current_user.stationname.nil? %>
+          <span>
+            <p>
+              <font color="red">
+                Your Assigned Station Is <br />
+                Not Set. Please Edit Your Profile & <br />
+                Choose Assigned Station
+              </font>
+            </p>
+            <% else %>
+            <h4 align="center">
+              <font color="green">
+                Your Assigned Station Is:<br />
+                <%= current_user.stationname %>
+              </font>
+            </h4>
+          </span>
+          <% end %>
         </a>
       </li>
-              
-          <li>
+
+      <li>
         <a href="<%= root_path %>">
           <i class="fa fa-home"></i>
           <span>Dashboard</span>
         </a>
       </li>
 
-            <li>
-          <a href="professionaldevelopment">
+      <li>
+        <a href="professionaldevelopment">
           <i class="fa fa-search"></i>
           <span>Learn MS Excel & MS Access</span>
         </a>
       </li>
-    
 
       <li>
-          <a href="<%= orders_path %>">
+        <a href="<%= rotation_path %>">
+          <i class="fa fa-search"></i>
+          <span>Border Rotation</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="<%= orders_path %>">
           <i class="fa fa-search"></i>
           <span>View Deployed Items</span>
         </a>
       </li>
-    
-   
+
       <li>
         <a href="<%= applications_path %>">
           <i class="fa fa-user-plus"></i>
           <span>Electronic Forms</span>
         </a>
       </li>
-      
     </ul>
     <% end %>
   </section>
   <!-- /.sidebar -->
 </aside>
+<script>
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
+  }
+  $('#class_toggle').on('click',function(e){
+    $('#rotate_fa').toggleClass('fa-rotate-90');
+  });
+</script>
