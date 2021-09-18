@@ -4,9 +4,8 @@ class BorderRotationController < ApplicationController
     @border_rotation_import = BorderRotationImport.all
   end
 
-  def create
-  end
-
   def new
+    exports = BorderRotationExport.new
+    imports = BorderRotationImport.new
   end
 end
