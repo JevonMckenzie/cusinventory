@@ -1,6 +1,6 @@
 <style>
-     table, span { background:; color: }
-     th, td { background: ; width: 20%; align="center"}
+  table, span { background:; color: }
+  th, td { background: ; width: 20%; align="center"}
 </style>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -17,7 +17,8 @@
           <li>
             <a href="#">
               <i class="fa fa-home"></i>
-              Home Page</a>
+              Home Page
+            </a>
           </li>
           <li class="active">Asyworld User</li>
         </ol>
@@ -36,11 +37,9 @@
               </div>
               <!-- /.box-header -->
               <!-- form start -->
-              <%= form_for @awuser_change do |f| %>
-              <% if @awuser_change.errors.any? %>
+              <%= form_for @awuser_change do |f| %> <% if @awuser_change.errors.any? %>
               <div id="error_explanation">
-                <h2><%= pluralize(@awuser_change.errors.count, "error") %>
-                  prohibited this item from being saved:</h2>
+                <h2><%= pluralize(@awuser_change.errors.count, "error") %> prohibited this item from being saved:</h2>
                 <ul>
                   <% @awuser_change.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
@@ -49,95 +48,68 @@
               </div>
               <% end %>
               <div class="box-body">
+                You are creating a Change of User that is referenced to Request ID: <%= @awuser_change.awuser_id %> <br />
 
+                <hr />
+                <h2>Officer's Current Rank</h2>
+                <hr />
+                <table style="display: inline-block;" width="100%">
+                  <tr>
+                    <td>
+                      <div class="form-group">
+                        <label class="number_field"><%= f.number_field :awuser_id, :value => params[:awuser], :readonly=>true %>Request ID</label>
+                      </div>
+                    </td>
 
+                    <td>
+                      <div class="checkbox">
+                        <label class="checkbox"><input type="checkbox" /><%= f.check_box :acc_clerk %>Accounts Clerk</label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <hr />
+                      <h2>Officer's New Customs Station</h2>
+                      <hr />
+                    </td>
+                  </tr>
+                </table>
 
-   
-       
-          You are creating a Change of User that is referenced to Request ID:   <%= @awuser_change.awuser_id   %>  <br>
-
-
-               
-               <hr>
- <h2> Officer's Current Rank </h2>
- <hr>
-               <table style=display:inline-block width="100%">
-              
-
-               <tr>
-
-                  <td>
-
-                 <div class="form-group">
-                  <label class="number_field"><%= f.number_field :awuser_id, :value => params[:awuser], :readonly=>true %>Request ID</label>
-
-               
+                <!-- /.box-body -->
+                <div class="box-footer">
+                  <%= f.submit "Submit", class: "btn btn-primary"%>
                 </div>
-              </td>
-
-
-                <td>
-
-                 <div class="checkbox">
-                  <label class="checkbox"><input type="checkbox"><%= f.check_box :acc_clerk  %>Accounts Clerk</label>
-
-               
-                </div>
-              </td>
-
-              
-
-          
-
-             </tr>
-             <tr><td>
-               <hr>
- <h2> Officer's New Customs Station </h2>
- <hr>
-</td></tr>
-
-
-
-             </table>
-
-
-
- 
-
-
-              
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <%= f.submit "Submit", class: "btn btn-primary"%>
+                <% end %>
               </div>
-              <% end %>
-             
+              <!-- /.box -->
             </div>
-            <!-- /.box -->
+            <!--/.col (right) -->
           </div>
-          <!--/.col (right) -->
+
+          <% else %>
+
+          <h3 align="center">Add Item Not Acessible</h3>
+          <!-- /.row -->
+          <% end %>
+
+          <!-- /.content -->
         </div>
-
-        <% else %>
-
-        <h3 align="center"> Add Item Not Acessible </h3>
-        <!-- /.row -->
-         <% end %>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+          <div class="pull-right hidden-xs">
+            <b>Version</b>
+            0.1
+          </div>
+          Content available under
+          <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0</a>.
+        </footer>
+        <!-- ./wrapper -->
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+          $.widget.bridge("uibutton", $.ui.button);
+        </script>
       </section>
-      <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      <div class="pull-right hidden-xs">
-        <b>Version</b>
-        0.1
-      </div>
-      Content available under
-      <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0</a>.
-    </footer>
-    <!-- ./wrapper -->
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-      $.widget.bridge('uibutton', $.ui.button);
-    </script>
-  </body>
+  </div>
+</body>

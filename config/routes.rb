@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'rotation/create' => 'border_rotation#create'
 
+  post 'rotation/create', to: 'border_rotation#create'
+
   get 'border_rotation/show'
 
   get 'border_rotation/new'
@@ -98,6 +100,7 @@ Rails.application.routes.draw do
   #end
   devise_for :users, controllers: { registrations: "users/registrations" }
   #devise_for :users
+  resources :border_rotation
   resources :orders
   resources :members
   resources :users
