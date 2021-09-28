@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Border Rot Imports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @border_rot_imports.each do |border_rot_import| %>
+      <tr>
+        <td><%= link_to 'Show', border_rot_import %></td>
+        <td><%= link_to 'Edit', edit_border_rot_import_path(border_rot_import) %></td>
+        <td><%= link_to 'Destroy', border_rot_import, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Border Rot Import', new_border_rot_import_path %>

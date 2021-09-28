@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BorderRotationExportTest < ActiveSupport::TestCase
+class BorderRotImportTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

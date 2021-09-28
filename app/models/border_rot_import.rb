@@ -1,0 +1,2 @@
+class BorderRotImport < ApplicationRecord
+end

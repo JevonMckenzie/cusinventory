@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :border_rot_imports
   get 'rotation' => 'border_rotation#index'
   
   get 'rotation/new' => 'border_rotation#new'
