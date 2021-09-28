@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Passwordreset:</strong>
+  <%= @email.passwordreset %>
+</p>
+
+<p>
+  <strong>Unblockemail:</strong>
+  <%= @email.unblockemail %>
+</p>
+
+<p>
+  <strong>Newuser:</strong>
+  <%= @email.newuser %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @email.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @email.lastname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @email.email %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @email.reason %>
+</p>
+
+<%= link_to 'Edit', edit_email_path(@email) %> |
+<%= link_to 'Back', emails_path %>

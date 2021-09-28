@@ -1,0 +1,100 @@
+<html>
+<head>
+<title> Customs IT Inventory</title>
+<style>
+table, th, td, tr {
+ 
+  border-collapse: collapse;
+  text-align: center;
+}
+</style>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <%= render 'layouts/header' %>
+    <div class="content-wrapper">
+
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Users
+          <small>All Asyworld User Requests</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li>
+            <a href="#">
+              <i class="fa fa-home"></i>
+              Home Page</a>
+          </li>
+          <li class="active">Asyworld User Request</li>
+        </ol>
+      </section>
+
+      <section class="content">
+        <div class="row">
+          <div class="col-xs-12">
+            <!-- Main data table -->
+            <div class="box">
+
+              <!-- /.box-header -->
+              <div class="box-body">
+                    <div class="table-responsive fix-table-height">
+                <table id="example1" class="table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Request ID</th>
+                      <th>Name</th>
+              
+                      
+                      <% if current_user.admin? %>
+                      <th>Add/Edit ASYWorld User</th>
+                      <th>Delete</th>
+                      <% end %>
+                     
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @awusers.each do |awuser| %>
+                   
+                                     <tr>
+                     <td><%= awuser.id %></td>
+                      <td><%= awuser.username %></td>
+                      
+                  
+                      <% if current_user.admin? %>
+                      <td><%= link_to 'Add/Edit ASYWorld User', new_awuser_change_path(awuser: awuser.id) %></td>
+                      <td><%= link_to 'Delete', awuser, method: :delete, data: { confirm: 'Are you sure you want to delete this awuser?' } %></td>
+                      <% end %>
+
+                    
+                    </tr>
+                    <% end %>
+                    
+                  </tbody>
+                </table>
+              </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <%= render 'layouts/footer' %>
+  </div>
+  <script>
+    $(function () {
+      $("#example1").DataTable();
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false
+      });
+    });
+  </script>
+</body>
+</html>

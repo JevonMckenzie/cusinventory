@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nointernet: false
+  compnopower: false
+  compshutdown: false
+  novideo: false
+  keyboard: false
+  mouse: false
+  printerjam: false
+  printernowork: false
+  scanner: false
+  other: false
+  explanation: MyString
+  location: MyString
+  office: false
+  asycuda: false
+  slonfreeze: false
+  othersoftware: false
+  explanationsoft: MyString
+  locationsoft: MyString
+  hardware: false
+  software: false
+
+two:
+  nointernet: false
+  compnopower: false
+  compshutdown: false
+  novideo: false
+  keyboard: false
+  mouse: false
+  printerjam: false
+  printernowork: false
+  scanner: false
+  other: false
+  explanation: MyString
+  location: MyString
+  office: false
+  asycuda: false
+  slonfreeze: false
+  othersoftware: false
+  explanationsoft: MyString
+  locationsoft: MyString
+  hardware: false
+  software: false

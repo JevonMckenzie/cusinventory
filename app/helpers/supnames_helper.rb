@@ -1,0 +1,2 @@
+module SupnamesHelper
+end

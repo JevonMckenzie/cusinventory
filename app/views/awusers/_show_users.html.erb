@@ -1,0 +1,20 @@
+<% if @awuser_with_class.empty? %>
+	<h4> No records to display </h4>
+<% else %>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Username</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @awuser_with_class.each do |user| %>
+		<tr>
+			<td> <%= user.username %> </td>
+			<td><%= link_to 'Show', awuser %> </td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<% end %>

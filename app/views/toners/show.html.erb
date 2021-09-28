@@ -1,0 +1,167 @@
+<html>
+<head><title>Customs Management Information Systems</title>
+<style type="text/css">
+@media print
+{
+body {
+            margin: 5px;
+        }
+
+        .body.{
+            padding-top: 0px;
+        }
+
+        .no-print {
+            display: none;
+        }
+
+        .div2, .section-to-print * {
+            visibility: visible;
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+
+        .section-to-print {
+            /*position: absolute;*/
+            /*left: 0;
+            top: 0;*/
+        }
+    }
+
+</style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+
+  <div class="wrapper">
+    <div class="no-print">
+    <%= render 'layouts/header' %>
+  </div>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>Requested Toner</h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-home"></i>Home Page</a></li>
+          <li class="active">Request Toner</li>
+        </ol>
+      </section>
+
+<section class="content">
+  <div class="no-print">
+         <a href="<%= toners_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>Outstanding Requisitions</span>
+        </a>
+        &nbsp;
+         <a href="<%= requisitions_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>all Requisitions</span>
+        </a>
+        &nbsp;
+    
+          <a href="<%= new_toner_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>New Item Requisitions</span>
+        </a> 
+
+         &nbsp;
+    
+         
+             <%= link_to 'PRINT', 'your_link_here', :onclick => 'window.print();return false;'%>
+          <i class="fa fa-user-plus"></i>
+          
+       
+
+
+
+       
+
+      </div>
+        <br>
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="box box-header">
+              <div class="box-header with-border">
+                <h3 class="box-title">Basic Information</h3>
+              </div>
+
+
+              <!-- /.box-header -->
+              <!-- form start -->
+              <div class="div2">
+              <%= form_for @toner do |f| %>
+              <table><tr><td>
+                    <div class="form-group">
+                    <label>Requisition #</label>
+                    <%= f.text_field :requisitionnumber, class: 'form-control', placeholder: 'Enter Section Name', value:@toner.requisitionnumber, required: true %>
+                  </div>
+</td><td>
+                    <div class="form-group">
+                    <label>Item Name</label>
+                    <%= f.text_field :requisitionnumber, class: 'form-control', placeholder: 'Enter Section Name', value:@toner.tonername, required: true %>
+                  </div></td><td>
+
+                          <div class="form-group">
+                    <label>Request Date</label>
+                    <%= f.date_field :requestdate, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
+                  </div>
+
+</td></tr><tr><td>
+                
+                     <div class="form-group">
+                    <label>Username</label>
+                   <%= f.text_field :username, required: true, class: 'form-control', value:@toner.username  %>
+                  </div></td><td>
+                
+               
+                      <div class="form-group">
+                    <label>Section Name</label>
+                    <%= f.text_field :sectionname, class: 'form-control', placeholder: 'Enter Section Name', required: true %>
+                  </div></td><td>
+                      <div class="form-group">
+                    <label>Quantity Requested</label>
+                    <%= f.text_field :quantity, class: 'form-control', placeholder: 'Enter Quantity Requested', required: true %>
+                  </div></td></tr><tr><td>
+                     <div class="form-group">
+                    <label>Issued By</label>
+                    <%= f.text_field :issuedby, class: 'form-control', placeholder: 'Enter Issued By', required: true %>
+                  </div></td><td>
+                    <div class="form-group">
+                    <label>Quantity Issued</label>
+                    <%= f.number_field :quantityissued, class: 'form-control', placeholder: 'Enter Quantity Issued', required: true %>
+                  </div></td><td>
+                      <div class="form-group">
+                    <label>Date Issued</label>
+                    <%= f.date_field :issuedate, class: 'form-control', placeholder: 'Enter Date Issued', required: true %>
+                  </div></td><td></td></tr><tr><td>
+                     <div class="form-group">
+                    <label>Issue Comment</label>
+                    <%= f.text_area:issuecomment, class: 'form-control', placeholder: 'Enter Comment', required: true %>
+                  </div></td><td width="33.3%"></td><td>
+                     <div class="form-group">
+                    <label>Signature and Date of Person Picking up / Receiving Item</label>
+                    <%= f.text_area:signature, class: 'form-control' %>
+                  </div>
+</td></tr></table>
+
+              <% end %>
+</div>
+<div class="no-print">
+ <% if current_user.cmisuser == "YES" %>
+<%= link_to 'Edit/Issue Toner', edit_toner_path(@toner) %> |
+<% end %>
+<%= link_to 'print', 'your_link_here', :onclick => 'window.print();return false;'%> | 
+<%= link_to 'Back', toners_path %> | 
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
+</div>
+</div>
+</div>
+</div></section></div>
+
+
+
+</div>
+</body>

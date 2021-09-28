@@ -1,0 +1,121 @@
+<html>
+<head>
+<title> Customs IT Inventory</title>
+<style>
+table, th, td, tr {
+  
+  border-collapse: collapse;
+  text-align: center;
+}
+</style>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="">
+    <%= render 'layouts/header' %>
+    <div class="content-wrapper">
+
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Inventory
+          <small>All Item Requisitions</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li>
+            <a href="#">
+              <i class="fa fa-home"></i>
+              Home Page</a>
+          </li>
+          <li class="active">Check Inventory</li>
+        </ol>
+      </section>
+
+      <section class="content">
+              <a href="<%= toners_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>Outstanding Requisitions from your Station</span>
+        </a>
+        &nbsp;
+      
+          <a href="<%= new_toner_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>New Item Requisitions</span>
+        </a> <br>
+        <div class="row">
+          <div class="col-xs-12">
+            <!-- Main data table -->
+            <div class="box">
+
+              <!-- /.box-header -->
+              <div class="box-body">
+                <div class="table-responsive fix-table-height">
+                <table id="example1" class="table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Item ID</th>
+                      <th>Requisition Number</th>
+                      <th>Itemname</th>
+                      <th>Username</th>
+                      <th>Quantity</th>
+                     <th>Stationname</th>
+                      <th>Sectionname</th>
+                      
+                      <th>Requestdate</th>
+                      <th>Comment</th>
+                      <th>Issuedby</th>
+                       <th>Show</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @toners.each do |toner| %>
+                     <% if toner.sectionname == current_user.stationname || current_user.cmisuser == "YES" %>
+                       <% if toner.id > 0 %>
+                  
+                                     <tr>
+                    
+                      <td><%= toner.id %></td>
+                      <td><%= toner.requisitionnumber %></td>
+                      <td><%= toner.tonername %></td>
+                      <td><%= toner.username %></td>
+                     
+                      <td><%= toner.quantity%></td>
+                      <td><%= toner.stationname %></td>
+                      <td><%= toner.sectionname %></td>
+                      <td><%= toner.requestdate %></td>
+                      <td><%= toner.comment %></td>
+                       <td><%= toner.issuedby %></td>
+                      
+                      <td><%= link_to 'Show', toner %></td>
+        
+      </tr>
+     <% end %>
+              <% end %>     <% end %> 
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <%= render 'layouts/footer' %>
+  </div>
+  <script>
+    $(function () {
+      $("#example1").DataTable();
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false
+      });
+    });
+  </script>
+</body>
+</html>

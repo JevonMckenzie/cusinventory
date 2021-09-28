@@ -1,0 +1,139 @@
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <%= render 'layouts/header' %>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>Request Item</h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-home"></i>Home Page</a></li>
+          <li class="active">Request Toner</li>
+        </ol>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="box box-header">
+
+    
+        <% if current_user.stationname.nil? %><span >
+          <p><font color="red">   Your  Assigned Station 
+            Is Not Set. <br>Please Click On Edit Profile To Select Your Assigned Station</font> </p>
+            </span>
+            <% end %>
+              
+
+    
+   
+
+         <a href="<%= toners_path %>">
+          <i class="fa fa-search"></i>
+          <span>Outstanding Requisitions From Your Station</span>
+        </a>
+        <br>
+        <a href="<%= requisitions_path %>">
+          <i class="fa fa-search"></i>
+          <span>All Requisitions from Your Station</span>
+        </a>
+       
+      
+    
+              <div class="box-header with-border">
+                <h3 class="box-title">Basic Information</h3>
+              </div>
+
+              <!-- /.box-header -->
+              <!-- form start -->
+
+              <%= form_for @toner do |f| %>
+                <% if @toner.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@toner.errors.count, 'error') %> prohibited this item from being saved:</h2>
+                    <ul>
+                      <% @toner.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+                <div class="box-body">
+
+                    <% if Toner.first.requisitionnumber.nil? %>
+
+                            <div class="form-group">
+                               <label>Requisition Number</label>
+                               <%= f.text_field :requisitionnumber, :value => 1, :readonly => true %>
+                           </div>
+
+                            <% else %>
+
+                             <div class="form-group">
+                                <label>Requisition Number</label>
+                               <%= f.text_field :requisitionnumber, :value => Toner.last.requisitionnumber + 1, :readonly => true %>
+                             </div>
+
+                       <% end %>
+
+                	   <div class="form-group">
+                    <label>Username</label>
+                    <%= f.text_field :username, class: 'form-control', placeholder: 'Enter Username', required: true, value: current_user.email, readonly: true %>
+                  </div>
+                     <div class="form-group">
+                    <label>You are Assigned to Station:</label>
+                 <%= f.text_field :stationname, class: 'form-control', placeholder: '', required: true, value: current_user.stationname, readonly: true %> Please ensure that the Assigned Station you choose in the drop-down list below matches the Assigned Station in your profile. If the Assigned Station in your profile is currently blank or has the wrong information Plesae click Edit Profile to select your assigned station.
+                  </div>
+                             <div class="form-group">
+                    <label>Station Name</label>
+                    <%= f.select(:sectionname, [["Select Station"],["BELIZE CITY - RECORDS","BELIZE CITY - RECORDS"],["BELIZE CITY -CMIS","BELIZE CITY -CMIS"],["COROZAL-CARGO","COROZAL-CARGO"], ["COROZAL - PASSENGER","COROZAL - PASSENGER"], ["COROZAL - CIU","COROZAL - CIU"], ["BENQUE - CARGO","BENQUE - CARGO"], ["BENQUE - PASSENGER","BENQUE - PASSENGER"],["PUNTA GORDA","PUNTA GORDA"],["BIG CREEK","BIG CREEK"],["DANGRIGA","DANGRIGA"],["SAN PEDRO","SAN PEDRO"],["BELIZE CITY - PORT","BELIZE CITY - PORT"],["BELIZE CITY - VALUATION","BELIZE CITY - VALUATION"],["BELIZE CITY - RECORDS","BELIZE CITY - RECORDS"],["BELIZE CITY - SHIPPING","BELIZE CITY - SHIPPING"],["BELIZE CITY - EXAMINATION","BELIZE CITY - EXAMINATION"],["BELIZE CITY - CASHIER","BELIZE CITY - CASHIER"],["BELIZE CITY - ACCOUNTS","BELIZE CITY - ACCOUNTS"],["BELIZE CITY - TRAINING","BELIZE CITY - TRAINING"],["BELIZE CITY - LEGAL SECTION","BELIZE CITY - LEGAL SECTION"],["BELIZE CITY - COMPTROLLER","BELIZE CITY - COMPTROLLER"],["DEPUTY COMPTROLLER","DEPUTY COMPTROLLER"],["BELIZE CITY - POST AUDIT","BELIZE CITY - POST AUDIT"],["BELIZE CITY - EXCISE","BELIZE CITY - EXCISE"],["BELIZE CITY - PRIVATE WAREHOUSE","BELIZE CITY - PRIVATE WAREHOUSE"],["BELIZE CITY - ENFORCEMENT","BELIZE CITY - ENFORCEMENT"],["BELIZE CITY- SECURITY","BELIZE CITY- SECURITY"],["TOURIST VILLAGE","TOURIST VILLAGE"],["POST OFFICE","POST OFFICE"],["PGIA - CARGO","PGIA - CARGO"],["PGIA - PASSENGER","PGIA - PASSENGER"],["ORANGE WALK","ORANGE WALK"],["BELIZE CITY - TRADE","BELIZE CITY - TRADE"],["BELIZE CITY - RISK MANAGEMENT","BELIZE CITY - RISK MANAGEMENT"],["BELIZE CITY - QBOND SHED","BELIZE CITY - QBOND SHED"]], {}, { :class => 'form-control' })%>
+                  </div>
+                       <div class="form-group">
+                    <label>Request Date</label>
+                    <%= f.date_field :requestdate, class: 'form-control', placeholder: 'Enter Request Date', required: true, readonly:true, :value => Time.now.strftime('%Y-%m-%d') %>
+                  </div>
+                 
+                    <div class="form-group">
+                    <label>Item Name</label>
+                 <%= f.select(:tonername, [["Select Item"],["Desktop","Desktop"],["Monitor","Monitor"],["Laptop","Laptop"],["Printer","Printer"],["Keyboard","Keyboard"],["Backup UPS,Backup UPS"],["MiFi","MiFi"],["USB Adapter","USB Adapter"],["Webcam","Webcam"],["Headset","Headset"],["KVM Switch","KVM Switch"],["Projector","Projector"],["Mouse","Mouse"],["Scanner","Scanner"],["Keyboard","Keyboard"],["Flashdrive","Flashdrive"],["Dell PK492","Dell PK492"],["Dell 2350dn Drum PK496","Dell 2350dn Drum PK496"], ["HDMI - VGA Adapter","HDMI - VGA Adapter"],["Dell 113X","Dell 113X"], ["Hp 81A","Hp 81A"],["Hp 64A","Hp 64A"],["Hp 26A","Hp 26A"],["37A","37A"],["Hp 30A","Hp 30A"],["Hp 17A","Hp 17A"],["Hp 19A","Hp 19A"],["126A (310A) Black","126A (310A) Black"],["126A (312A) Yellow","126A (312A) Yellow"],["126A (313A) Magenta","126A (313A) Magenta"],["126A (311A) Cyan","126A (311A) Cyan"],["131A (210A) Black","131A (210A) Black"],["131A (211A) Cyan","131A (211A) Cyan"],["131A (213A) Magenta","131A (213A) Magenta"],["Hp 410A Black","Hp 410A Black"],["Hp 411A Cyan","Hp 411A Cyan"],["Hp 412A Yellow","Hp 412A Yellow"],["413A Mag","413A Mag"],["Hp 83A","Hp 83A"],["Hp 85A","BZHp 85A"],["Hp 85A","Hp 85A"],["Hp 55A","Hp 55A"],["Hp 80A"],["HarvesHp 80A"],["Hp 35A","Hp 35A"],["Hp 05A","Hp 05A"],["122 XL Color","122 XL Color"],["122 XL Black","122 XL Black"],["414 Black,414 Black"],["414A Cyan","414A Cyan"],["414A Yellow","414A Yellow"],["414A Magenta","414A Magenta"],["21XL","21XL"],["22XL","22XL"],["Canon GPR22 Drum","Canon GPR22 Drum"],["Canon GPR22","Canon GPR22"],["Canon GPR54","Canon GPR54"],["Brother Fax 775 ","Brother Fax 775 "],["Brother Fax 575","Brother Fax 575"],["Samsung 101S","Samsung 101S"],["Kyocera TK352","Kyocera TK352"],["Hp 950 Black,Hp 950 Black"],["Hp 951 Color","Hp 951 Color"],["Hp 952 Black","Hp 952 Black"],["952 Magenta","952 Magenta"],["Hp 952 Yellow","Hp 952 Yellow"],["Hp 952 Cyan","Hp 952 Cyan"],["508A Black","508A Black"],["508A Cyan","508A Cyan"],["508A Yellow","508A Yellow"],["508A Magenta","508A Magenta"],["Lexmark 50F4H00","Lexmark 50F4H00"],["Lexmark 60F4H00","Lexmark 60F4H00"],["Hp 36A","Hp 36A"],["Hp 90A","Hp 90A"],["Hp 87A / 87XC","Hp 87A"],["Backup UPS - Battery","Backup UPS - Battery"],["Add Item","Add Item"]], {}, { :class => 'form-control' })%>
+                  </div>
+                 
+                  <div class="form-group">
+                    <label>Quantity</label>
+                    <%= f.number_field :quantity, class: 'form-control', placeholder: 'Enter Quantity', required: true %>
+                  </div>
+                  <div class="form-group">
+                    <label>Comment</label>
+                    <%= f.text_field :comment, class: 'form-control', placeholder: 'Enter Comment', required: true %>
+                  </div>
+                 
+                <!-- /.box-body -->
+                <div class="box-footer">
+                  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+                </div>
+              <% end %>
+            </div>
+            <!-- /.box -->
+          </div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <%= render 'layouts/footer' %>
+    <!-- ./wrapper -->
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $(document).ready(function () {
+        $.widget.bridge('uibutton', $.ui.button);
+        $('.datepicker').datepicker({format: 'yyyy/mm/dd'});
+      });
+    </script>
+  </div>
+</body>

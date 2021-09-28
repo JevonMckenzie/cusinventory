@@ -1,0 +1,314 @@
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+
+    <%= render 'layouts/header' %>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Dashboard
+          <small>Control panel</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li class="active">
+            <a href="#">
+              <i class="fa fa-home"></i>
+              Home Page</a>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Desktops</h3><h5>Total: <%=Item.where(:category => "Desktop").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Desktop").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Monitors</h3><h5>Total: <%=Item.where(:category => "Monitor").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Monitor").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+           <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Laptops</h3><h5>Total: <%=Item.where(:category => "Laptop").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Laptop").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Printers</h3><h5>Total: <%=Item.where(:category => "Printer").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Printer").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+      
+
+          <!-- ./col -->
+        </div>
+
+        <!-- /.row -->
+<div class="row">
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Backup UPS</h3><h5>Total: <%=Item.where(:category => "UPS Battery Backup").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "UPS Battery Backup").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Mifi</h3><h5>Total: <%=Item.where(:category => "MiFi").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "MiFi").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+        <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>USB Adpters</h3><h5>Total: <%=Item.where(:category => "Wireless USB Adapter").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "USB Adapter").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+         <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Servers</h3><h5>Total: <%=Item.where(:category => "Server").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Server").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+      
+
+          <!-- ./col -->
+        </div>
+                <div class="row">
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Webcams</h3><h5>Total: <%=Item.where(:category => "Webcam").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Webcam").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Headsets</h3><h5>Total: <%=Item.where(:category => "Head Set").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Head Set").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+           <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Projectors</h3><h5>Total: <%=Item.where(:category => "Projector").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Projector").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+              <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+           <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Mouse</h3><h5>Total: <%=Item.where(:category => "Mouse").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Mouse").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+              <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+           <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Keyboard</h3><h5>Total: <%=Item.where(:category => "Keyboard").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Keyboard").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+              <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+           <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Flash Drive</h3><h5>Total: <%=Item.where(:category => "Flash Drive").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Flash Drive").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>Scanners</h3><h5>Total: <%=Item.where(:category => "Scanner").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Scanner").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+
+               <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+             <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>KVM Switch</h3><h5>Total: <%=Item.where(:category => "KVM Switch").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "KVM Switch").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+      
+
+          <!-- ./col -->
+        </div>
+
+            <div class="row">
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>HDMI Adapt.</h3><h5>Total: <%=Item.where(:category => "HDMI - VGA Adapter").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "HDMI - VGA Adapter").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+          <!-- ./col -->
+    
+
+                <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>UPS Battery</h3><h5>Total: <%=Item.where(:category => "Backup UPS - Battery").sum(:quantity)%>
+                </h5>
+                <h5>Available: <%=Item.where(:category => "Backup UPS - Battery").sum(:remaining_quantity)%>
+                </h5>
+              </div>
+              
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <!-- ./col -->
+        </div>
+
+
+
+        
+        </div>
+        <!-- /.row -->
+   
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <%= render 'layouts/footer' %>
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <script>
+      $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+      });
+    </script>
+  </body>

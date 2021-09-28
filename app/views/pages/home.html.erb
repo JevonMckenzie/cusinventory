@@ -1,0 +1,28 @@
+<html>
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </head>
+  <body class="container">
+
+
+<h1 align="center">Customs Electronic Applications</h1><br><br>
+<%= link_to 'View Information About This Electronic Form', pages_path %><br><br>
+<% if current_user %>
+<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %><br><br>
+<a href="http://customsapplications.herokuapp.com/admin">Administration Panel</a>
+<% else %>
+<%= link_to 'Sign Up', new_user_registration_path %><br><br>
+<%= link_to 'Sign In', new_user_session_path %>
+<% end %><br><br>
+
+<%= link_to 'View Applications Submitted for Refund of Duty (NOT YET FULLY FUNCTIONAL)', refunds_path %><br><br>
+<%= link_to 'Apply for Refund of Duty (NOT YET FULLY FUNCTIONAL)', new_refund_path %><br><br>
+
+<%= link_to 'View Applications Submitted for Post Modification', postmods_path %><br><br>
+<%= link_to 'Apply for Post Modification', new_postmod_path %>
+
+</body>
+</html>

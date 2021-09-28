@@ -1,0 +1,52 @@
+
+<html>
+<head>
+<title> Customs IT Inventory</title>
+<style>
+table, th, td, tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+</style>
+</head>
+
+
+<% if @selected_user.empty? %>
+	<h4> No records to Testing</h4>
+<% else %>
+  <%= puts @selected_user %>
+	<table width="100%">
+		<thead>
+			<tr>
+				<th>Email</th>
+				<th>Rank</th>
+				<th>Asycuda Function</th>
+				<th>Account Type</th>
+				<th>Station</th>
+				<th>Section</th>
+				<th>Section</th>													
+			</tr>
+		</thead>
+		<tbody>
+		<% @selected_user.each do |user| %>
+
+		<tr>
+			<td>@selected_user</td>
+			<td> <%= user.email%> </td>
+			<td> <%= user.orank_id%> </td>
+			<td> <%= user.asyfxn_id%> </td>
+			<td> <%= user.acctype_id%> </td>			
+			<td> <%= user.custation_id%> </td>
+			<td> <%= user.section_id%> </td>
+			
+			
+			<td> <%= user.supervisor_id%> </td>
+<!--			<td><%= link_to 'Show', user %> </td>     -->
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<% end %>
+
+</html>

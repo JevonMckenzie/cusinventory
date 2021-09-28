@@ -1,0 +1,193 @@
+<header class="main-header">
+  <!-- Logo -->
+  <a href="<%= root_url %>" class="logo">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini">
+      <b>f</b>Customs</span>
+    <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg">
+      <b>Customs MIS</b>
+    </span>
+  </a>
+  <!-- Header Navbar: style can be found in header.less -->
+  <nav class="navbar navbar-static-top">
+    <!-- Sidebar toggle button-->
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+  </nav>
+</header>
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <%= image_tag("user2-160x160.jpg", class: "img-circle") %>
+      </div>
+      <div class="pull-left info">
+        <p><%= current_user.name %></p>
+
+        <a href="<%= edit_user_path(current_user.id) %>">
+          <i class="fa fa-edit"></i>
+          Edit Profile</a>
+        <a href="">
+          <%= link_to destroy_user_session_path, method: :delete  do %>
+          <i class="fa fa-sign-out"></i>Log Out
+        <% end %>
+        </a>
+      </div>
+    </div>
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+     <% if current_user.admin? || current_user.cmisuser == "YES" %>
+        <ul class="sidebar-menu">
+      <li class="header">MAIN NAVIGATION</li>
+                    <li>
+        <a href="<%= inventory_path %>">
+          <i class=""></i>
+          <span ><% if current_user.stationname.nil? %>
+          <p><font color="red">  Your  Assigned Station 
+            Is <br>Not Set. Please Edit Your Profile & <br>Choose Assigned Station</font> </p>
+            <% else %>           
+            <h4 align="center"><font color="green">Your Assigned Station Is:<br> <%= current_user.stationname %></font></h4></span>
+            <% end %>
+        </a>
+      </li>
+              <li>
+        <a href="<%= inventory_path %>">
+          <i class="fa fa-search"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+      <li>
+          <a href="professionaldevelopment">
+          <i class="fa fa-search"></i>
+          <span>Learn MS Excel & MS Access</span>
+        </a>
+      </li>
+
+           <li>
+          <a href="<%= rails_admin_path %>">
+          <i class="fa fa-search"></i>
+          <span>Admin</span>
+        </a>
+      </li>
+      
+      <li>
+          <a href="<%= items_path %>">
+          <i class="fa fa-search"></i>
+          <span>View All Items</span>
+        </a>
+      </li>
+
+         <li>
+          <a href="<%= users_path %>">
+          <i class="fa fa-search"></i>
+          <span>View All Users</span>
+        </a>
+      </li>
+
+           <li>
+          <a href="<%= applications_path %>">
+          <i class="fa fa-search"></i>
+          <span>Electronic Forms</span>
+        </a>
+      </li>
+
+<li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>View Deployed Items</span>
+        </a>
+      </li>
+        
+          <li>
+          <a href="<%= serviced_items_path %>">
+          <i class="fa fa-search"></i>
+          <span>View Serviced/Returned Items</span>
+        </a>
+      </li>
+        
+          <li>
+          <a href="<%= station_info_path %>">
+          <i class="fa fa-search"></i>
+          <span>View Customs Stations</span>
+        </a>
+      </li>
+       
+      <li>
+       <a href="<%= new_item_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>Add Item to Inventory</span>
+        </a>
+      </li>
+<li>
+        <li>
+        <a href="<%= new_member_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>Add Customs Station</span>
+        </a>
+</li>
+   
+
+    
+   
+  
+     
+    </ul>
+
+
+ <% else %>
+
+    <ul class="sidebar-menu">
+      <li class="header">MAIN NAVIGATION</li>
+
+                  <li>
+        <a href="<%= inventory_path %>">
+          <i class=""></i>
+         <% if current_user.stationname.nil? %> <span >
+          <p><font color="red">  Your  Assigned Station 
+            Is <br>Not Set. Please Edit Your Profile & <br>Choose Assigned Station</font> </p>
+            <% else %>           
+            <h4 align="center"><font color="green">Your Assigned Station Is:<br> <%= current_user.stationname %></font></h4></span>
+            <% end %>
+        </a>
+      </li>
+              
+          <li>
+        <a href="<%= root_path %>">
+          <i class="fa fa-home"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+            <li>
+          <a href="professionaldevelopment">
+          <i class="fa fa-search"></i>
+          <span>Learn MS Excel & MS Access</span>
+        </a>
+      </li>
+    
+
+      <li>
+          <a href="<%= orders_path %>">
+          <i class="fa fa-search"></i>
+          <span>View Deployed Items</span>
+        </a>
+      </li>
+    
+   
+      <li>
+        <a href="<%= applications_path %>">
+          <i class="fa fa-user-plus"></i>
+          <span>Electronic Forms</span>
+        </a>
+      </li>
+      
+    </ul>
+    <% end %>
+  </section>
+  <!-- /.sidebar -->
+</aside>

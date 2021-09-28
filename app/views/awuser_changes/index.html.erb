@@ -1,0 +1,99 @@
+<html>
+<head>
+<title> Customs IT Inventory</title>
+<style>
+table, th, td, tr {
+ 
+  border-collapse: collapse;
+  text-align: center;
+}
+</style>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <%= render 'layouts/header' %>
+    <div class="content-wrapper">
+
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Requests for Change to Asyworld User
+          <small>All Asyworld User Requests</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li>
+            <a href="#">
+              <i class="fa fa-home"></i>
+              Home Page</a>
+          </li>
+          <li class="active">Asyworld User Request</li>
+        </ol>
+      </section>
+
+      <section class="content">
+        <div class="row">
+          <div class="col-xs-12">
+            <!-- Main data table -->
+            <div class="box">
+
+              <!-- /.box-header -->
+              <div class="box-body">
+                    <div class="table-responsive fix-table-height">
+                <table id="example1" class="table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Request Change ID</th>
+                      <th>User to Change</th>
+                      <th>Select Request</th>
+              
+           
+                 
+                   
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @awuser_changes.each do |change| %>
+                   
+                                     <tr>
+                     <td><%= change.id %></td>
+                      <td><%= change.user.email %></td>
+                       <td><%= link_to 'Select Request', edit_awuser_change_path(change) %></td>
+
+              
+                  
+                   
+                      
+                      
+                
+                    
+                    </tr>
+                    <% end %>
+                    
+                  </tbody>
+                </table>
+              </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <%= render 'layouts/footer' %>
+  </div>
+  <script>
+    $(function () {
+      $("#example1").DataTable();
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false
+      });
+    });
+  </script>
+</body>
+</html>

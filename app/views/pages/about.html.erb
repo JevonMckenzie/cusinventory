@@ -1,0 +1,87 @@
+<html>
+<head>
+<title> Customs Application For Post Modification </title>
+<style>
+table, th, td, tr {
+ border: ;
+ border-collapse: collapse;
+}
+label{
+
+}
+</style>
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
+
+</head> 
+
+<body style="background-color:#f5f3f2;" class="container">
+<br>
+<h1>Customs Online Request For Post Modification Guide</h1><br><br>
+<%= link_to 'Home', root_path %><br><br>
+
+<h3>Process Flow </h3>
+<ul>
+	<li>The Broker will be given a username and password. They will change their password after they login.</li>
+	<li>The Broker will select the fields respective to thier request for postmodification and attach file if necessary. </li>
+	<li>The Broker submits the request by clicking on the submit button.</li>
+	<li>When Broker clicks submit an email notification is sent to Customs Administration. The email will only show the fields that have been selected. . If a file is attached it will be in the email; it will not be stored in the app.</li>
+	<li>When Administration receives the email notification they can look at the information within the email and click on the available link to access the app.</li>
+	<li> By Editing the Request Administration will either approve, record, ask for additional information(with explanation), or deny(with explanation) the request by choosing the appropriate field(s) in the Official Use section. </li>
+		<li>If Admin chooses Additional Information the Broker will be prompted to edit their Request respective to the information/reason provided by Administration. This process can go back and forth until Admin is satisfied, afterwhich they will Approve the Request.</li>
+		<li> If Admin chooses Approve he/she will also include an Ammendment Cost To Be Paid</li>
+		<li> The Broker will be notified when their Request has been approved.</li>
+		<li> The Broker will then visit Customs Main Office to make payment respective to the Ammendment Cost To Be Paid set by Admin.</li>
+		<li> The Broker will edit their Request and include the Receipt Number received from the payment.</li>
+		<li> Administration receives an automatic email notification whenever a Request is edited. Considering that Admin will receive an email notification when the Broker edits his/her Request and enters their Ammendment Fee Receipt Number.</li>
+		<li> If the status of the request is Approved and the Ammendment Fee Receipt is present, Admin will select Recorded.</li>
+		<li> When recorded is selected the Request is not longer available to anyone. Same is true for when denied is selected.</li>
+</ul>
+
+<h3>USER ACCOUNTS</h3>
+<ul>
+<li>Temporary Email Account Receiving Emails<br> Email Address: bellcus00@gmail.com; Password: belizecustoms (This is a test email account that I created, which will be replaced with trade@customs.gov.bz after testing )</li>
+<li>A Username and Password will be created for each Broker. Test Broker User Login: jj@gmail.com, pass123 ;   jane.doe@gmail.com, pass123  and john.doe@customs.gov.bz, pass123</li>
+<li>There are Three types of Broker/Users, Super Admins, Admins & Brokers. Your Admin username is your customs email alias and temp password is pass123.</li>
+</ul>
+
+<h3> Email Notification</h3>
+<ul>
+	<li>When a Broker Creates a Request for Post Modification an email notification is automatically sent to Customs Trade Email address. At the moment its temporarily being sent to bellcus00@gmail.com</li> 
+	<li>The subject of the email identifies that its a notification for Post Modification. The message of the email identifies if the the notification if from an Administrator or if its frm a Broker.</li>
+	<li>The message of the email also identifies all Selected / Chosen fields from the Request / Form. I.E. within the email you will be able to see the status the Approved field and any other fields that may have been selected. Fields that were not selected will not show in the email.</li> 
+	<li>When a Request for Post Modification is Edited an email is sent to ustoms Trade Email address. At the moment its temporarily being sent to bellcus00@gmail.com </li>
+</ul>
+
+
+<h3>CREATING A REQUEST FOR POST MODIFICATION</h3>
+<ul>
+<li>A Post Modification request can only be created by a Broker. </li>
+<li>Brokers can only see and edit Requests that they made.</li>
+<li>If the user who logs in is a Super Admin or Admin they will NOT be able to access Sections I and II. They will only be able to access Section III.</li>
+<li>If the user who logs in is a Broker they will NOT be able to access Section section III. They will only be able to access section I and II.
+<li>The following fields must be present when broker is creating a request for post modification:
+	<ul>
+	<li>Entry Number and Office Code cannot be blank</li>
+	<li>Ammendmen fee Receipt is not available unless "Approved " from Official Use Section is true </li> 
+	<li>When editing a request the broker needs to re-upload their attachment because attachments are not saved in the app. All attachments have to compiled to a single PDF file before uploading. </li>
+	</ul>
+</li>
+</li>
+</ul>
+<h3>ADMINISTRATION EDITING (Approve/Deny) A REQUEST</h3>
+<ul>
+<li>If Denied or Additional Information is selected, Admin Reason must be present.</li>
+<li>If Administration chooses Approved, Ammendment Cost To be paid must be present .</li>
+<li>If Administration chooses Recorded, Approved must be present.</li>
+<li>When Administration chooses Recorded the Request is no longer available to anyone.</li>
+</ul>
+
+</body>
+</html>
+	
