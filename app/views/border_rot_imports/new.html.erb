@@ -1,5 +1,27 @@
-<h1>New Border Rot Import</h1>
+<%= render 'layouts/header' %>
+<body class="skin-blue sidebar-mini">
+    <div class="content-wrapper">
+        <div class="content">
 
-<%= render 'form', border_rot_import: @border_rot_import %>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="nav nav-tabs style-1" id="tabs" role="tablist">
+                        <li class="active nav-item"><a class="nav_links nav-link btn" data-toggle="tab" href="#entrance" role="tab">Entrance Gate</a></li>
+                        <li class="nav-item"><a data-toggle="tab" class="nav_links nav-link btn" href="#exit" role="tab">Exit Gate</a></li>
+                    </ul>
 
-<%= link_to 'Back', border_rot_imports_path %>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="entrance">
+                            <h1 class="text-center">New Importer</h1>
+                            <%= render 'entering', border_rot_import: @border_rot_import %>
+                            <%= link_to 'Back', border_rot_imports_path %>
+                        </div>
+                        <div class="tab-pane" id="exit">
+                            <h1>Exit</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -17,6 +17,7 @@ class BorderRotImportsController < ApplicationController
 
   # GET /border_rot_imports/1/edit
   def edit
+    
   end
 
   # POST /border_rot_imports or /border_rot_imports.json

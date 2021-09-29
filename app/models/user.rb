@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+     belongs_to :border_rot_imports
 	#has_many :maintenances
     has_many :toners
      #has_many :awusers

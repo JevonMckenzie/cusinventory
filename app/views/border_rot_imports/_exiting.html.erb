@@ -1,0 +1,40 @@
+<%= form_for(border_rot_import) do |f| %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <% if border_rot_import.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(border_rot_import.errors.count, "error") %> prohibited this border_rot_import from being saved:</h2>
+
+          <ul>
+          <% border_rot_import.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="form-group">
+      <label>Rot#: </label>
+        <%= f.text_field :rot_num, :class => 'form-control' %>
+        <label>License#:</label>
+        <%= f.text_field :license_plate, :class => 'form-control' %>
+        <label>Vehicle Description: </label>
+        <%= f.text_field :vehicle_description, :class => 'form-control' %>
+        <label>Vehicle Color: </label>
+        <%= f.text_field :vehicle_color, :class => 'form-control' %>
+        <label>Driver Name: </label>
+        <%= f.text_field :driver_name, :class => 'form-control' %>
+        <label>Owner: </label>
+        <%= f.text_field :owner, :class => 'form-control' %>
+        <label>Goods Description: </label>
+        <%= f.text_field :goods_description, :class => 'form-control' %>
+        <label>Vin#: </label>
+        <%= f.text_field :vin, :class => 'form-control' %>
+        <label>Destination: </label>
+        <%= f.text_field :destination, :class => 'form-control' %>
+      </div>
+      <div class="actions text-center">
+        <%= f.submit nil, :class => 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+<% end %>

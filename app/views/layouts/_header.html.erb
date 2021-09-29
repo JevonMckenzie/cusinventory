@@ -126,30 +126,6 @@
       </li>
 
       <li>
-        <a class="dropdown-btn" id="class_toggle">
-             <small><i class="fa fa-caret-right" id="rotate_fa" style="margin-right: 5px;"></i> Border Rotation</small>
-        </a>
-        <div class="dropdown-container">
-            <div class="container" style="margin-left: 14px;">
-              <div class="row">
-                <div class="col-md-12">
-                  <a href="<%= rotation_new_path %>">
-                     <i class="fa fa-level-up fa-rotate-90" style="font-size: 20px; margin-right: 10px;"></i>
-                    <span>Create</span>
-                  </a>
-                </div>
-                <div class="col-md-12">
-                  <a href="<%= rotation_path %>">
-                  <i class="fa fa-level-up fa-rotate-90" style="font-size: 20px; margin-right: 10px;"></i>
-                    <span>View</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-        </div>
-      </li>
-
-      <li>
         <a href="<%= rails_admin_path %>">
           <i class="fa fa-search"></i>
           <span>Admin</span>
@@ -257,13 +233,6 @@
       </li>
 
       <li>
-        <a href="<%= rotation_path %>">
-          <i class="fa fa-search"></i>
-          <span>Border Rotation</span>
-        </a>
-      </li>
-
-      <li>
         <a href="<%= orders_path %>">
           <i class="fa fa-search"></i>
           <span>View Deployed Items</span>
@@ -281,22 +250,3 @@
   </section>
   <!-- /.sidebar -->
 </aside>
-<script>
-  var dropdown = document.getElementsByClassName("dropdown-btn");
-  var i;
-
-  for (i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener("click", function () {
-      this.classList.toggle("active");
-      var dropdownContent = this.nextElementSibling;
-      if (dropdownContent.style.display === "block") {
-        dropdownContent.style.display = "none";
-      } else {
-        dropdownContent.style.display = "block";
-      }
-    });
-  }
-  $('#class_toggle').on('click',function(e){
-    $('#rotate_fa').toggleClass('fa-rotate-90');
-  });
-</script>

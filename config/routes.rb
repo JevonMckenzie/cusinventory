@@ -1,28 +1,7 @@
 Rails.application.routes.draw do
   
   resources :border_rot_imports
-  get 'rotation' => 'border_rotation#index'
   
-  get 'rotation/new' => 'border_rotation#new'
-
-  post 'rotation/new' => 'border_rotation#create'
-
-  get 'rotation/create_export', to: 'border_rotation#create_export'
-
-  post 'rotation/create_export', to: 'border_rotation#create_export'
-
-  get 'rotation/create_import', to: 'border_rotation#create_import'
-  
-  post 'rotation/create_import', to: 'border_rotation#create_import'
-
-  get 'rotation/create', to: 'border_rotation#create'
-  
-  post 'rotation/create', to: 'border_rotation#create'
-
-  get 'border_rotation/show'
-
-  get 'border_rotation/new'
-
   get 'awuser_change/index'
 
   get 'awuser_change/new'
