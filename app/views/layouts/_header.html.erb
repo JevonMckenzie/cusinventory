@@ -1,6 +1,6 @@
 <header class="main-header">
   <!-- Logo -->
-  <a href="<%= root_url %>" class="logo">
+  <a href="<%= root_url %>" class="logo" style="position: fixed;">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"> <b>f</b>Customs</span>
     <!-- logo for regular state and mobile devices -->
@@ -9,7 +9,7 @@
     </span>
   </a>
   <!-- Header Navbar: style can be found in header.less -->
-  <nav class="navbar navbar-static-top">
+  <nav class="navbar navbar-static-top" style="position: fixed; width: 100%;">
     <!-- Sidebar toggle button-->
     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
       <span class="sr-only">Toggle navigation</span>
@@ -63,7 +63,7 @@
   </style>
 </header>
 <!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar">
+<aside class="main-sidebar" style="height: 100%; position: fixed;">
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <!-- Sidebar user panel -->
@@ -130,6 +130,29 @@
           <i class="fa fa-search"></i>
           <span>Admin</span>
         </a>
+      </li>
+      
+      <li>
+        <ul>
+          <li>
+            <a href="<%= border_rot_imports_path %>">
+              <i class="fa fa-search"></i>
+              <span>Border Rotation System</span>
+            </a>
+          </li>
+          <li>
+            <a href="<%= new_border_rot_import_path %>">
+              <i class="fa fa-search"></i>
+              <span>New Importer</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-search"></i>
+              <span>Importer Clearance</span>
+            </a>
+          </li>
+        </ul>
       </li>
 
       <li>
@@ -230,6 +253,29 @@
           <i class="fa fa-search"></i>
           <span>Learn MS Excel & MS Access</span>
         </a>
+      </li>
+      
+      <li>
+        <ul>
+          <li>
+            <a href="<%= border_rot_imports_path %>">
+              <i class="fa fa-search"></i>
+              <span>Border Rotation System</span>
+            </a>
+          </li>
+          <li>
+            <a href="<%= new_border_rot_import_path %>">
+              <i class="fa fa-search"></i>
+              <span>New Importer</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-search"></i>
+              <span>Importer Clearance</span>
+            </a>
+          </li>
+        </ul>
       </li>
 
       <li>
