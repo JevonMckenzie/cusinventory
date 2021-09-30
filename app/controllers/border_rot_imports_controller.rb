@@ -33,7 +33,7 @@ class BorderRotImportsController < ApplicationController
     respond_to do |format|
       if @border_rot_import.save
         format.html { redirect_to @border_rot_import, notice: "Border rot import was successfully created." }
-        format.json { render :show, status: :created, location: @border_rot_import }
+        format.json { render :new, status: :created, location: @border_rot_import }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @border_rot_import.errors, status: :unprocessable_entity }

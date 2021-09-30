@@ -14,16 +14,47 @@
                 <table id="example1" class="table-bordered table-striped">
                   <thead>
                     <tr>
-                      <th>Request ID</th>
+                      <th>ID</th>
+                      <th>Date In</th>
+                      <th>Time In</th>
                       <th>Rot#</th>
-                      <th>Clear</th>
+                      <th>License Plate In</th>
+                      <th>Vehicle Model</th>
+                      <th>Vehicle Color</th>
+                      <th>Driver Name</th>
+                      <th>Owner</th>
+                      <th>Goods Description</th>
+                      <th>Vin</th>
+                      <th>Destination</th>
+                      <th>Entry</th>
+                      <th>License Plate Out</th>
+                      <th>Date Out</th>
+                      <th>Time Out</th>
+                      <th>Issuing Officer</th>
+                      <th>Clearing Officer</th>
                     </tr>
                   </thead>
                   <tbody>
                     <% @border_rot_imports.each do |border_rot_imports| %>
                     <tr>
                       <td><%= border_rot_imports.id %></td>
+                      <td><%= border_rot_imports.date_in %></td>
+                      <td><%= border_rot_imports.time_in %></td>
                       <td><%= border_rot_imports.rot_num %></td>
+                      <td><%= border_rot_imports.license_plate_in %></td>
+                      <td><%= border_rot_imports.vehicle_description %></td>
+                      <td><%= border_rot_imports.vehicle_color %></td>
+                      <td><%= border_rot_imports.driver_name %></td>
+                      <td><%= border_rot_imports.owner %></td>
+                      <td><%= border_rot_imports.goods_description %></td>
+                      <td><%= border_rot_imports.vin %></td>
+                      <td><%= border_rot_imports.destination %></td>
+                      <td><%= border_rot_imports.entry = "---" unless border_rot_imports.entry? %></td>
+                      <td><%= border_rot_imports.license_plate_out = "---" unless border_rot_imports.license_plate_out? %></td>
+                      <td><%= border_rot_imports.date_out = "---" unless border_rot_imports.date_out? %></td>
+                      <td><%= border_rot_imports.time_out = "---" unless border_rot_imports.time_out? %></td>
+                      <td><%= border_rot_imports.issuing_officer_id %></td>
+                      <td><%= border_rot_imports.clearing_officer_id %></td>
                     </tr>
                     <% end %>
                   </tbody>
