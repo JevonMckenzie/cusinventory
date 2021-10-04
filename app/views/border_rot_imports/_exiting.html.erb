@@ -1,40 +1,32 @@
 <%= form_for(border_rot_import) do |f| %>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <% if border_rot_import.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(border_rot_import.errors.count, "error") %> prohibited this border_rot_import from being saved:</h2>
+    <% if border_rot_import.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(border_rot_import.errors.count, "error") %> prohibited this border_rot_import from being saved:</h2>
 
-          <ul>
-          <% border_rot_import.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <div class="form-group">
-      <label>Rot#: </label>
-        <%= f.text_field :rot_num, :class => 'form-control' %>
-        <label>License#:</label>
-        <%= f.text_field :license_plate, :class => 'form-control' %>
-        <label>Vehicle Description: </label>
-        <%= f.text_field :vehicle_description, :class => 'form-control' %>
-        <label>Vehicle Color: </label>
-        <%= f.text_field :vehicle_color, :class => 'form-control' %>
-        <label>Driver Name: </label>
-        <%= f.text_field :driver_name, :class => 'form-control' %>
-        <label>Owner: </label>
-        <%= f.text_field :owner, :class => 'form-control' %>
-        <label>Goods Description: </label>
-        <%= f.text_field :goods_description, :class => 'form-control' %>
-        <label>Vin#: </label>
-        <%= f.text_field :vin, :class => 'form-control' %>
-        <label>Destination: </label>
-        <%= f.text_field :destination, :class => 'form-control' %>
+        <ul>
+        <% border_rot_import.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
       </div>
-      <div class="actions text-center">
-        <%= f.submit nil, :class => 'btn btn-primary' %>
-      </div>
+    <% end %>
+    <div class="form-group">
+     <label>Rot#: </label><p style="display: inline-block; margin-left: 10px;"> <%= @rotation.rot_num %></p><br />
+      <label>Owner: </label><p style="display: inline-block; margin-left: 10px;"><%= @rotation.owner %></p><br />
+      <label>Goods Description: </label><p style="display: inline-block; margin-left: 10px;"><%= @rotation.goods_description %></p><br />
+      <label>Destination: </label><p style="display: inline-block; margin-left: 10px;"><%= @rotation.destination %></p><br />
+
+      <label>Entry:</label>
+      <%= f.text_field :entry, :class => 'form-control' %>
+      <label>License Plate: </label>
+      <%= f.text_field :license_plate_out, :class => 'form-control' %>
+      <label>Date Out: </label>
+      <%= f.text_field :date_out, :class => 'form-control' %>
+      <label>Time Out: </label>
+      <%= f.text_field :time_out, :class => 'form-control' %>
     </div>
-  </div>
+    <div class="actions text-center">
+      <%= f.submit nil, :class => 'btn btn-primary' , :value => 'Confirm', :style =>"margin: 20px;" %>
+    </div>
+  
 <% end %>

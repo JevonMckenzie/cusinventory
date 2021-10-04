@@ -1,5 +1,7 @@
 <%= render 'layouts/header' %>
 <body class="skin-blue sidebar-mini">
+  <%= @border_rot_import.inspect%>
+
   <div class="content-wrapper">
     <div class="content">
       <p id="notice"><%= notice %></p>
@@ -38,8 +40,8 @@
                     <% @border_rot_imports.each do |border_rot_imports| %>
                     <tr>
                       <td><%= border_rot_imports.id %></td>
-                      <td><%= border_rot_imports.date_in %></td>
-                      <td><%= border_rot_imports.time_in %></td>
+                      <td><%= border_rot_imports.date_time_in.strftime("%F") %></td>
+                      <td><%= border_rot_imports.date_time_in.strftime("%T") %></td>
                       <td><%= border_rot_imports.rot_num %></td>
                       <td><%= border_rot_imports.license_plate_in %></td>
                       <td><%= border_rot_imports.vehicle_description %></td>
@@ -49,13 +51,14 @@
                       <td><%= border_rot_imports.goods_description %></td>
                       <td><%= border_rot_imports.vin %></td>
                       <td><%= border_rot_imports.destination %></td>
+                      
                       <td><%= border_rot_imports.entry = "---" unless border_rot_imports.entry? %></td>
                       <td><%= border_rot_imports.license_plate_out = "---" unless border_rot_imports.license_plate_out? %></td>
-                      <td><%= border_rot_imports.date_out = "---" unless border_rot_imports.date_out? %></td>
-                      <td><%= border_rot_imports.time_out = "---" unless border_rot_imports.time_out? %></td>
-                      <td><%= border_rot_imports.issuing_officer_id %></td>
-                      <td><%= border_rot_imports.clearing_officer_id %></td>
+                      <td><%= border_rot_imports.date_time_out = "---" unless border_rot_imports.date_time_out? %></td>
+                      <td><%= border_rot_imports.date_time_out = "---" unless border_rot_imports.date_time_out? %></td>
+                      <td><%= border_rot_imports.issuing_officer_name %></td>
                     </tr>
+                    
                     <% end %>
                   </tbody>
                 </table>
@@ -67,18 +70,10 @@
       </div>
     </div>
   </div>
-
   <%= link_to 'New Border Rot Import', new_border_rot_import_path %>
   <script>
     $(function () {
-      $("#example1").DataTable({
-        paging: true,
-        lengthChange: false,
-        searching: true,
-        ordering: true,
-        info: true,
-        autoWidth: false,
-      });
+      $("#example1").DataTable();
     });
   </script>
 </body>

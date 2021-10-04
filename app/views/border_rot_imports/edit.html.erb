@@ -1,6 +1,15 @@
-<h1>Editing Border Rot Import</h1>
-
-<%= render 'form', border_rot_import: @border_rot_import %>
-
-<%= link_to 'Show', @border_rot_import %> |
-<%= link_to 'Back', border_rot_imports_path %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 " style="border: 1px solid grey; box-shadow: 5px 10px #dfdfdf; border-radius: 15px;">
+            
+            <div class="card" style="width: 80%; padding-left: 20%;">
+                <div class="card-header">
+                    <h4 class="card-title text-center">Importer Information</h4>
+                </div>
+                <div class="card-body">
+                    <%= render 'exiting', border_rot_import: @border_rot_import %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -21,23 +21,28 @@
         </div>
     </div>
 <script>
-        $('#na_vin').on('click',function(){ 
-            if (this.checked){ $('#border_rot_import_vin').attr('disabled', 'disabled'); 
-            $('#border_rot_import_vin').addClass('invisible');
-            }
-            else{
-                $('#border_rot_import_vin').removeAttr('disabled');
-                $('#border_rot_import_vin').removeClass('invisible');
-            }
-        });
-        $('#na_license').on('click',function(){ 
-            if (this.checked){ $('#border_rot_import_license_plate_in').attr('disabled', 'disabled'); 
-            $('#border_rot_import_license_plate_in').addClass('invisible');
-            }
-            else{
-                $('#border_rot_import_license_plate_in').removeAttr('disabled');
-                $('#border_rot_import_license_plate_in').removeClass('invisible');
-            }
-        });
+    //Resets input field if N/A checkbox clicked
+    $('#na_vin').on('click',function(){ 
+        if (this.checked){ $('#border_rot_import_vin').attr('disabled', 'disabled'); 
+        $('#border_rot_import_vin').addClass('invisible');
+        $('#border_rot_import_vin').val('');
+        }
+        else{
+            $('#border_rot_import_vin').removeAttr('disabled');
+            $('#border_rot_import_vin').removeClass('invisible');
+        }
+    });
+    
+    //Resets input field if N/A checkbox clicked
+    $('#na_license').on('click',function(){ 
+        if (this.checked){ $('#border_rot_import_license_plate_in').attr('disabled', 'disabled'); 
+        $('#border_rot_import_license_plate_in').addClass('invisible');
+        $('#border_rot_import_license_plate_in').val('');
+        }
+        else{
+            $('#border_rot_import_license_plate_in').removeAttr('disabled');
+            $('#border_rot_import_license_plate_in').removeClass('invisible');
+        }
+    });
 </script>
 </body>

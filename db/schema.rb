@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210928164220) do
+ActiveRecord::Schema.define(version: 20211001224622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -156,8 +156,7 @@ ActiveRecord::Schema.define(version: 20210928164220) do
   end
 
   create_table "border_rot_imports", force: :cascade do |t|
-    t.date     "date_in"
-    t.time     "time_in"
+    t.date     "date_time_in"
     t.string   "rot_num"
     t.string   "license_plate_in"
     t.string   "vehicle_description"
@@ -169,14 +168,10 @@ ActiveRecord::Schema.define(version: 20210928164220) do
     t.string   "destination"
     t.string   "entry"
     t.string   "license_plate_out"
-    t.date     "date_out"
-    t.time     "time_out"
-    t.integer  "issuing_officer_id"
-    t.integer  "clearing_officer_id"
+    t.date     "date_time_out"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.index ["clearing_officer_id"], name: "index_border_rot_imports_on_clearing_officer_id", using: :btree
-    t.index ["issuing_officer_id"], name: "index_border_rot_imports_on_issuing_officer_id", using: :btree
+    t.integer  "issuing_officer_id"
   end
 
   create_table "cusections", primary_key: "secode", force: :cascade do |t|
@@ -317,7 +312,6 @@ ActiveRecord::Schema.define(version: 20210928164220) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.integer  "border_rot_import_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
@@ -346,7 +340,6 @@ ActiveRecord::Schema.define(version: 20210928164220) do
     t.string   "contact"
     t.index ["acctcode"], name: "index_users_on_acctcode", using: :btree
     t.index ["asyfxn_user"], name: "index_users_on_asyfxn_user", using: :btree
-    t.index ["border_rot_import_id"], name: "index_users_on_border_rot_import_id", using: :btree
     t.index ["cusection_id"], name: "index_users_on_cusection_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["orank_id"], name: "index_users_on_orank_id", using: :btree
@@ -356,6 +349,7 @@ ActiveRecord::Schema.define(version: 20210928164220) do
     t.index ["stncode"], name: "index_users_on_stncode", using: :btree
   end
 
+  add_foreign_key "border_rot_imports", "users", column: "issuing_officer_id"
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "members"
   add_foreign_key "toners", "users"

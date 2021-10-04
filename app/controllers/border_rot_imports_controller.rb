@@ -4,6 +4,9 @@ class BorderRotImportsController < ApplicationController
   # GET /border_rot_imports or /border_rot_imports.json
   def index
     @border_rot_imports = BorderRotImport.all
+    @testrelations = @border_rot_import
+      
+
   end
 
   # GET /border_rot_imports/1 or /border_rot_imports/1.json
@@ -17,19 +20,13 @@ class BorderRotImportsController < ApplicationController
 
   # GET /border_rot_imports/1/edit
   def edit
-    
+    @rotation = BorderRotImport.find(params[:id])
   end
 
   # POST /border_rot_imports or /border_rot_imports.json
   def create
     @border_rot_import = BorderRotImport.new(border_rot_import_params)
-    @border_rot_import.time_in = Time.current
-    @border_rot_import.date_in = Time.current
-    @border_rot_import.issuing_officer = User.find_by_id(current_user)
 
-    @border_rot_import.vin = 'N/A' unless @border_rot_import.vin? 
-    @border_rot_import.license_plate_in = 'N/A' unless @border_rot_import.license_plate_in?
-    
     respond_to do |format|
       if @border_rot_import.save
         format.html { redirect_to @border_rot_import, notice: "Border rot import was successfully created." }
@@ -71,6 +68,6 @@ class BorderRotImportsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def border_rot_import_params
-      params.require(:border_rot_import).permit(:rot_num, :license_plate_in, :vehicle_description, :vehicle_color, :driver_name, :owner, :goods_description, :vin, :destination)
+      params.require(:border_rot_import).permit(:rot_num, :license_plate_in, :vehicle_description, :vehicle_color, :driver_name, :owner, :goods_description, :vin, :destination).merge(issuing_officer_id: current_user.id)
     end
 end
