@@ -1,0 +1,43 @@
+                      List of relations
+ Schema |             Name             |   Type   |   Owner   
+--------+------------------------------+----------+-----------
+ public | acctypes                     | table    | fehrfaber
+ public | acctypes_acctcode_seq        | sequence | fehrfaber
+ public | ar_internal_metadata         | table    | fehrfaber
+ public | asyfxns                      | table    | fehrfaber
+ public | asyfxns_asyfxn_seq           | sequence | fehrfaber
+ public | awuser_changes               | table    | fehrfaber
+ public | awuser_changes_id_seq        | sequence | fehrfaber
+ public | awusers                      | table    | fehrfaber
+ public | awusers_id_seq               | sequence | fehrfaber
+ public | border_rot_imports           | table    | fehrfaber
+ public | border_rot_imports_id_seq    | sequence | fehrfaber
+ public | cusections                   | table    | fehrfaber
+ public | cusections_secode_seq        | sequence | fehrfaber
+ public | custations                   | table    | fehrfaber
+ public | custations_stncode_seq       | sequence | fehrfaber
+ public | delayed_jobs                 | table    | fehrfaber
+ public | delayed_jobs_id_seq          | sequence | fehrfaber
+ public | emails                       | table    | fehrfaber
+ public | emails_id_seq                | sequence | fehrfaber
+ public | items                        | table    | fehrfaber
+ public | items_id_seq                 | sequence | fehrfaber
+ public | members                      | table    | fehrfaber
+ public | members_id_seq               | sequence | fehrfaber
+ public | oranks                       | table    | fehrfaber
+ public | oranks_rankcode_seq          | sequence | fehrfaber
+ public | orders                       | table    | fehrfaber
+ public | orders_id_seq                | sequence | fehrfaber
+ public | reports                      | table    | fehrfaber
+ public | reports_id_seq               | sequence | fehrfaber
+ public | schema_migrations            | table    | fehrfaber
+ public | supervisors                  | table    | fehrfaber
+ public | supervisors_supcode_seq      | sequence | fehrfaber
+ public | supnames                     | table    | fehrfaber
+ public | supnames_sup_id_seq          | sequence | fehrfaber
+ public | toners                       | table    | fehrfaber
+ public | toners_requisitionnumber_seq | sequence | fehrfaber
+ public | users                        | table    | fehrfaber
+ public | users_id_seq                 | sequence | fehrfaber
+(38 rows)
+
