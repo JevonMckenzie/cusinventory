@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20211001224622) do
+ActiveRecord::Schema.define(version: 20211004221444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,9 +169,10 @@ ActiveRecord::Schema.define(version: 20211001224622) do
     t.string   "entry"
     t.string   "license_plate_out"
     t.date     "date_time_out"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.integer  "issuing_officer_id"
+    t.integer  "clearance_officer_id"
   end
 
   create_table "cusections", primary_key: "secode", force: :cascade do |t|
@@ -349,6 +350,7 @@ ActiveRecord::Schema.define(version: 20211001224622) do
     t.index ["stncode"], name: "index_users_on_stncode", using: :btree
   end
 
+  add_foreign_key "border_rot_imports", "users", column: "clearance_officer_id"
   add_foreign_key "border_rot_imports", "users", column: "issuing_officer_id"
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "members"

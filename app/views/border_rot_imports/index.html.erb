@@ -34,6 +34,7 @@
                       <th>Time Out</th>
                       <th>Issuing Officer</th>
                       <th>Clearing Officer</th>
+                      <th>Clear Importer</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -54,11 +55,16 @@
                       
                       <td><%= border_rot_imports.entry = "---" unless border_rot_imports.entry? %></td>
                       <td><%= border_rot_imports.license_plate_out = "---" unless border_rot_imports.license_plate_out? %></td>
-                      <td><%= border_rot_imports.date_time_out = "---" unless border_rot_imports.date_time_out? %></td>
-                      <td><%= border_rot_imports.date_time_out = "---" unless border_rot_imports.date_time_out? %></td>
-                      <td><%= border_rot_imports.issuing_officer_name %></td>
+                      <td><%= border_rot_imports.date_time_out ||= "---" %></td>
+                      <td><%= border_rot_imports.date_time_out ||= "---" %></td>
+                      <td><%= border_rot_imports.issuing_officer_name ||= "---" %></td>
+                      <% if border_rot_imports.clearance_officer_id?%>
+                        <td><%border_rot_imports.clearance_officer_name%></td>
+                        <% else %>
+                        <td>---</td>
+                        <% end %>
+                        <td><%= link_to "Clear Importer", edit_border_rot_import_path(border_rot_imports.id) %></td>
                     </tr>
-                    
                     <% end %>
                   </tbody>
                 </table>
@@ -73,7 +79,14 @@
   <%= link_to 'New Border Rot Import', new_border_rot_import_path %>
   <script>
     $(function () {
-      $("#example1").DataTable();
+      $("#example1").DataTable({
+        "paging": true,
+        "lengthChange": true,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": true
+      });
     });
   </script>
 </body>
