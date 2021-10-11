@@ -13,7 +13,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <div class="table-responsive fix-table-height">
-                <table id="example1" class="table-bordered table-striped">
+                <table id="example1" class="table-bordered table-striped text-center table">
                   <thead>
                     <tr>
                       <th>ID</th>
@@ -53,17 +53,21 @@
                       <td><%= border_rot_imports.vin %></td>
                       <td><%= border_rot_imports.destination %></td>
                       
-                      <td><%= border_rot_imports.entry = "---" unless border_rot_imports.entry? %></td>
-                      <td><%= border_rot_imports.license_plate_out = "---" unless border_rot_imports.license_plate_out? %></td>
+                      <td><%= border_rot_imports.entry ||= "---" %></td>
+                      <td><%= border_rot_imports.license_plate_out ||= "---" %></td>
                       <td><%= border_rot_imports.date_time_out ||= "---" %></td>
                       <td><%= border_rot_imports.date_time_out ||= "---" %></td>
-                      <td><%= border_rot_imports.issuing_officer_name ||= "---" %></td>
-                      <% if border_rot_imports.clearance_officer_id?%>
-                        <td><%border_rot_imports.clearance_officer_name%></td>
-                        <% else %>
-                        <td>---</td>
-                        <% end %>
-                        <td><%= link_to "Clear Importer", edit_border_rot_import_path(border_rot_imports.id) %></td>
+                      <% if border_rot_imports.issuing_officer%>
+                          <td><%= border_rot_imports.issuing_officer_name%></td>
+                          <%else%>
+                          <td>---</td>
+                        <%end%>
+                        <% if border_rot_imports.clearance_officer%>
+                          <td><%= border_rot_imports.clearance_officer_name%></td>
+                          <%else%>
+                          <td>---</td>
+                        <%end%>
+                        <td><%= link_to "Clear Importer", edit_border_rot_import_path(border_rot_imports) %></td>
                     </tr>
                     <% end %>
                   </tbody>

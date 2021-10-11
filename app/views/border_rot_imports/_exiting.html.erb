@@ -11,10 +11,10 @@
       </div>
     <% end %>
     <div class="form-group">
-     <label>Rot#: </label><p style="display: inline-block; margin-left: 10px;"> <%= @rotation.rot_num %></p><br />
-      <label>Owner: </label><p style="display: inline-block; margin-left: 10px;"><%= @rotation.owner %></p><br />
-      <label>Goods Description: </label><p style="display: inline-block; margin-left: 10px;"><%= @rotation.goods_description %></p><br />
-      <label>Destination: </label><p style="display: inline-block; margin-left: 10px;"><%= @rotation.destination %></p><br />
+     <label>Rot#: </label><p style="display: inline-block; margin-left: 10px;"> <%= @border_rot_import.rot_num %></p><br />
+      <label>Owner: </label><p style="display: inline-block; margin-left: 10px;"><%= @border_rot_import.owner %></p><br />
+      <label>Goods Description: </label><p style="display: inline-block; margin-left: 10px;"><%= @border_rot_import.goods_description %></p><br />
+      <label>Destination: </label><p style="display: inline-block; margin-left: 10px;"><%= @border_rot_import.destination %></p><br />
 
       <label>Entry:</label>
       <%= f.text_field :entry, :class => 'form-control' %>
