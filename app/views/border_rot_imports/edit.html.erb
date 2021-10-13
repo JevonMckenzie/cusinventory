@@ -1,4 +1,10 @@
-<div class="container">
+<%= render 'layouts/header' %>
+<body class="skin-blue sidebar-mini">
+  <%= @border_rot_import.inspect%>
+
+  <div class="content-wrapper">
+    <div class="content">
+      <p id="notice"><%= notice %></p>
     <div class="row">
         <div class="col-md-8 col-md-offset-2 " style="border: 1px solid grey; box-shadow: 5px 10px #dfdfdf; border-radius: 15px;">
             
@@ -13,3 +19,6 @@
         </div>
     </div>
 </div>
+</div>
+</div>
+</body>
