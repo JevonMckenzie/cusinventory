@@ -1,6 +1,6 @@
 <%= render 'layouts/header' %>
 <body class="skin-blue sidebar-mini">
-  <%= @border_rot_import.inspect%>
+  
 
   <div class="content-wrapper">
     <div class="content">
@@ -67,7 +67,12 @@
                           <%else%>
                           <td>---</td>
                         <%end%>
-                        <td><%= link_to "Clear Importer", edit_border_rot_import_path(border_rot_imports) %></td>
+                        <% if border_rot_imports.clearance_officer %>
+                          <td>Cleared</td>
+                        <% else %>
+                          <td><%= link_to "Clear Importer", edit_border_rot_import_path(border_rot_imports) %></td>
+                        <% end %>
+
                     </tr>
                     <% end %>
                   </tbody>

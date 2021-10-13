@@ -69,6 +69,6 @@ class BorderRotImportsController < ApplicationController
     end
     
     def border_rot_import_update_params
-      params.require(:border_rot_import).permit(:entry,:license_plate_out,:date_time_out).merge(issuing_officer_id: current_user.id)
+      params.require(:border_rot_import).permit(:entry,:license_plate_out,:date_time_out).merge(clearance_officer_id: current_user.id)
     end
 end
