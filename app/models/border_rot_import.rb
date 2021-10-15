@@ -10,7 +10,4 @@ class BorderRotImport < ApplicationRecord
     prefix: true
     
     attribute :date_time_in, :datetime, default: -> { Time.current }
-
-    attribute :vin, :string, default: 'N/A'
-    attribute :license_plate_in, :string, default: 'N/A'
 end

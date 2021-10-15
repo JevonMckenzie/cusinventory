@@ -24,6 +24,9 @@ class BorderRotImportsController < ApplicationController
   def create
     @border_rot_import = BorderRotImport.new(border_rot_import_params)
 
+    @border_rot_import.vin ||= 'N/A'
+    @border_rot_import.license_plate_in ||= 'N/A'
+    
     respond_to do |format|
       if @border_rot_import.save
         format.html { redirect_to @border_rot_import, notice: "Border rot import was successfully created." }
