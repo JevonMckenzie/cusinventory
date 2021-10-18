@@ -44,9 +44,11 @@ class BorderRotImportsController < ApplicationController
   def update
     respond_to do |format|
       if @border_rot_import.update(border_rot_import_update_params)
-        format.html { redirect_to @border_rot_import, notice: "Border rot import was successfully updated." }
+        flash[:success] = "Import was successfully updated."
+        format.html { redirect_to :controller=>"border_rot_imports", :action => "index" }
         format.json { render :show, status: :ok, location: @border_rot_import }
       else
+        flash[:error] = "Import was not updated."
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @border_rot_import.errors, status: :unprocessable_entity }
       end
