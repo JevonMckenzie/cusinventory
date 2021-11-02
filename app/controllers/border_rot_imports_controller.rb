@@ -24,15 +24,18 @@ class BorderRotImportsController < ApplicationController
   def create
     @border_rot_import = BorderRotImport.new(border_rot_import_params)
 
+    #Sets default value if field is empty
     @border_rot_import.vin ||= 'N/A'
     @border_rot_import.license_plate_in ||= 'N/A'
     
     respond_to do |format|
       if @border_rot_import.save
+        #redirects to the create new importer page and flash success message
         flash[:success] = "Import was successfully created."
         format.html { redirect_to :controller=>"border_rot_imports", :action => "new" }
         format.json { render :new, status: :created, location: @border_rot_import }
       else
+        #Flashes error message
         flash[:error] = "Import was not created."
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @border_rot_import.errors, status: :unprocessable_entity }
@@ -44,10 +47,12 @@ class BorderRotImportsController < ApplicationController
   def update
     respond_to do |format|
       if @border_rot_import.update(border_rot_import_update_params)
+        #redirects to the index page and flash success message
         flash[:success] = "Import was successfully updated."
         format.html { redirect_to :controller=>"border_rot_imports", :action => "index" }
         format.json { render :show, status: :ok, location: @border_rot_import }
       else
+        #flashes error message
         flash[:error] = "Import was not updated."
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @border_rot_import.errors, status: :unprocessable_entity }
@@ -69,12 +74,12 @@ class BorderRotImportsController < ApplicationController
     def set_border_rot_import
       @border_rot_import = BorderRotImport.find(params[:id])
     end
-
-    # Only allow a list of trusted parameters through.
+    
+    # Only allow a list of trusted parameters through and merging it with the current user id
     def border_rot_import_params
       params.require(:border_rot_import).permit(:rot_num, :license_plate_in, :vehicle_description, :vehicle_color, :driver_name, :owner, :goods_description, :vin, :destination).merge(issuing_officer_id: current_user.id)
     end
-    
+    # Only allow a list of trusted parameters through and merging it with the current user id
     def border_rot_import_update_params
       params.require(:border_rot_import).permit(:entry,:license_plate_out,:date_time_out).merge(clearance_officer_id: current_user.id)
     end
