@@ -10,7 +10,7 @@ class BorderRotImportsController < ApplicationController
   def show
   end
 
-  # GET /border_rot_imports/new
+  # GET /border_rot_imports/new 
   def new
     @border_rot_import = BorderRotImport.new
   end

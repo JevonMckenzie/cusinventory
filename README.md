@@ -9,6 +9,13 @@ Demo: [https://inventorious.herokuapp.com/](https://inventorious.herokuapp.com/)
 ## Description
 Users (who have access to the app), can specify items, members (who can borrow items), and create borrow orders for members. Orders can then be marked as returned or canceled, or renewed for 7 days from a user. Only authenticated users can access the app and make changes. User registration is disabled. Emails to a specified address are sent when an order is created, deleted, renewed, or marked as "returned".
 
+# Boarder Rotation System
+This system trackes the goods that are entering the boarder throught the use of rotations. First the description of the vehicle and its driver is entered into the system along side the goods that they are importing. The main objective is to track the goods entering and leaving the boarder so it records the vehicle description and driver again when the goods are leaving.
+# Boarder Rotation System Fuctionality 
+    1.) Table searching
+    2.) Clearance of importees 
+    3.) Insertion of importer
+    
 ## Installation Instructions
 
 ### Install Rails
