@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
     # before_action :admin_required, except: [:deployed_by_section]
     # before_action :authenticate_user!
 
+    #gets all the orders,members,items,actives, and expired items and sends it to the index page for display
   def index
     @orders = Order.all
     @members = Member.all
@@ -17,11 +18,12 @@ class OrdersController < ApplicationController
       format.xlsx
     end
   end
-
+  #gets all the inactive items
   def old
     @inactive = Order.inactive?
   end
 
+  #gets all the deployed items
   def deployed
        if current_user.cmisuser != "YES"
          redirect_to deployed_section_path
@@ -45,7 +47,7 @@ class OrdersController < ApplicationController
 
 
     def deployed_by_section
-        @orders = Order.all
+    @orders = Order.all
     @members = Member.all
     @items = Item.all
     @active = Order.active?
@@ -55,6 +57,7 @@ class OrdersController < ApplicationController
     handle_filters
   end
 
+  #gets all the members,orders,items [expired,active] from a station.
   def station
     @orders = Order.all
     @members = Member.all
@@ -63,6 +66,7 @@ class OrdersController < ApplicationController
     @expired = Order.expired?
   end
 
+  #gets all the orders
   def inventory
     @orders = Order.all
   end
@@ -82,7 +86,7 @@ class OrdersController < ApplicationController
 
   def returnedby
   end
-
+  #gets an item and places it as a returned item
   def disable
     @current_user = current_user
     #Order.update_attribute(:returnedby, @current_user)
@@ -107,7 +111,7 @@ class OrdersController < ApplicationController
     @order = Order.new
     @member = Member.all
   end
-
+  #allows a user to order available items from inventory
   def create
     if Item.find_by_id(params[:order][:item_id]).remaining_quantity >= params[:order][:quantity].to_i
       params[:order][:status] = true
@@ -132,7 +136,7 @@ class OrdersController < ApplicationController
       redirect_to :back
     end
   end
-
+  #cancels a order made
   def destroy
     borrowed_qty = @order.quantity.to_i
     @borrowed_item = @order.item
@@ -160,6 +164,7 @@ class OrdersController < ApplicationController
 
   private
 
+  #
   def initialize_search
     @reports = Order.all
    
@@ -208,6 +213,7 @@ class OrdersController < ApplicationController
 
 
 
+    #search for an item in the inventory
     def initialize_search
     @orders = Order.all
     session[:search_name] ||= params[:search_name]
@@ -216,6 +222,7 @@ class OrdersController < ApplicationController
     session[:filter_option] = params[:filter_option]
   end
 
+  #searching table using wildcards
   def handle_search_name
     if session[:search_name]
       @orders = Order.where("name LIKE ?", "%#{session[:search_name].titleize}%")
@@ -224,7 +231,7 @@ class OrdersController < ApplicationController
       @reports = Order.all
     end
   end
-
+  
   def handle_filters
     if session[:filter_option] && session[:filter] == "station"
       @orders = @orders.where(position: session[:filter_option])

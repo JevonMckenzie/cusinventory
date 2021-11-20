@@ -18,6 +18,7 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])      
   end
 
+  #accepts the post request and creates a new member with all its feilds of data or else renders a new form
   def create
     @member = Member.new(member_params)
     if @member.save
@@ -35,6 +36,7 @@ class MembersController < ApplicationController
     end
   end
 
+  #deletes a member from a member table
   def destroy
     if @member.orders.where(status: true).count == 0
       @member.destroy
